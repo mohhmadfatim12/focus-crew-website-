@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sliders, Clock, BookOpen, Dumbbell, Code2, Sparkles } from 'lucide-react';
+import { Sliders, Clock, BookOpen, Dumbbell, Code2, Sparkles, ArrowRight } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 export const DopamineCalculator: React.FC = () => {
@@ -13,40 +13,47 @@ export const DopamineCalculator: React.FC = () => {
   const booksRead = Math.round(hoursPerYear / 6);
   const softwareProjects = Math.max(1, Math.round(hoursPerYear / 200));
   const workoutsCompleted = Math.round(hoursPerYear / 1.2);
-  
   const hoursReclaimed = Math.round(hoursPerYear * 0.78);
 
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    setDailyHours(val);
+    if (Math.random() > 0.6) {
+      soundFx.playChime();
+    }
+  };
+
   return (
-    <section id="cost-calculator" className="py-24 bg-slate-50 relative border-t border-slate-200">
-      
+    <section id="cost-calculator" className="py-24 bg-white border-t border-purple-100 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
-            <Sliders className="w-3.5 h-3.5 text-blue-600" />
-            DOOMSCROLL TIME AUDIT
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#7E3FF2] shadow-2xs">
+            <Sliders className="w-3.5 h-3.5" />
+            <span>REAL TIME AUDIT</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            The invisible theft of your youth.
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
+            How Much of Your Life is Doomscrolling Stealing?
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
-            Short-form algorithms don't just consume your time—they fragment your dopaminergic baseline. 
-            Adjust your daily screen time below to face the exact biological math.
+
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Be honest with yourself. Drag the slider to see how many days you lose every year to short-form video feeds—and what you could build instead.
           </p>
         </div>
 
-        {/* Calculator Main Box */}
-        <div className="max-w-4xl mx-auto p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm text-left">
+        {/* Calculator Main Box (Light Theme) */}
+        <div className="max-w-4xl mx-auto p-6 sm:p-10 rounded-3xl bg-[#FAF7FF] border border-purple-200/90 shadow-sm">
           
           {/* Slider Control */}
           <div className="space-y-4 mb-10">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <label htmlFor="daily-hours-slider" className="text-sm font-bold text-slate-800">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <label htmlFor="daily-hours-slider" className="text-sm font-bold text-slate-900">
                 Daily time spent on Reels, Shorts, TikTok & feeds:
               </label>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 font-mono font-extrabold text-lg">
-                <Clock className="w-4 h-4 text-blue-600" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white border border-purple-200 text-[#7E3FF2] font-mono font-extrabold text-lg shadow-2xs">
+                <Clock className="w-4 h-4" />
                 <span>{dailyHours} hours / day</span>
               </div>
             </div>
@@ -58,94 +65,93 @@ export const DopamineCalculator: React.FC = () => {
               max="6.0"
               step="0.5"
               value={dailyHours}
-              onChange={(e) => {
-                soundFx.playChime();
-                setDailyHours(parseFloat(e.target.value));
-              }}
-              className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              onChange={handleSliderChange}
+              className="w-full h-3 bg-purple-200 rounded-lg appearance-none cursor-pointer accent-[#7E3FF2]"
             />
 
-            <div className="flex justify-between text-[11px] font-mono text-slate-500">
-              <span>30 mins (Light)</span>
-              <span>2.5 hours (Average)</span>
-              <span>4.5 hours (Heavy)</span>
-              <span>6.0 hours (Compulsive)</span>
+            <div className="flex justify-between text-[11px] font-mono text-slate-400">
+              <span>30 mins (Casual)</span>
+              <span>2.5 hrs (Average Adult)</span>
+              <span>6 hrs (Severe Doomscroll)</span>
             </div>
           </div>
 
-          {/* Metrics Grid */}
+          {/* Big Impact Numbers Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            
-            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <div className="text-[10px] font-mono uppercase text-slate-500 mb-1 font-semibold">Time Lost Annually</div>
-              <div className="text-3xl font-extrabold text-rose-600 font-mono">
-                {hoursPerYear} <span className="text-sm font-sans font-bold text-slate-500">hours</span>
-              </div>
-              <p className="text-xs text-slate-600 mt-2">
-                That is <span className="text-slate-900 font-semibold font-mono">{hoursPerMonth} hours</span> vanishing from your life every single month.
-              </p>
+            <div className="p-5 rounded-2xl bg-white border border-purple-100 shadow-2xs text-center space-y-1">
+              <span className="text-[10px] font-mono uppercase text-slate-400 font-bold">Lost Per Month</span>
+              <div className="text-3xl font-extrabold text-[#212529] font-mono">{hoursPerMonth} Hours</div>
+              <span className="text-xs text-slate-500">wasted every 30 days</span>
             </div>
 
-            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <div className="text-[10px] font-mono uppercase text-slate-500 mb-1 font-semibold">Full Waking Days Lost</div>
-              <div className="text-3xl font-extrabold text-amber-600 font-mono">
-                {wakingDaysLost} <span className="text-sm font-sans font-bold text-slate-500">days</span>
-              </div>
-              <p className="text-xs text-slate-600 mt-2">
-                Equivalent to spending <span className="text-slate-900 font-semibold font-mono">nearly 2 full months</span> of conscious life staring into glass.
-              </p>
+            <div className="p-5 rounded-2xl bg-white border border-purple-100 shadow-2xs text-center space-y-1">
+              <span className="text-[10px] font-mono uppercase text-slate-400 font-bold">Lost Per Year</span>
+              <div className="text-3xl font-extrabold text-[#7E3FF2] font-mono">{hoursPerYear} Hours</div>
+              <span className="text-xs text-slate-500">gone forever into feeds</span>
             </div>
 
-            <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200">
-              <div className="text-[10px] font-mono uppercase text-emerald-800 mb-1 font-bold">FocusCrew Reclaimed</div>
-              <div className="text-3xl font-extrabold text-emerald-700 font-mono">
-                +{hoursReclaimed} <span className="text-sm font-sans font-bold text-emerald-800">hours</span>
-              </div>
-              <p className="text-xs text-emerald-800/80 mt-2">
-                Reclaimed into your consciousness by FocusCrew's friction gates and task alarms.
-              </p>
+            <div className="p-5 rounded-2xl bg-white border border-red-200 shadow-2xs text-center space-y-1 bg-red-50/40">
+              <span className="text-[10px] font-mono uppercase text-red-600 font-bold">Waking Days Lost</span>
+              <div className="text-3xl font-extrabold text-red-600 font-mono">{wakingDaysLost} Days</div>
+              <span className="text-xs text-red-700/80">of 16-hour waking life erased</span>
             </div>
-
           </div>
 
-          {/* Achievable Milestones */}
-          <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <h4 className="text-xs font-mono font-bold uppercase text-slate-600 mb-3 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              What {hoursPerYear} Hours Could Have Built This Year:
-            </h4>
+          {/* What You Could Build Instead */}
+          <div className="p-6 rounded-2xl bg-white border border-purple-100 shadow-2xs space-y-4">
+            <div className="flex items-center gap-2 text-xs font-bold text-slate-900 uppercase font-mono tracking-wider">
+              <Sparkles className="w-4 h-4 text-[#7E3FF2]" />
+              <span>What You Could Build With That Time:</span>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                <div className="p-2 rounded-lg bg-blue-50 text-blue-700">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-[#FAF8FF] border border-purple-100">
+                <div className="w-9 h-9 rounded-lg bg-purple-100 text-[#7E3FF2] flex items-center justify-center shrink-0">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-base font-extrabold text-slate-900 font-mono">{booksRead}</div>
-                  <div className="text-[11px] text-slate-500">Books Read & Absorbed</div>
+                  <div className="text-base font-extrabold text-slate-900 font-mono">{booksRead} Books</div>
+                  <div className="text-[11px] text-slate-500">Read & internalized</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                <div className="p-2 rounded-lg bg-emerald-50 text-emerald-700">
-                  <Dumbbell className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-base font-extrabold text-slate-900 font-mono">{workoutsCompleted}</div>
-                  <div className="text-[11px] text-slate-500">Intense Gym Sessions</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                <div className="p-2 rounded-lg bg-purple-50 text-purple-700">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-[#FAF8FF] border border-purple-100">
+                <div className="w-9 h-9 rounded-lg bg-purple-100 text-[#7E3FF2] flex items-center justify-center shrink-0">
                   <Code2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-base font-extrabold text-slate-900 font-mono">{softwareProjects}</div>
-                  <div className="text-[11px] text-slate-500">Shipped Software MVPs</div>
+                  <div className="text-base font-extrabold text-slate-900 font-mono">{softwareProjects} Projects</div>
+                  <div className="text-[11px] text-slate-500">Built & deployed</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-[#FAF8FF] border border-purple-100">
+                <div className="w-9 h-9 rounded-lg bg-purple-100 text-[#7E3FF2] flex items-center justify-center shrink-0">
+                  <Dumbbell className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-base font-extrabold text-slate-900 font-mono">{workoutsCompleted} Workouts</div>
+                  <div className="text-[11px] text-slate-500">Completed at the gym</div>
                 </div>
               </div>
             </div>
+
+            {/* FocusCrew Reclaim stat */}
+            <div className="pt-3 border-t border-purple-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-600">
+              <div>
+                With FocusCrew's 15-reel cap, you reclaim an estimated <strong className="text-[#7E3FF2] font-mono text-sm">+{hoursReclaimed} hours/year</strong> of clear, undistracted focus.
+              </div>
+
+              <a
+                href="#download-section"
+                onClick={() => soundFx.playShieldTone()}
+                className="px-4 py-2 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer whitespace-nowrap self-start sm:self-auto"
+              >
+                <span>Reclaim Your Time</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
           </div>
 
         </div>

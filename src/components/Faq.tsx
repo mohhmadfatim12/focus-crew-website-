@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, MessageSquare } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 export const Faq: React.FC = () => {
@@ -7,28 +7,28 @@ export const Faq: React.FC = () => {
 
   const faqs = [
     {
-      q: 'Does FocusCrew route my traffic through your servers or sell my data?',
-      a: 'Absolutely not. FocusCrew has zero central servers, zero analytics SDKs, and zero cloud accounts. The VPN interface runs entirely on Android\'s local loopback at 10.0.0.2:53. DNS queries are parsed inside your phone\'s RAM. Your internet traffic never touches any external FocusCrew infrastructure.'
+      q: 'Does FocusCrew see my browsing history, messages, or sell my data?',
+      a: 'Never. FocusCrew has zero servers, zero cloud databases, and zero tracking SDKs. It runs 100% on your phone using Android\'s local loopback at 10.0.0.2:53. It only inspects domain names (DNS Port 53) in memory. It cannot see your encrypted HTTPS traffic, passwords, messages, or photos.'
     },
     {
-      q: 'Why can\'t I just bypass FocusCrew when I feel an urge or craving?',
-      a: 'Most blockers fail because they are trivial to turn off. FocusCrew locks all configuration behind the Freedom Vault PIN and enforces a mandatory 15-minute emergency delay. Dopamine urges are neurochemically acute and typically peak within 8 to 12 minutes. By forcing a biological pause, FocusCrew allows your rational prefrontal cortex to regain control before you can act.'
+      q: 'Why can\'t I just turn off FocusCrew when I get an urge?',
+      a: 'Most blockers fail because turning them off takes 3 seconds. FocusCrew locks everything behind a PIN and an unskippable 15-minute emergency delay. Urges usually peak and die down within 10 minutes. The 15-minute buffer gives your rational mind enough time to calm down and put the phone away.'
     },
     {
-      q: 'Will the local VPN blocker drain my phone battery?',
-      a: 'No. Commercial VPNs drain battery because they compress and encrypt entire data streams to remote servers thousands of miles away. FocusCrew only intercepts lightweight UDP Port 53 DNS queries (less than 1KB each) and passes standard web traffic directly through your normal Wi-Fi or cellular connection. Total battery impact is under 1% per 24 hours.'
+      q: 'Will running the blocker kill my phone battery?',
+      a: 'No. Normal VPN apps drain battery because they stream all your video and audio through distant servers. FocusCrew only intercepts tiny DNS domain queries (less than 1KB) right on your phone, while normal video and web traffic goes directly through your standard Wi-Fi. It uses less than 1% battery per day.'
     },
     {
-      q: 'Does TaskAlarm wake my phone if it is on Do Not Disturb or silent mode?',
-      a: 'Yes. TaskAlarm is engineered using Android\'s AlarmManager with setExactAndAllowWhileIdle and full-screen window wake locks (FLAG_TURN_SCREEN_ON, FLAG_SHOW_WHEN_LOCKED). It uses a dedicated high-priority alarm audio channel that punches through system Do Not Disturb and requires solving wakefulness challenges to dismiss.'
+      q: 'Does TaskAlarm wake me up if my phone is on silent or Do Not Disturb?',
+      a: 'Yes. TaskAlarm uses Android\'s high-priority alarm channel and full-screen wake lock. It turns your screen on, cuts through Do Not Disturb, and rings until you solve the math problem on the screen. You can\'t just tap snooze in your sleep.'
     },
     {
-      q: 'Can FocusCrew read my WhatsApp chats, passwords, or banking details?',
-      a: 'No. FocusCrew operates exclusively at the DNS layer (Port 53), which only sees domain names (e.g. google.com or adult-site.xxx). FocusCrew does not perform SSL/TLS certificate interception and has zero capability to inspect encrypted HTTPS web contents, keystrokes, personal messages, or payment data.'
+      q: 'Can I use other apps and browsers normally?',
+      a: 'Yes! FocusCrew only blocks adult content, explicit domains, and excessive short-form doomscrolling. Google Docs, YouTube educational videos, WhatsApp, Slack, Spotify, banking apps, and normal websites work at full speed.'
     },
     {
-      q: 'Is FocusCrew free, or is there a hidden subscription trap?',
-      a: 'FocusCrew v1.0.0 is an independent production release created by Mohammad Fatim Hasnain. The core APK with Titan Anti-Porn, Reel Counter, TaskAlarm, and Freedom Vault is 100% free with no recurring subscription paywalls.'
+      q: 'Is FocusCrew really 100% free?',
+      a: 'Yes. FocusCrew was built by Mohammad Fatim Hasnain as an open tool for anyone who wants to reclaim their focus. There are no paid tiers, no subscription traps, and no credit card required.'
     }
   ];
 
@@ -41,8 +41,8 @@ export const Faq: React.FC = () => {
           
           {/* Left Column (Sticky Title & Action) */}
           <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7E3FF2] px-3 py-1 rounded-full bg-[#FAF7FF] border border-purple-200 inline-block">
-              HELP & ARCHITECTURE
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7E3FF2] px-3.5 py-1 rounded-full bg-[#FAF7FF] border border-purple-200 inline-block shadow-2xs">
+              CLEAR ANSWERS
             </span>
             
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
@@ -50,8 +50,21 @@ export const Faq: React.FC = () => {
             </h2>
             
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Everything You Need to Know, All in One Place. Direct architectural answers with zero marketing spin.
+              No marketing double-speak. Here are straight, technical answers about how FocusCrew works on your phone.
             </p>
+
+            <div className="pt-2">
+              <a
+                href="https://wa.me/923312466885?text=Hi%20Fatim,%20I%20have%20a%20question%20about%20FocusCrew"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playChime()}
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#7E3FF2] hover:text-[#6C2FE0] bg-purple-50 px-4 py-2.5 rounded-full border border-purple-200 transition-colors"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Have a specific question? Ask founder on WhatsApp →</span>
+              </a>
+            </div>
 
             <div className="pt-3">
               <a
@@ -59,7 +72,7 @@ export const Faq: React.FC = () => {
                 onClick={() => soundFx.playShieldTone()}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer"
               >
-                <span>Get FocusCrew v1.0.0</span>
+                <span>Get FocusCrew Production APK</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -72,26 +85,28 @@ export const Faq: React.FC = () => {
               return (
                 <div 
                   key={idx}
-                  className="rounded-2xl border border-purple-100 bg-[#FAF7FF]/60 hover:bg-[#FAF7FF] overflow-hidden transition-all duration-200"
+                  className="rounded-2xl border border-purple-100 bg-[#FAF7FF]/70 hover:bg-[#FAF7FF] overflow-hidden transition-all duration-200 shadow-2xs"
                 >
                   <button
                     onClick={() => {
                       soundFx.playChime();
                       setOpenIdx(isOpen ? null : idx);
                     }}
-                    className="w-full p-5 flex items-center justify-between text-left transition-colors cursor-pointer"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">
+                    <span className="text-sm sm:text-base font-bold text-[#212529] font-sans">
                       {faq.q}
                     </span>
-                    <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-[#7E3FF2]' : ''
-                    }`} />
+                    <div className={`w-7 h-7 rounded-full bg-white border border-purple-200 flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 bg-purple-100 text-[#7E3FF2]' : 'text-slate-400'
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-purple-100/60 bg-white/60 animate-fadeIn">
-                      <p>{faq.a}</p>
+                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-purple-100/60 pt-3">
+                      {faq.a}
                     </div>
                   )}
                 </div>

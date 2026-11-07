@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, Shield } from 'lucide-react';
+import { Check, X, Shield, Sparkles } from 'lucide-react';
 
 export const ComparisonMatrix: React.FC = () => {
   const comparisonData = [
@@ -9,153 +9,156 @@ export const ComparisonMatrix: React.FC = () => {
       opal: false,
       freedom: false,
       screenTime: false,
-      note: 'FocusCrew never routes your browsing through remote cloud proxies'
+      note: 'FocusCrew never routes your browsing history through outside cloud servers'
     },
     {
-      feature: '15-Minute Impulse Unlock Friction',
+      feature: '15-Minute Emergency Unlock Cooldown',
       focuscrew: true,
       opal: 'Limited',
       freedom: 'Partial',
       screenTime: false,
-      note: 'Enforces a biological pause that breaks neurochemical craving loops'
+      note: 'Gives your rational mind time to take control during late-night impulses'
     },
     {
-      feature: 'Short-Form Reel Counter (Reels/Shorts/TikTok)',
+      feature: 'Reel Counter (Instagram / Shorts / TikTok)',
       focuscrew: true,
       opal: false,
       freedom: false,
       screenTime: false,
-      note: 'Monitors individual short-form video swipes with mindful friction'
+      note: 'Tracks individual video swipes and triggers an 8-second breathing gate'
     },
     {
-      feature: 'Unignorable TaskAlarm (Wake Lock & Math Challenges)',
+      feature: 'Military TaskAlarm (Wake Lock + Math)',
       focuscrew: true,
       opal: false,
       freedom: false,
       screenTime: false,
-      note: 'System-level full-screen activity that cuts through heavy sleep'
+      note: 'Takes over the entire screen, ignores DND, and requires arithmetic to silence'
     },
     {
-      feature: 'Forced SafeSearch across All Engines',
+      feature: 'Forced SafeSearch in All Browsers',
       focuscrew: true,
       opal: false,
       freedom: 'Partial',
       screenTime: 'Partial',
-      note: 'Locks Google, Bing, DuckDuckGo to strict safe results in all browsers'
+      note: 'Forces strict safe results across Google, Bing, and YouTube in any browser'
     },
     {
-      feature: 'Zero Account & Zero Telemetry Tracking',
+      feature: 'Zero Accounts & Zero Telemetry Tracking',
       focuscrew: true,
       opal: false,
       freedom: false,
       screenTime: false,
-      note: 'Zero user accounts, zero analytics SDKs, zero data monetization'
+      note: 'No signups, no analytics SDKs, and zero telemetry leaving your phone'
     },
     {
-      feature: 'Subscription Cost',
-      focuscrew: '100% Free Core / Direct APK',
+      feature: 'Annual Price',
+      focuscrew: '100% Free / Direct APK',
       opal: '$99.99 / year',
       freedom: '$39.99 / year',
-      screenTime: 'Free (Inflexible)',
-      note: 'No recurring subscription paywalls or artificial limitations'
+      screenTime: 'Free (Bypassed in 3s)',
+      note: 'No subscription traps or credit card requirements'
     }
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative border-t border-slate-200">
-      
+    <section className="py-24 bg-white border-t border-purple-100 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
-            <Shield className="w-3.5 h-3.5 text-blue-600" />
-            UNCOMPROMISING COMPARISON
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#7E3FF2] shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>HONEST COMPARISON</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Why conventional blockers fail.
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
+            FocusCrew vs. Commercial Blockers
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
-            Most wellbeing apps are built for retention, not recovery. 
-            They make bypasses trivial so users don't cancel their subscriptions. FocusCrew is built for total mastery.
+
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Why paying $99/year for commercial blocker apps still ends in a relapse—and how FocusCrew is built different.
           </p>
         </div>
 
-        {/* Table Container */}
-        <div className="max-w-5xl mx-auto rounded-3xl bg-white border border-slate-200 shadow-sm overflow-hidden text-left">
+        {/* Comparison Table (Zanderio Style Table Card) */}
+        <div className="max-w-5xl mx-auto rounded-3xl bg-[#FAF7FF] border border-purple-200/90 shadow-sm overflow-hidden">
+          
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 font-mono text-xs">
-                  <th className="p-4 sm:p-5 text-slate-600 font-semibold w-1/3">Capability</th>
-                  <th className="p-4 sm:p-5 text-blue-700 font-extrabold bg-blue-50/70 border-x border-blue-200 text-center">
-                    <div className="flex items-center justify-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-blue-600" />
-                      <span>FocusCrew</span>
+                <tr className="border-b border-purple-200/70 bg-white">
+                  <th className="py-5 px-6 text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    Protection Feature
+                  </th>
+                  <th className="py-5 px-6 text-xs font-mono font-bold text-[#7E3FF2] uppercase tracking-wider bg-purple-50/80 border-x border-purple-200/60">
+                    <div className="flex items-center gap-1.5">
+                      <Shield className="w-4 h-4 fill-current" />
+                      <span>FocusCrew (APK)</span>
                     </div>
                   </th>
-                  <th className="p-4 sm:p-5 text-slate-600 font-medium text-center">Opal</th>
-                  <th className="p-4 sm:p-5 text-slate-600 font-medium text-center">Freedom</th>
-                  <th className="p-4 sm:p-5 text-slate-600 font-medium text-center">Default OS</th>
+                  <th className="py-5 px-6 text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                    Opal ($99/yr)
+                  </th>
+                  <th className="py-5 px-6 text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                    Freedom ($40/yr)
+                  </th>
+                  <th className="py-5 px-6 text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                    Android Screen Time
+                  </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-xs">
+
+              <tbody className="divide-y divide-purple-100 text-xs sm:text-sm">
                 {comparisonData.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50/60 transition-colors">
+                  <tr key={idx} className="hover:bg-purple-100/30 transition-colors">
                     
-                    {/* Feature description */}
-                    <td className="p-4 sm:p-5 font-semibold text-slate-800">
+                    {/* Feature & Note */}
+                    <td className="py-4 px-6 text-slate-900 font-semibold bg-white/70">
                       <div>{row.feature}</div>
-                      <div className="text-[10px] text-slate-500 font-normal mt-0.5">{row.note}</div>
+                      <div className="text-[11px] text-slate-500 font-normal mt-0.5 font-sans">
+                        {row.note}
+                      </div>
                     </td>
 
-                    {/* FocusCrew Column */}
-                    <td className="p-4 sm:p-5 bg-blue-50/30 border-x border-blue-100 text-center font-bold">
+                    {/* FocusCrew Column (Highlighted) */}
+                    <td className="py-4 px-6 font-bold text-purple-950 bg-purple-50/50 border-x border-purple-200/60 text-center sm:text-left">
                       {typeof row.focuscrew === 'boolean' ? (
-                        <div className="w-6 h-6 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                          <Check className="w-3.5 h-3.5" />
+                        <div className="inline-flex items-center gap-1.5 text-[#7E3FF2] font-mono">
+                          <Check className="w-4 h-4 stroke-[3]" />
+                          <span>Included</span>
                         </div>
                       ) : (
-                        <span className="text-blue-700 font-mono font-bold">{row.focuscrew}</span>
+                        <span className="inline-block px-2.5 py-1 rounded-md bg-[#7E3FF2] text-white font-mono text-xs font-bold shadow-2xs">
+                          {row.focuscrew}
+                        </span>
                       )}
                     </td>
 
-                    {/* Opal Column */}
-                    <td className="p-4 sm:p-5 text-center text-slate-600">
+                    {/* Opal */}
+                    <td className="py-4 px-6 text-slate-600 text-center sm:text-left">
                       {typeof row.opal === 'boolean' ? (
-                        row.opal ? (
-                          <Check className="w-4 h-4 mx-auto text-emerald-600" />
-                        ) : (
-                          <X className="w-4 h-4 mx-auto text-slate-300" />
-                        )
+                        row.opal ? <Check className="w-4 h-4 text-emerald-600" /> : <X className="w-4 h-4 text-slate-300" />
                       ) : (
-                        <span className="font-mono text-slate-600">{row.opal}</span>
+                        <span className="text-slate-700 font-mono text-xs">{row.opal}</span>
                       )}
                     </td>
 
-                    {/* Freedom Column */}
-                    <td className="p-4 sm:p-5 text-center text-slate-600">
+                    {/* Freedom */}
+                    <td className="py-4 px-6 text-slate-600 text-center sm:text-left">
                       {typeof row.freedom === 'boolean' ? (
-                        row.freedom ? (
-                          <Check className="w-4 h-4 mx-auto text-emerald-600" />
-                        ) : (
-                          <X className="w-4 h-4 mx-auto text-slate-300" />
-                        )
+                        row.freedom ? <Check className="w-4 h-4 text-emerald-600" /> : <X className="w-4 h-4 text-slate-300" />
                       ) : (
-                        <span className="font-mono text-slate-600">{row.freedom}</span>
+                        <span className="text-slate-700 font-mono text-xs">{row.freedom}</span>
                       )}
                     </td>
 
-                    {/* Default OS Column */}
-                    <td className="p-4 sm:p-5 text-center text-slate-600">
+                    {/* Screen Time */}
+                    <td className="py-4 px-6 text-slate-500 text-center sm:text-left">
                       {typeof row.screenTime === 'boolean' ? (
-                        row.screenTime ? (
-                          <Check className="w-4 h-4 mx-auto text-emerald-600" />
-                        ) : (
-                          <X className="w-4 h-4 mx-auto text-slate-300" />
-                        )
+                        row.screenTime ? <Check className="w-4 h-4 text-emerald-600" /> : <X className="w-4 h-4 text-slate-300" />
                       ) : (
-                        <span className="font-mono text-slate-600">{row.screenTime}</span>
+                        <span className="text-slate-500 font-mono text-xs">{row.screenTime}</span>
                       )}
                     </td>
 
@@ -164,6 +167,7 @@ export const ComparisonMatrix: React.FC = () => {
               </tbody>
             </table>
           </div>
+
         </div>
 
       </div>

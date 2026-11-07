@@ -1,10 +1,13 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { DualFeatureBento } from './components/DualFeatureBento';
+import { DemoVideoShowcase } from './components/DemoVideoShowcase';
+import { StopDoomscrollSection } from './components/StopDoomscrollSection';
 import { StatsGrid } from './components/StatsGrid';
 import { DeepPurpleBanner } from './components/DeepPurpleBanner';
 import { DnsSimulator } from './components/DnsSimulator';
 import { DopamineCalculator } from './components/DopamineCalculator';
+import { SuccessStories } from './components/SuccessStories';
 import { ArchitectureFlow } from './components/ArchitectureFlow';
 import { ComparisonMatrix } from './components/ComparisonMatrix';
 import { Faq } from './components/Faq';
@@ -21,43 +24,52 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#212529] flex flex-col font-sans selection:bg-[#7E3FF2] selection:text-white antialiased">
-      {/* Navbar (Zanderio Style) */}
+      {/* 1. Navbar (Zanderio Style with Purple Pill CTA) */}
       <Navbar onOpenDownload={scrollToDownload} />
 
-      {/* Main Content Sections */}
+      {/* Main Content Flow */}
       <main className="flex-1">
-        {/* Hero Section with Zanderio-style Connected Canvas & Phone */}
+        {/* 2. Hero Section with Connected Phone Canvas, Flowing SVG Lines, & Marquee */}
         <Hero onOpenDownload={scrollToDownload} />
 
-        {/* Dual Feature Bento (Service vs E-com layout in Zanderio) */}
+        {/* 3. Dual Feature Bento (Titan Fortress vs Reel Disruptor) */}
         <DualFeatureBento />
 
-        {/* 4-Card Stats Grid (What's Driving Your Customers Away layout) */}
+        {/* 4. Product Walkthrough Stage (Interactive 4-Step Showcase) */}
+        <DemoVideoShowcase onOpenDownload={scrollToDownload} />
+
+        {/* 5. Stop Doomscrolling Friction Engine (Live 8s Breathing Circle) */}
+        <StopDoomscrollSection />
+
+        {/* 6. 4-Card Stats Grid (Why Willpower Fails) */}
         <StatsGrid />
 
-        {/* Signature Full-Width Deep-Purple Feature Section */}
+        {/* 7. Signature Full-Width Deep-Purple Section (Military TaskAlarm & Buzzer) */}
         <DeepPurpleBanner />
 
-        {/* Interactive Live DNS Packet Inspector Lab */}
+        {/* 8. Interactive DNS Packet Inspector Lab (Light Theme) */}
         <DnsSimulator />
 
-        {/* Interactive Time Reclaim Calculator */}
+        {/* 9. Interactive Time Reclaim Calculator (Slider & Tangible Life Metrics) */}
         <DopamineCalculator />
 
-        {/* Zero-Server Local Loopback Architecture Flow */}
+        {/* 10. Real Tabbed Success Stories (Engineers, Students, Founders) */}
+        <SuccessStories />
+
+        {/* 11. Zero-Server Local Loopback Architecture Flow */}
         <ArchitectureFlow />
 
-        {/* Hard Truth Comparison Matrix */}
+        {/* 12. Honest Comparison Matrix (FocusCrew vs Opal vs Freedom) */}
         <ComparisonMatrix />
 
-        {/* Split FAQ Section (Zanderio FAQ Layout) */}
+        {/* 13. Split FAQ Section (Direct Human Answers) */}
         <Faq />
 
-        {/* Bottom Conversion Section (Request a Demo layout) */}
+        {/* 14. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
         <ConversionCard />
       </main>
 
-      {/* Structured SaaS Footer */}
+      {/* 15. Structured SaaS Footer */}
       <Footer />
     </div>
   );

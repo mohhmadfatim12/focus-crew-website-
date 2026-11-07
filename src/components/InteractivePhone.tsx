@@ -35,6 +35,7 @@ export const InteractivePhone: React.FC = () => {
   const [reelLimit] = useState(18);
   const [showFrictionModal, setShowFrictionModal] = useState(false);
   const [frictionSeconds, setFrictionSeconds] = useState(5);
+  const [isSwiping, setIsSwiping] = useState(false);
 
   // TaskAlarm State
   const [isAlarmModalOpen, setIsAlarmModalOpen] = useState(false);
@@ -46,7 +47,7 @@ export const InteractivePhone: React.FC = () => {
   const [isVaultLocked, setIsVaultLocked] = useState(true);
   const [emergencyCountdown, setEmergencyCountdown] = useState<number | null>(null);
 
-  // Live clock
+  // Live Clock
   useEffect(() => {
     const update = () => {
       const now = new Date();
@@ -68,7 +69,7 @@ export const InteractivePhone: React.FC = () => {
     return () => clearTimeout(timer);
   }, [showFrictionModal, frictionSeconds]);
 
-  // Emergency countdown
+  // Emergency countdown timer
   useEffect(() => {
     let timer: number;
     if (emergencyCountdown !== null && emergencyCountdown > 0) {
@@ -86,7 +87,7 @@ export const InteractivePhone: React.FC = () => {
       'tracker.nsfw-network.xxx',
       'api.adult-stream-cdn.com',
       'popup.malicious-redirect.net',
-      'analytics.dopamine-loop.io'
+      'ad-tracker.dopamine-loop.io'
     ];
     const picked = mockThreats[Math.floor(Math.random() * mockThreats.length)];
     setBlockedQueriesCount(prev => prev + 1);
@@ -96,12 +97,16 @@ export const InteractivePhone: React.FC = () => {
 
   const handleNextReel = () => {
     soundFx.playChime();
-    const next = reelCount + 1;
-    setReelCount(next);
-    if (next >= reelLimit) {
-      setShowFrictionModal(true);
-      setFrictionSeconds(5);
-    }
+    setIsSwiping(true);
+    setTimeout(() => {
+      setIsSwiping(false);
+      const next = reelCount + 1;
+      setReelCount(next);
+      if (next >= reelLimit) {
+        setShowFrictionModal(true);
+        setFrictionSeconds(5);
+      }
+    }, 200);
   };
 
   const triggerAlarmTest = () => {
@@ -115,7 +120,7 @@ export const InteractivePhone: React.FC = () => {
       soundFx.stopTaskAlarmBuzzer((active) => setIsBuzzerActive(active));
       setIsAlarmModalOpen(false);
     } else {
-      alert('Wrong answer! Solve 24 + 18 to prove wakefulness.');
+      alert('Wrong answer! Solve 24 + 18 to turn off the alarm.');
     }
   };
 
@@ -127,13 +132,13 @@ export const InteractivePhone: React.FC = () => {
   return (
     <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[340px] select-none text-left">
       
-      {/* Soft Zanderio ambient glow */}
+      {/* Soft Ambient Shadow */}
       <div className="absolute -inset-3 bg-[#7E3FF2]/10 rounded-[52px] blur-xl opacity-75 pointer-events-none" />
 
       {/* Titanium White Hardware Bezel */}
       <div className="relative rounded-[44px] p-2.5 bg-gradient-to-b from-[#EDE9FE] via-[#F3E8FF] to-[#EDE9FE] border-2 border-purple-200/80 shadow-xl">
         
-        {/* Buttons */}
+        {/* Hardware Buttons */}
         <div className="absolute -left-[3px] top-24 w-[2px] h-9 bg-purple-300 rounded-l-sm" />
         <div className="absolute -left-[3px] top-36 w-[2px] h-12 bg-purple-300 rounded-l-sm" />
         <div className="absolute -right-[3px] top-28 w-[2px] h-14 bg-purple-300 rounded-r-sm" />
@@ -162,7 +167,7 @@ export const InteractivePhone: React.FC = () => {
           {/* App Header Inside Phone */}
           <div className="px-4 py-2.5 flex items-center justify-between border-b border-purple-100 bg-[#FAF7FF]">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-md overflow-hidden border border-purple-200 bg-white p-0.5">
+              <div className="w-6 h-6 rounded-md overflow-hidden border border-purple-200 bg-white p-0.5 shadow-2xs">
                 <img src="/app-icon-round.png" alt="Icon" className="w-full h-full object-cover rounded" />
               </div>
               <span className="text-xs font-extrabold text-slate-900 tracking-tight">FocusCrew</span>
@@ -170,11 +175,11 @@ export const InteractivePhone: React.FC = () => {
             
             <div className="flex items-center gap-1.5 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Shield Live</span>
+              <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Shield On</span>
             </div>
           </div>
 
-          {/* Main Content */}
+          {/* Main Content Area */}
           <div className="flex-1 overflow-y-auto px-3.5 py-3 relative bg-white">
             
             {/* TAB 1: FORTRESS */}
@@ -191,8 +196,8 @@ export const InteractivePhone: React.FC = () => {
                         {isShieldActive ? <ShieldCheck className="w-4 h-4" /> : <Shield className="w-4 h-4" />}
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-slate-900">Titan Anti-Porn</div>
-                        <div className="text-[10px] font-mono text-slate-500">Local DNS Loopback</div>
+                        <div className="text-xs font-bold text-slate-900">Titan Blocker</div>
+                        <div className="text-[10px] font-mono text-slate-500">System DNS Layer</div>
                       </div>
                     </div>
                     
@@ -220,7 +225,7 @@ export const InteractivePhone: React.FC = () => {
                     </div>
                     <div className="bg-white p-2 rounded-xl border border-purple-100 shadow-2xs">
                       <div className="text-[9px] font-mono uppercase text-slate-500">SafeSearch</div>
-                      <div className="text-xs font-extrabold text-emerald-600 mt-0.5">Enforced</div>
+                      <div className="text-xs font-extrabold text-emerald-600 mt-0.5">Forced On</div>
                     </div>
                   </div>
                 </div>
@@ -236,16 +241,12 @@ export const InteractivePhone: React.FC = () => {
 
                 <div className="p-2.5 rounded-2xl bg-[#FAF8FF] border border-purple-100 space-y-1.5 text-[10px]">
                   <div className="flex items-center justify-between text-slate-600 font-mono">
-                    <span>LOCAL SOCKET</span>
+                    <span>LOOPBACK SOCKET</span>
                     <span className="text-slate-900 font-bold">10.0.0.2:53 (TUN)</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-600 font-mono">
-                    <span>DNS PACKET PARSER</span>
-                    <span className="text-[#7E3FF2] font-bold">DnsPacketParser.kt</span>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-600 font-mono">
-                    <span>CLOUD TELEMETRY</span>
-                    <span className="text-emerald-700 font-bold">0 BYTES (DISABLED)</span>
+                    <span>REMOTE TRAFFIC</span>
+                    <span className="text-emerald-700 font-bold">0 BYTES (NO SERVERS)</span>
                   </div>
                 </div>
 
@@ -254,7 +255,7 @@ export const InteractivePhone: React.FC = () => {
                   className="w-full py-2.5 px-3 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-xs font-bold text-white flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-95"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Simulate Adult Domain Query</span>
+                  <span>Test Adult Domain Block</span>
                 </button>
               </div>
             )}
@@ -269,18 +270,18 @@ export const InteractivePhone: React.FC = () => {
                         <Smartphone className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-slate-900">Reel Habit Breaker</div>
-                        <div className="text-[10px] text-slate-500">Short-Form Friction Gate</div>
+                        <div className="text-xs font-bold text-slate-900">Reel Counter</div>
+                        <div className="text-[10px] text-slate-500">Instagram & Shorts Gate</div>
                       </div>
                     </div>
                     <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#F5F0FF] text-[#7E3FF2] border border-purple-200">
-                      Armed
+                      Active
                     </span>
                   </div>
 
                   <div className="mt-3 space-y-1.5">
                     <div className="flex justify-between text-[11px] font-mono">
-                      <span className="text-slate-600">Reels Watched Today</span>
+                      <span className="text-slate-600">Reels Swiped Today</span>
                       <span className={`font-bold ${reelCount >= reelLimit ? 'text-rose-600' : 'text-slate-900'}`}>
                         {reelCount} / {reelLimit} max
                       </span>
@@ -298,36 +299,39 @@ export const InteractivePhone: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Monitored Apps */}
                 <div className="p-2.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5 text-[10px]">
                   <div className="text-[9px] font-mono uppercase text-slate-500 tracking-wider font-semibold">
-                    Monitored Surfaces
+                    Monitored Feeds
                   </div>
                   <div className="flex items-center justify-between text-slate-700 py-1 border-b border-slate-200/60">
                     <span className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-pink-500" />
                       Instagram Reels
                     </span>
-                    <span className="text-slate-500 font-mono text-[9px]">Active</span>
+                    <span className="text-slate-500 font-mono text-[9px]">Monitored</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-700 py-1 border-b border-slate-200/60">
                     <span className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
                       YouTube Shorts
                     </span>
-                    <span className="text-slate-500 font-mono text-[9px]">Active</span>
+                    <span className="text-slate-500 font-mono text-[9px]">Monitored</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-700 py-1">
                     <span className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-600" />
                       TikTok & Feeds
                     </span>
-                    <span className="text-slate-500 font-mono text-[9px]">Active</span>
+                    <span className="text-slate-500 font-mono text-[9px]">Monitored</span>
                   </div>
                 </div>
 
                 <button
                   onClick={handleNextReel}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
+                  className={`w-full py-2.5 px-3 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer ${
+                    isSwiping ? 'scale-95 bg-purple-800' : ''
+                  }`}
                 >
                   <Eye className="w-3.5 h-3.5" />
                   <span>Simulate Next Reel Swipe (+1)</span>
@@ -344,12 +348,12 @@ export const InteractivePhone: React.FC = () => {
                       <Bell className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-slate-900">TaskAlarm & Planner</div>
-                      <div className="text-[10px] text-slate-500">System Wake Lock</div>
+                      <div className="text-xs font-bold text-slate-900">TaskAlarm</div>
+                      <div className="text-[10px] text-slate-500">Unignorable Wake Lock</div>
                     </div>
                   </div>
                   <div className="text-[10px] font-mono text-amber-900 font-semibold mt-2 bg-amber-100/70 p-2 rounded-lg border border-amber-200">
-                    Next Task: 15:00 — Deep Code Review & Execution
+                    Next Alarm: 07:00 AM — Morning Cardio & Deep Work
                   </div>
                 </div>
 
@@ -357,14 +361,14 @@ export const InteractivePhone: React.FC = () => {
                   <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span className="line-through text-slate-400">07:00 AM — Morning Run</span>
+                      <span className="line-through text-slate-400">07:00 AM — Wake Up</span>
                     </div>
                     <span className="text-[9px] font-mono text-emerald-700 font-bold">DONE</span>
                   </div>
                   <div className="p-2 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
                       <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                      <span className="font-semibold text-slate-900">15:00 — FocusCrew Sprint</span>
+                      <span className="font-semibold text-slate-900">15:00 — Deep Code Sprint</span>
                     </div>
                     <span className="text-[9px] font-mono text-amber-700 font-bold">ARMED</span>
                   </div>
@@ -375,7 +379,7 @@ export const InteractivePhone: React.FC = () => {
                   className="w-full py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
                 >
                   <Bell className="w-3.5 h-3.5 fill-current" />
-                  <span>Test Full-Screen Wake Alarm</span>
+                  <span>Test Wake Lock Alarm</span>
                 </button>
               </div>
             )}
@@ -387,9 +391,9 @@ export const InteractivePhone: React.FC = () => {
                   <div className="w-9 h-9 mx-auto rounded-full bg-white border border-purple-200 shadow-2xs flex items-center justify-center mb-1.5">
                     {isVaultLocked ? <Lock className="w-4 h-4 text-[#7E3FF2]" /> : <Unlock className="w-4 h-4 text-emerald-600" />}
                   </div>
-                  <div className="text-xs font-bold text-slate-900">Freedom Vault Master Lock</div>
+                  <div className="text-xs font-bold text-slate-900">Freedom Vault Master PIN</div>
                   <div className="text-[10px] text-slate-500 mt-0.5">
-                    {isVaultLocked ? 'Protected by 15-minute emergency delay' : 'Vault Temporarily Unlocked'}
+                    {isVaultLocked ? '15-minute emergency delay armed' : 'Vault Temporarily Open'}
                   </div>
 
                   <div className="flex justify-center gap-2.5 my-2.5">
@@ -407,7 +411,7 @@ export const InteractivePhone: React.FC = () => {
 
                   {emergencyCountdown !== null ? (
                     <div className="p-2 rounded-xl bg-amber-50 border border-amber-300 text-[10px] font-mono text-amber-900">
-                      Emergency Delay: {emergencyCountdown}s remaining. Breathe and pause.
+                      Emergency Delay: {emergencyCountdown}s left. Take a breath and reflect.
                     </div>
                   ) : isVaultLocked ? (
                     <button
@@ -456,7 +460,7 @@ export const InteractivePhone: React.FC = () => {
 
           </div>
 
-          {/* Bottom Tabs */}
+          {/* Bottom Tabs Inside Phone */}
           <div className="p-1.5 border-t border-purple-100 bg-[#FAF7FF] grid grid-cols-4 gap-1 z-20">
             <button
               onClick={() => {
@@ -515,27 +519,34 @@ export const InteractivePhone: React.FC = () => {
             <div className="w-20 h-1 rounded-full bg-slate-300" />
           </div>
 
-          {/* Friction Modal */}
+          {/* Friction Modal (Breathing Screen) */}
           {showFrictionModal && (
             <div className="absolute inset-0 z-30 bg-white/98 backdrop-blur-md p-5 flex flex-col justify-between text-center animate-fadeIn">
               <div className="pt-6">
-                <div className="w-12 h-12 mx-auto rounded-full bg-purple-50 border border-purple-200 flex items-center justify-center text-[#7E3FF2] mb-2">
-                  <Flame className="w-6 h-6" />
+                {/* Expanding Breathing Circle Animation */}
+                <div className="relative w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full bg-purple-200 radar-ring" />
+                  <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-[#7E3FF2] relative z-10">
+                    <Flame className="w-6 h-6" />
+                  </div>
                 </div>
-                <h4 className="text-sm font-extrabold text-slate-900">Dopamine Limit Reached</h4>
+
+                <h4 className="text-sm font-extrabold text-slate-900">Reel Limit Hit</h4>
                 <p className="text-[11px] text-slate-600 mt-1">
-                  You have watched {reelLimit} short-form reels today.
+                  You have watched {reelLimit} reels today. Take 3 slow breaths.
                 </p>
                 <div className="mt-3 p-3 rounded-2xl bg-[#FAF8FF] border border-purple-100 text-[11px] text-slate-700">
-                  <div className="text-[9px] uppercase font-mono text-[#7E3FF2] font-bold mb-1">Mindful Interruption</div>
-                  Take 3 deep breaths before returning to your true mission.
+                  <div className="text-[9px] uppercase font-mono text-[#7E3FF2] font-bold mb-1">
+                    Breathe In ... Breathe Out
+                  </div>
+                  Are you scrolling with intention, or is the algorithm driving?
                 </div>
               </div>
 
               <div className="space-y-2 pb-4">
                 {frictionSeconds > 0 ? (
                   <div className="py-2 rounded-xl bg-slate-100 text-xs font-mono font-bold text-slate-600 border border-slate-200">
-                    Friction Gate Active ({frictionSeconds}s)
+                    Pause Active: {frictionSeconds}s
                   </div>
                 ) : (
                   <button
@@ -543,9 +554,9 @@ export const InteractivePhone: React.FC = () => {
                       setShowFrictionModal(false);
                       setReelCount(0);
                     }}
-                    className="w-full py-2.5 rounded-xl bg-[#7E3FF2] text-white font-bold text-xs cursor-pointer"
+                    className="w-full py-2.5 rounded-xl bg-[#7E3FF2] text-white font-bold text-xs cursor-pointer shadow-sm"
                   >
-                    Close Feeds & Reclaim My Time
+                    Close Feeds & Get Back to Work
                   </button>
                 )}
                 
@@ -563,34 +574,34 @@ export const InteractivePhone: React.FC = () => {
           {isAlarmModalOpen && (
             <div className="absolute inset-0 z-40 bg-white p-5 flex flex-col justify-between text-center animate-fadeIn border-2 border-amber-400 shadow-2xl">
               <div className="pt-5">
-                <div className="w-14 h-14 mx-auto rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 mb-2">
+                <div className="w-14 h-14 mx-auto rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 mb-2 animate-bounce">
                   <Bell className="w-7 h-7 fill-current" />
                 </div>
                 <div className="text-[10px] font-mono text-amber-800 uppercase tracking-widest font-extrabold">
                   TaskAlarm Wake Lock
                 </div>
-                <h3 className="text-base font-extrabold text-slate-900 mt-1">Deep Work Sprint</h3>
-                <p className="text-[11px] text-slate-600 mt-0.5">FocusCrew v1.0.0 Production</p>
+                <h3 className="text-base font-extrabold text-slate-900 mt-1">07:00 AM — Morning Workout</h3>
+                <p className="text-[11px] text-slate-600 mt-0.5">FocusCrew Exact Alarm</p>
 
                 <div className="mt-3 flex items-center justify-center gap-2">
                   <button
                     onClick={() => {
                       soundFx.toggleBuzzer((active) => setIsBuzzerActive(active));
                     }}
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold border ${
+                    className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold border transition-colors ${
                       isBuzzerActive 
                         ? 'bg-amber-500 text-slate-950 border-amber-600 shadow' 
                         : 'bg-slate-100 text-slate-700 border-slate-300'
                     }`}
                   >
                     {isBuzzerActive ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
-                    <span>{isBuzzerActive ? 'Buzzer Ringing (Sound ON)' : 'Buzzer Muted'}</span>
+                    <span>{isBuzzerActive ? 'Buzzer Ringing' : 'Test Tone'}</span>
                   </button>
                 </div>
 
                 <div className="mt-4 p-3 rounded-2xl bg-amber-50/70 border border-amber-200 text-left">
                   <div className="text-[10px] font-mono text-amber-900 font-bold uppercase">Wake Challenge (Anti-Snooze)</div>
-                  <div className="text-xs text-slate-700 font-medium mt-1">Solve to prove alertness:</div>
+                  <div className="text-xs text-slate-700 font-medium mt-1">Solve to silence alarm:</div>
                   <div className="text-sm font-mono font-bold text-slate-900 my-1">24 + 18 = ?</div>
                   <div className="flex gap-2 mt-1.5">
                     <input
@@ -604,7 +615,7 @@ export const InteractivePhone: React.FC = () => {
                       onClick={dismissAlarm}
                       className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg font-sans cursor-pointer shadow-sm"
                     >
-                      Verify & Dismiss
+                      Dismiss
                     </button>
                   </div>
                 </div>
