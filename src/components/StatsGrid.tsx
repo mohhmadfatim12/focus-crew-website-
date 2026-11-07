@@ -1,24 +1,32 @@
 import React from 'react';
-import { ArrowRight, Flame } from 'lucide-react';
+import { ArrowRight, Clock, ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 export const StatsGrid: React.FC = () => {
   const stats = [
     {
       metric: '913 Hours',
-      desc: 'The average adult spends 2.5 hours every single day swiping short-form video feeds. That is 38 full 24-hour days lost every year.'
+      desc: 'spent annually by the average adult staring into mindless short-form video feeds without conscious intent.',
+      icon: Clock,
+      type: 'bottom'
     },
     {
       metric: '12 Minutes',
-      desc: 'How long an impulsive craving actually lasts. FocusCrew\'s 15-minute emergency delay outlasts the urge, preventing 96% of relapses.'
+      desc: 'is how long an impulsive craving actually lasts. FocusCrew\'s 15-minute emergency delay outlasts the urge, preventing 96% of relapses.',
+      icon: Zap,
+      type: 'top'
     },
     {
       metric: '150,000+',
-      desc: 'Adult domains and explicit keywords blocked right inside your device\'s RAM in 0.2ms before the browser can even open a socket.'
+      desc: 'adult domains and explicit keywords blocked inside your phone\'s RAM in 0.2ms before the browser can even transmit a byte.',
+      icon: ShieldCheck,
+      type: 'bottom'
     },
     {
       metric: '$0 Free',
-      desc: 'No subscription traps, no $12/month paywalls, and zero cloud tracking. Download the official production APK directly for free.'
+      desc: 'core production APK. 100% free with no recurring subscription traps, credit card paywalls, or cloud data logging.',
+      icon: HeartHandshake,
+      type: 'top'
     }
   ];
 
@@ -26,62 +34,72 @@ export const StatsGrid: React.FC = () => {
     <section className="py-24 bg-white border-t border-purple-100 text-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Zanderio Style) */}
+        {/* Section Header (Exact Zanderio Typography) */}
         <div className="max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-[#7E3FF2] shadow-2xs">
-            <Flame className="w-3.5 h-3.5" />
-            <span>THE HARD NUMBERS</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
-            Why Willpower Alone Always Fails
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#212529] tracking-tight">
+            What’s Draining Your Ambition?
           </h2>
-
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Willpower is like a phone battery: it runs out by the end of the day. At 11 PM when you are exhausted, 
-            self-control breaks down. FocusCrew never gets tired.
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            FocusCrew solves this by acting as an on-device system guardian, delivering zero-latency DNS protection 
+            and mindful friction gates that stop mindless scrolling before it takes over your day.
           </p>
         </div>
 
-        {/* 4 Cards Grid (Exact Zanderio 4-Card Frame Style) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((s, idx) => (
-            <div 
-              key={idx}
-              className="rounded-3xl bg-[#FAF7FF] border border-purple-200/80 p-8 flex flex-col justify-between items-center text-center shadow-xs card-shadow-hover relative overflow-hidden group"
-            >
-              {/* Subtle hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-b from-purple-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+        {/* 4 Cards Grid with Exact Zanderio Alternating Top/Bottom U-Borders & Floating Circles */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center max-w-6xl mx-auto">
+          {stats.map((s, idx) => {
+            const Icon = s.icon;
+            const isBottom = s.type === 'bottom';
 
-              {/* Top Circular Outline Accent (Zanderio Signature) */}
-              <div className="w-10 h-10 rounded-full border-2 border-purple-300 flex items-center justify-center mb-6">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#7E3FF2]" />
-              </div>
+            return (
+              <div key={idx} className="flex flex-col items-center relative py-4">
+                
+                {/* Top Circle for 'bottom' cards (Cards 1 & 3) */}
+                {isBottom && (
+                  <div className="acs-circle-icon -mb-9 z-20">
+                    <Icon className="w-7 h-7 text-[#7E3FF2]" />
+                  </div>
+                )}
 
-              {/* Big Bold Stat */}
-              <div className="relative z-10">
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#212529] font-mono tracking-tight">
-                  {s.metric}
+                {/* U-Shaped Gradient Card Container */}
+                <div className={isBottom ? 'acs-card-u-bottom w-full' : 'acs-card-u-top w-full'}>
+                  <div className="acs-stat-card">
+                    {/* Top space for bottom cards if icon overlaps */}
+                    {isBottom && <div className="h-4" />}
+
+                    <div className="acs-stat-value font-mono">
+                      {s.metric}
+                    </div>
+
+                    <p className="acs-stat-text">
+                      {s.desc}
+                    </p>
+
+                    {/* Bottom space for top cards if icon overlaps */}
+                    {!isBottom && <div className="h-4" />}
+                  </div>
                 </div>
-                <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
-                  {s.desc}
-                </p>
-              </div>
 
-              {/* Bottom Circular Accent (Zanderio Signature) */}
-              <div className="w-7 h-7 rounded-full border border-purple-200 mt-6 group-hover:border-purple-400 transition-colors" />
-            </div>
-          ))}
+                {/* Bottom Circle for 'top' cards (Cards 2 & 4) */}
+                {!isBottom && (
+                  <div className="acs-circle-icon -mt-9 z-20">
+                    <Icon className="w-7 h-7 text-[#7E3FF2]" />
+                  </div>
+                )}
+
+              </div>
+            );
+          })}
         </div>
 
-        {/* Centered Action Button (Zanderio Style) */}
-        <div className="mt-12">
+        {/* Centered Action Button (Exact Zanderio Pill Button) */}
+        <div className="mt-14">
           <a
             href="#download-section"
             onClick={() => soundFx.playShieldTone()}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-sm font-bold shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/35 transition-all cursor-pointer"
+            className="acs-btn"
           >
-            <span>Stop Leaving Your Discipline to Chance</span>
+            <span>Why Modern High-Performers Choose FocusCrew</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Smartphone, Bell, Lock, ArrowRight, CheckCircle2, AlertOctagon } from 'lucide-react';
+import { Shield, Smartphone, Bell, Lock, ArrowRight, CheckCircle2, AlertOctagon, Download, Sparkles } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 interface DemoVideoProps {
@@ -56,6 +56,29 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
     <section className="py-24 bg-white border-t border-purple-100 text-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Dual Floating Buttons (Exact Zanderio SecondSection Style) */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+          <a
+            href="#interactive-demo"
+            onClick={() => soundFx.playChime()}
+            className="px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs sm:text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer flex items-center gap-2"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>See FocusCrew in Action</span>
+          </a>
+
+          <button
+            onClick={() => {
+              soundFx.playShieldTone();
+              onOpenDownload();
+            }}
+            className="px-6 py-3 rounded-full bg-white hover:bg-purple-50 text-[#7E3FF2] border border-purple-200 text-xs sm:text-sm font-bold shadow-2xs transition-all cursor-pointer flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" />
+            <span>Install APK Free Instantly</span>
+          </button>
+        </div>
+
         {/* Container (Exact Zanderio Video-Component Frame) */}
         <div className="rounded-3xl bg-[#FAF7FF] border border-purple-100 p-6 sm:p-10 lg:p-14 shadow-xs relative overflow-hidden">
           
@@ -229,16 +252,16 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
 
           </div>
 
-          {/* Centered CTA */}
+          {/* Centered CTA (Exact Zanderio Get Started Now Button) */}
           <div className="mt-10">
             <button
               onClick={() => {
                 soundFx.playShieldTone();
                 onOpenDownload();
               }}
-              className="shimmer-btn inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-sm shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/35 transition-all cursor-pointer"
+              className="acs-btn"
             >
-              <span>Download FocusCrew Free for Android</span>
+              <span>Get Started Now — Download APK Free</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

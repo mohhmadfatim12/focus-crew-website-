@@ -162,3 +162,98 @@
   background-image: radial-gradient(rgba(126, 63, 242, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+/* =========================================================================
+   Zanderio AI Exact Signature Visual Elements
+   ========================================================================= */
+
+/* Signature 4-Card U-Gradient Borders & Floating Circles */
+.acs-card-u-bottom {
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, #7E3FF2 50%);
+  border-radius: 24px;
+  padding: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.acs-card-u-bottom:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 12px 24px rgba(126, 63, 242, 0.2));
+}
+
+.acs-card-u-top {
+  background: linear-gradient(#7E3FF2 50%, rgba(0, 0, 0, 0) 50%);
+  border-radius: 24px;
+  padding: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.acs-card-u-top:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 12px 24px rgba(126, 63, 242, 0.2));
+}
+
+.acs-circle-icon {
+  background-color: #FFFFFF;
+  border: 3.5px solid #7E3FF2;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(126, 63, 242, 0.2);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+.acs-card-u-bottom:hover .acs-circle-icon,
+.acs-card-u-top:hover .acs-circle-icon {
+  transform: scale(1.08);
+  border-color: #6C2FE0;
+}
+
+.acs-stat-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.05);
+  padding: 44px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.acs-stat-value {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1C1C1C;
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.acs-stat-text {
+  font-size: 13px;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-top: 12px;
+  font-family: var(--font-sans);
+}
+
+.acs-btn {
+  background: #7E3FF2;
+  color: #FFFFFF;
+  border-radius: 50px;
+  padding: 14px 38px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(126, 63, 242, 0.25);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.acs-btn:hover {
+  background: #6C2FE0;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(126, 63, 242, 0.35);
+}

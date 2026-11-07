@@ -4,7 +4,10 @@ import {
   ArrowDownRight, 
   ArrowDownLeft, 
   Lock, 
-  TrendingDown 
+  TrendingDown,
+  Smartphone,
+  Zap,
+  Globe
 } from 'lucide-react';
 import { InteractivePhone } from './InteractivePhone';
 
@@ -19,10 +22,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
     { name: 'TikTok', icon: '🎵' },
     { name: 'Google Chrome', icon: '🌐' },
     { name: 'Brave Browser', icon: '🦁' },
-    { name: 'Reddit', icon: '🤖' },
-    { name: 'Twitter / X', icon: '🐦' },
-    { name: 'Telegram', icon: '✈️' },
-    { name: 'Android 15', icon: '⚡' }
+    { name: 'Incognito Mode', icon: '🕶️' },
+    { name: 'Reddit In-App', icon: '🤖' },
+    { name: 'Android 15', icon: '⚡' },
+    { name: 'Firefox Focus', icon: '🦊' }
   ];
 
   return (
@@ -30,34 +33,34 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Floating Callout Badges with Micro-arrows (Zanderio Style) */}
-        <div className="relative max-w-3xl mx-auto mb-4 flex justify-between items-center px-4 sm:px-12 pointer-events-none">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold shadow-xs rotate-[-3deg] pointer-events-auto animate-float">
-            <span>🛡️ System-Level DNS Shield</span>
-            <ArrowDownRight className="w-3.5 h-3.5 text-emerald-600" />
+        {/* Tilted Callout Pointer Badges (Exact Zanderio Pointer Icon Style) */}
+        <div className="relative max-w-3xl mx-auto mb-5 flex justify-between items-center px-2 sm:px-12 pointer-events-none">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float">
+            <span>🛡️ #1 On-Device Blocker</span>
+            <ArrowDownRight className="w-4 h-4 text-[#0A6B4F]" />
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-[#7E3FF2] text-xs font-semibold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
-            <ArrowDownLeft className="w-3.5 h-3.5 text-[#7E3FF2]" />
-            <span>⚡ Zero-Relapse Machine</span>
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
+            <ArrowDownLeft className="w-4 h-4 text-[#7E3FF2]" />
+            <span>⚡ Zero-Relapse Fortress</span>
           </div>
         </div>
 
-        {/* Centered H1 (Human, Direct, Unapologetic) */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#212529] max-w-4xl mx-auto leading-[1.14]">
-          The Android Blocker That{' '}
-          <span className="text-[#7E3FF2]">Actually Works.</span>
+        {/* Centered H1 (Exact Zanderio Hierarchy) */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#212529] max-w-4xl mx-auto leading-[1.12]">
+          #1 Android Blocker That <br className="hidden sm:inline" />
+          <span className="text-[#7E3FF2]">Never Lets You Relapse</span>
         </h1>
 
-        {/* Subtitle (Honest, Human, Punchy) */}
+        {/* Subtitle */}
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Most blockers give you an easy 15-minute bypass. FocusCrew doesn't. 
-          Block porn across all browsers, put a hard stop on Instagram Reels, and wake up to an alarm you can't snooze in your sleep.
+          Turn your phone back into a high-leverage tool with an on-device wellness guardian that blocks porn across all browsers, 
+          puts a hard stop on Instagram Reels, and wakes you up on time.
         </p>
 
         {/* Hook */}
         <p className="mt-3 text-sm text-slate-800 font-medium">
-          Zero subscriptions. Zero cloud servers.{' '}
+          <strong>No subscriptions, no cloud proxies.</strong>{' '}
           <button 
             onClick={onOpenDownload} 
             className="text-[#7E3FF2] hover:text-[#6C2FE0] font-bold underline cursor-pointer"
@@ -66,104 +69,157 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
           </button>
         </p>
 
-        {/* --- CENTRAL CONNECTED DEVICE CANVAS --- */}
-        <div className="mt-12 relative rounded-3xl bg-[#FAF7FF] border border-purple-100 p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden">
+        {/* --- CENTRAL CONNECTED DIAGRAM CANVAS (EXACT ZANDERIO STYLE) --- */}
+        <div className="mt-12 relative rounded-3xl bg-[#FAF7FF] border border-purple-100/90 p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden">
           
           {/* Animated SVG Connector Lines with Moving Glow Points */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block opacity-40" viewBox="0 0 1000 650" fill="none">
-            <path d="M 220 180 C 350 180, 380 260, 500 280" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
-            <path d="M 780 180 C 650 180, 620 260, 500 280" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
-            <path d="M 220 480 C 350 480, 380 380, 500 360" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
-            <path d="M 780 480 C 650 480, 620 380, 500 360" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+          <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block opacity-45" viewBox="0 0 1000 650" fill="none">
+            {/* Top-Left to Center */}
+            <path d="M 230 140 C 350 140, 380 230, 500 270" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            {/* Mid-Left to Center */}
+            <path d="M 230 320 C 350 320, 390 310, 500 310" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            {/* Bottom-Left to Center */}
+            <path d="M 230 500 C 350 500, 380 390, 500 350" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
             
-            {/* Animated glowing dots pulsing along the paths */}
-            <circle cx="350" cy="210" r="3" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="650" cy="210" r="3" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="350" cy="440" r="3" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="650" cy="440" r="3" fill="#7E3FF2" className="animate-ping" />
+            {/* Top-Right to Center */}
+            <path d="M 770 170 C 650 170, 620 250, 500 280" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            {/* Bottom-Right to Center */}
+            <path d="M 770 480 C 650 480, 620 370, 500 340" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+
+            {/* Glowing animated pulse nodes */}
+            <circle cx="360" cy="180" r="3.5" fill="#7E3FF2" className="animate-ping" />
+            <circle cx="640" cy="210" r="3.5" fill="#7E3FF2" className="animate-ping" />
+            <circle cx="370" cy="450" r="3.5" fill="#7E3FF2" className="animate-ping" />
+            <circle cx="630" cy="430" r="3.5" fill="#7E3FF2" className="animate-ping" />
           </svg>
 
-          {/* Grid Layout: Left Floating Cards + Central Phone + Right Floating Cards */}
+          {/* Grid: Left Connected Cards + Center Interactive Phone + Right Connected Cards */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            {/* Left Floating Cards with Animation */}
-            <div className="md:col-span-3 space-y-6 text-left">
+            {/* Left Column (3 Connected Nodes) */}
+            <div className="md:col-span-3 space-y-5 text-left">
               
-              {/* Card 1: Local Loopback */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm space-y-2 card-shadow-hover animate-float">
+              {/* Node 1: Supported Browsers Pill (Like Zanderio's app pill) */}
+              <div className="p-3.5 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-xl bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
+                    <Globe className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">All Browsers Protected</div>
+                    <div className="text-[10px] text-slate-500">Chrome • Brave • Incognito</div>
+                  </div>
+                </div>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              </div>
+
+              {/* Node 2: Threats Blocked Stat Card (Like Zanderio's $34k Sales card) */}
+              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float-reverse space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold">Socket Ingress</span>
-                  <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-bold">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">
                     0ms Latency
                   </span>
                 </div>
-                <div className="text-xl font-extrabold text-[#212529] font-mono">10.0.0.2:53</div>
-                <p className="text-[11px] text-slate-500">
-                  Filters packets directly in RAM. Doesn't route through any remote VPN company.
+                <div className="text-2xl font-extrabold text-[#212529] font-mono">1,429+</div>
+                <div className="text-xs font-bold text-slate-800">Adult Threats Blocked</div>
+                <p className="text-[10px] text-slate-500 leading-snug">
+                  Returns 0.0.0.0 NXDOMAIN in RAM before the socket establishes.
                 </p>
-                <div className="pt-1.5 border-t border-purple-50 flex items-center gap-2 text-xs font-semibold text-slate-700">
-                  <span>Chrome</span>
-                  <span className="text-slate-300">•</span>
-                  <span>Brave</span>
-                  <span className="text-slate-300">•</span>
-                  <span>Incognito</span>
-                </div>
               </div>
 
-              {/* Card 2: Screen Time Chart */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm space-y-2 card-shadow-hover animate-float-reverse">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
-                  <TrendingDown className="w-4 h-4 text-[#7E3FF2]" />
-                  <span>Reel Time Slashed</span>
+              {/* Node 3: Analytics Trend Chart Card (Like Zanderio's purple graph card) */}
+              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
+                    <TrendingDown className="w-4 h-4 text-[#7E3FF2]" />
+                    <span>Screen Time Drop</span>
+                  </div>
+                  <span className="text-xs font-mono font-extrabold text-[#7E3FF2] bg-purple-50 px-2 py-0.5 rounded">
+                    -78%
+                  </span>
                 </div>
-                <div className="text-2xl font-extrabold text-[#7E3FF2] font-mono">-78%</div>
-                <div className="w-full h-1.5 bg-purple-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#7E3FF2] rounded-full w-[78%] transition-all duration-1000" />
+
+                {/* Simulated Mini SVG Line Chart */}
+                <div className="h-10 w-full flex items-end pt-1">
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 120 40">
+                    <path
+                      d="M 0 5 Q 30 10, 50 20 T 90 28 T 120 38"
+                      fill="none"
+                      stroke="#7E3FF2"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="120" cy="38" r="3.5" fill="#7E3FF2" />
+                  </svg>
                 </div>
-                <p className="text-[10px] text-slate-500">
-                  Friction gates snap you out of algorithmic hypnosis when you hit 15 reels.
-                </p>
+
+                <div className="pt-1 border-t border-purple-50 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                  <span>Day 1 (4.2h)</span>
+                  <span className="text-[#7E3FF2] font-bold">Day 30 (54m)</span>
+                </div>
               </div>
 
             </div>
 
-            {/* Center Phone Simulator */}
+            {/* Center: Titanium Smartphone Canvas */}
             <div id="interactive-demo" className="md:col-span-6 flex justify-center">
               <InteractivePhone />
             </div>
 
-            {/* Right Floating Cards with Animation */}
-            <div className="md:col-span-3 space-y-6 text-left">
+            {/* Right Column (2 Connected Nodes) */}
+            <div className="md:col-span-3 space-y-5 text-left">
               
-              {/* Card 3: Threats Blocked */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm space-y-2 card-shadow-hover animate-float">
+              {/* Node 4: Active Reel Counter Card (Like Zanderio's Active Cart card) */}
+              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="w-7 h-7 rounded-lg bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
-                    <ShieldCheck className="w-4 h-4" />
+                    <Smartphone className="w-4 h-4" />
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[10px] font-mono text-[#7E3FF2] font-bold bg-purple-50 px-2 py-0.5 rounded-full">
+                    Active Limit
+                  </span>
                 </div>
-                <div className="text-2xl font-extrabold text-[#212529] font-mono">1,429+</div>
-                <div className="text-xs font-bold text-slate-800">Adult Queries Blocked</div>
-                <p className="text-[10px] text-slate-500">
-                  Instantly returns 0.0.0.0 NXDOMAIN before the page even begins to load.
+                <div className="text-2xl font-extrabold text-[#7E3FF2] font-mono">15 / 15</div>
+                <div className="text-xs font-bold text-slate-800">Daily Reels Allowed</div>
+                
+                {/* Progress bar */}
+                <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div className="bg-[#7E3FF2] h-full w-full" />
+                </div>
+                <p className="text-[10px] text-slate-500 leading-snug">
+                  8s breathing pause activates immediately on swipe 15.
                 </p>
               </div>
 
-              {/* Card 4: Freedom Vault Prompt */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm space-y-2 card-shadow-hover animate-float-reverse">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-md bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
-                    <Lock className="w-3.5 h-3.5" />
+              {/* Node 5: Freedom Vault & Local TUN Node */}
+              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float-reverse space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
+                    <Lock className="w-3.5 h-3.5 text-[#7E3FF2]" />
+                    <span>Freedom Vault</span>
                   </div>
-                  <span className="text-xs font-bold text-slate-800">Freedom Vault</span>
+                  <span className="text-[10px] font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded font-bold">
+                    10.0.0.2:53
+                  </span>
                 </div>
-                <div className="p-2 rounded-xl bg-[#FAF8FF] border border-purple-100 text-[11px] text-purple-900 font-medium">
-                  "15-minute unlock timer active. Take a breath and walk away."
+                <div className="p-2.5 rounded-xl bg-[#FAF8FF] border border-purple-100 text-[11px] text-purple-900 font-medium">
+                  "15-minute emergency delay. Urges fade before timer hits zero."
                 </div>
-                <p className="text-[10px] text-slate-500">
-                  The urge to unblock peaks in 10 minutes. The 15-minute wait outlasts it every time.
+                <p className="text-[10px] text-slate-500 leading-snug">
+                  96% of relapses prevented by introducing mandatory delay.
                 </p>
+              </div>
+
+              {/* Node 6: Instant APK Pill */}
+              <div className="p-3.5 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-amber-500" />
+                  <span className="text-xs font-bold text-slate-800">100% Free Core APK</span>
+                </div>
+                <span className="text-[10px] font-mono text-slate-400">18.4MB</span>
               </div>
 
             </div>
@@ -172,18 +228,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
         </div>
 
-        {/* --- CONTINUOUS LOGO MARQUEE (ZANDERIO STYLE ANIMATION) --- */}
+        {/* --- PARTNERS MARQUEE BAR (EXACT ZANDERIO STYLE) --- */}
         <div className="mt-14 pt-8 border-t border-purple-100 overflow-hidden">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest font-mono mb-6">
             Active Protection Across All Your Feeds & Browsers
           </p>
 
           <div className="relative w-full overflow-hidden mask-fade">
-            <div className="animate-marquee flex items-center gap-12 text-slate-700 text-sm font-semibold whitespace-nowrap">
+            <div className="animate-marquee flex items-center gap-10 text-slate-700 text-sm font-semibold whitespace-nowrap">
               {platforms.concat(platforms).map((p, i) => (
-                <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 shadow-2xs shrink-0">
+                <div key={i} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200/80 shadow-2xs shrink-0">
                   <span className="text-base">{p.icon}</span>
-                  <span>{p.name}</span>
+                  <span className="font-bold text-slate-800 text-xs sm:text-sm">{p.name}</span>
                 </div>
               ))}
             </div>
