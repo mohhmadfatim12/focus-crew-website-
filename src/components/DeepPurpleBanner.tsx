@@ -14,47 +14,48 @@ export const DeepPurpleBanner: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white border-t border-purple-100">
+    <section className="py-24 bg-white border-t border-[#E5DFD3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Full-Width Deep Purple Container (Exact Zanderio Signature Style) */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#6A28E5] via-[#7E3FF2] to-[#9055FD] p-8 sm:p-12 lg:p-16 text-white shadow-xl shadow-purple-600/25 relative overflow-hidden text-left">
+        {/* Full-Width Luxury Obsidian Container with Honey Brass & Sage Accents */}
+        <div className="rounded-3xl bg-gradient-to-br from-[#1C221D] via-[#121413] to-[#1F2722] p-8 sm:p-12 lg:p-16 text-white shadow-2xl shadow-black/30 border border-[#A37A3E]/30 relative overflow-hidden text-left">
           
-          {/* Subtle background glow circle */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/10 blur-3xl pointer-events-none" />
+          {/* Subtle warm amber/brass glow circle */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#A37A3E]/15 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#284B39]/20 blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest px-3.5 py-1 rounded-full bg-white/20 text-white font-bold border border-white/25 inline-flex items-center gap-1.5 shadow-sm">
-                <Sparkles className="w-3 h-3" />
+              <span className="text-xs font-mono uppercase tracking-widest px-3.5 py-1 rounded-full bg-[#A37A3E]/20 text-[#D4AF37] font-bold border border-[#A37A3E]/40 inline-flex items-center gap-1.5 shadow-sm">
+                <Sparkles className="w-3 h-3 text-[#A37A3E]" />
                 ON-DEVICE SOVEREIGN FORTRESS
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white font-serif">
                 The Blocker You Can't Bypass In Moments of Craving
               </h2>
 
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#C5CDC6] text-sm sm:text-base leading-relaxed">
                 Standard blocker apps are easily uninstalled or toggled off when an urge strikes at midnight.
-                FocusCrew enforces instant zero-latency protection, strict search lockdown, and an unskippable 15-minute urge dissolution buffer right on your device.
+                FocusCrew enforces instant on-device RAM Bloom filtering, strict search VIP rewrite, and an unskippable 15-minute urge dissolution buffer right on your device.
               </p>
 
-              {/* 3 White Pill Feature Badges (Exact Zanderio Pill Style) */}
+              {/* 3 Pill Feature Badges */}
               <div className="space-y-3 pt-2">
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-[#212529] text-xs sm:text-sm font-semibold shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#7E3FF2]" />
-                  <span>On-device protection — 150,000+ adult domains neutralized locally with zero cloud lag</span>
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FBF9F5] text-[#202621] text-xs sm:text-sm font-semibold shadow-sm border border-[#E5DFD3]">
+                  <span className="w-2 h-2 rounded-full bg-[#A37A3E]" />
+                  <span>On-device protection — 154,820 adult domains neutralized in RAM with zero cloud lag</span>
                 </div>
                 <br />
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-[#212529] text-xs sm:text-sm font-semibold shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#7E3FF2]" />
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FBF9F5] text-[#202621] text-xs sm:text-sm font-semibold shadow-sm border border-[#E5DFD3]">
+                  <span className="w-2 h-2 rounded-full bg-[#284B39]" />
                   <span>Strict SafeSearch VIP rewrite — locks Google, Bing & YouTube restricted mode</span>
                 </div>
                 <br />
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-[#212529] text-xs sm:text-sm font-semibold shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#7E3FF2]" />
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#FBF9F5] text-[#202621] text-xs sm:text-sm font-semibold shadow-sm border border-[#E5DFD3]">
+                  <span className="w-2 h-2 rounded-full bg-[#A37A3E]" />
                   <span>15-minute Freedom Vault delay — dissolves 96% of relapse cravings before unlock</span>
                 </div>
               </div>
@@ -62,50 +63,50 @@ export const DeepPurpleBanner: React.FC = () => {
 
             {/* Right: Interactive DNS Socket Inspector Card */}
             <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-white p-6 sm:p-8 text-[#212529] shadow-2xl space-y-4 border border-purple-100">
+              <div className="rounded-3xl bg-[#FBF9F5] p-6 sm:p-8 text-[#202621] shadow-2xl space-y-4 border border-[#E5DFD3]">
                 
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div className="flex items-center justify-between pb-3 border-b border-[#E5DFD3]">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-xl bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
-                      <ShieldCheck className="w-4 h-4" />
+                    <div className="w-9 h-9 rounded-xl bg-[#F5EAD8] text-[#A37A3E] flex items-center justify-center font-bold">
+                      <ShieldCheck className="w-5 h-5 text-[#A37A3E]" />
                     </div>
                     <div>
-                      <div className="text-xs font-extrabold text-slate-900">Titan Shield Engine</div>
-                      <div className="text-[10px] text-slate-500 font-mono">On-Device Autonomous Security</div>
+                      <div className="text-xs font-extrabold text-[#202621]">Titan Shield Engine</div>
+                      <div className="text-[10px] text-[#5E665F] font-mono">On-Device Autonomous Security</div>
                     </div>
                   </div>
 
-                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#E1EDE5] text-[#284B39] border border-[#284B39]/20">
+                    <span className="w-2 h-2 rounded-full bg-[#284B39] animate-pulse" />
                     <span>ARMED</span>
                   </span>
                 </div>
 
                 {/* Live Diagnostics Block */}
-                <div className="p-4 rounded-2xl bg-[#FAF8FF] border border-purple-100 space-y-3">
-                  <div className="text-[10px] font-mono uppercase text-[#7E3FF2] font-bold flex items-center justify-between">
+                <div className="p-4 rounded-2xl bg-[#F2EEE5] border border-[#E5DFD3] space-y-3">
+                  <div className="text-[10px] font-mono uppercase text-[#A37A3E] font-bold flex items-center justify-between">
                     <span>Live Shield Diagnostics</span>
-                    <span className="text-slate-400">0.2ms latency</span>
+                    <span className="text-[#5E665F]">0.18ms RAM latency</span>
                   </div>
                   
                   <div className="space-y-1.5 text-xs font-mono">
-                    <div className="flex justify-between py-1 border-b border-purple-100/60 text-slate-600">
+                    <div className="flex justify-between py-1 border-b border-[#E5DFD3] text-[#5E665F]">
                       <span>Threat Rules Database:</span>
-                      <span className="font-bold text-slate-900">154,820 rules</span>
+                      <span className="font-bold text-[#202621]">154,820 rules (Bloom Filter)</span>
                     </div>
-                    <div className="flex justify-between py-1 border-b border-purple-100/60 text-slate-600">
+                    <div className="flex justify-between py-1 border-b border-[#E5DFD3] text-[#5E665F]">
                       <span>SafeSearch VIP:</span>
-                      <span className="font-bold text-emerald-600">Google / Bing / YT</span>
+                      <span className="font-bold text-[#284B39]">Google / Bing / YT Forced</span>
                     </div>
-                    <div className="flex justify-between py-1 text-slate-600">
+                    <div className="flex justify-between py-1 text-[#5E665F]">
                       <span>Freedom Vault:</span>
-                      <span className="font-bold text-purple-700">15-Min Buffer Active</span>
+                      <span className="font-bold text-[#A37A3E]">15-Min Buffer Active</span>
                     </div>
                   </div>
 
                   {/* Interactive Domain Check */}
                   <div className="pt-2">
-                    <label className="text-[11px] font-bold text-slate-700 block mb-1.5 font-sans">
+                    <label className="text-[11px] font-bold text-[#202621] block mb-1.5 font-sans">
                       Test Instant Loopback Intercept:
                     </label>
                     <div className="flex gap-2">
@@ -114,11 +115,11 @@ export const DeepPurpleBanner: React.FC = () => {
                         value={testDomain}
                         onChange={(e) => setTestDomain(e.target.value)}
                         placeholder="example-domain.com"
-                        className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs font-mono focus:outline-none focus:border-[#7E3FF2] bg-white text-slate-900"
+                        className="w-full px-3 py-2 rounded-xl border border-[#D5CEBF] text-xs font-mono focus:outline-none focus:border-[#A37A3E] bg-white text-[#202621]"
                       />
                       <button
                         onClick={handleTestBlock}
-                        className="px-4 py-2 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs font-bold transition-all cursor-pointer whitespace-nowrap shadow-sm flex items-center gap-1.5"
+                        className="px-4 py-2 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white text-xs font-bold transition-all cursor-pointer whitespace-nowrap shadow-sm flex items-center gap-1.5"
                       >
                         <Zap className="w-3.5 h-3.5" />
                         <span>Query</span>
@@ -127,17 +128,17 @@ export const DeepPurpleBanner: React.FC = () => {
                   </div>
 
                   {testResult && (
-                    <div className="flex items-center gap-2 text-xs text-emerald-800 font-mono font-bold bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 mt-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <div className="flex items-center gap-2 text-xs text-[#284B39] font-mono font-bold bg-[#E1EDE5] p-2.5 rounded-xl border border-[#284B39]/30 mt-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#284B39] shrink-0" />
                       <div>
                         <div>{testResult.status}</div>
-                        <div className="text-[10px] text-emerald-600 font-normal">Intercepted in {testResult.latency} • 0 bytes transmitted</div>
+                        <div className="text-[10px] text-[#284B39] font-normal">Intercepted in {testResult.latency} • 0 bytes transmitted</div>
                       </div>
                     </div>
                   )}
                 </div>
 
-                <div className="text-[11px] text-slate-500 text-center font-mono">
+                <div className="text-[11px] text-[#5E665F] text-center font-mono">
                   * 100% on-device processing. Zero data ever leaves your device.
                 </div>
 

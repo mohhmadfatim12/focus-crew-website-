@@ -29,18 +29,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-purple-100 shadow-sm py-3' 
+        ? 'bg-white/95 backdrop-blur-md border-b border-[#E5DFD3] shadow-xs py-3' 
         : 'bg-white/80 backdrop-blur-sm py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo (Zanderio Style) */}
+          {/* Brand Logo */}
           <a 
             href="#" 
             className="flex items-center gap-2.5 group focus:outline-none"
           >
-            <div className="w-9 h-9 rounded-xl overflow-hidden border border-purple-200 bg-[#FAF5FF] p-1 flex items-center justify-center shadow-xs group-hover:border-[#7E3FF2] transition-colors">
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#D8D1C3] bg-[#121413] p-1 flex items-center justify-center shadow-xs group-hover:border-[#A37A3E] transition-colors">
               <img 
                 src="/app-icon-round.png" 
                 alt="FocusCrew Logo" 
@@ -49,11 +49,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
             </div>
             
             <div className="flex items-center gap-1.5 text-left">
-              <span className="font-extrabold text-xl tracking-tight text-[#212529] group-hover:text-[#7E3FF2] transition-colors">
+              <span className="font-extrabold text-xl tracking-tight text-[#202621] group-hover:text-[#A37A3E] transition-colors">
                 FocusCrew
               </span>
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#F5F0FF] text-[#7E3FF2] border border-purple-200">
-                v1.0.0
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#EAF1EC] text-[#284B39] border border-[#C5DAC9] flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#284B39] animate-pulse"></span>
+                v1.0.4
               </span>
             </div>
           </a>
@@ -64,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-[#7E3FF2] transition-colors"
+                className="text-sm font-medium text-[#5E665F] hover:text-[#A37A3E] transition-colors"
               >
                 {link.name}
               </a>
@@ -75,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="#interactive-demo"
-              className="text-sm font-semibold px-4 py-2 rounded-full text-slate-700 hover:text-[#7E3FF2] hover:bg-purple-50 transition-all"
+              className="text-sm font-semibold px-4 py-2 rounded-full text-[#202621] hover:text-[#A37A3E] hover:bg-[#F5EAD8]/50 transition-all font-mono"
             >
               Test Live Simulator
             </a>
@@ -84,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
               onClick={() => {
                 onOpenDownload();
               }}
-              className="group flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/35 transition-all cursor-pointer"
+              className="group flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full bg-[#A37A3E] hover:bg-[#8A642E] text-white shadow-sm hover:shadow transition-all cursor-pointer"
             >
               <Download className="w-4 h-4 text-white" />
               <span>Get APK Free</span>
@@ -98,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
               onClick={() => {
                 onOpenDownload();
               }}
-              className="sm:hidden flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-[#7E3FF2] text-white"
+              className="sm:hidden flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-[#A37A3E] text-white"
             >
               <Download className="w-3.5 h-3.5" />
               <span>APK</span>
@@ -106,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
+              className="p-2 rounded-lg text-[#5E665F] hover:text-[#202621] hover:bg-[#F2EEE5] focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -117,27 +118,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-2xl bg-white border border-purple-100 shadow-xl space-y-2">
+          <div className="md:hidden mt-3 p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-xl space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-purple-50 hover:text-[#7E3FF2] rounded-xl transition-colors"
+                className="block px-3 py-2 text-sm font-semibold text-[#202621] hover:bg-[#F5EAD8]/50 hover:text-[#A37A3E] rounded-xl transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-2 border-t border-slate-100">
+            <div className="pt-2 border-t border-[#E5DFD3]">
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenDownload();
                 }}
-                className="w-full flex items-center justify-center gap-2 text-sm font-bold py-2.5 rounded-full bg-[#7E3FF2] text-white"
+                className="w-full flex items-center justify-center gap-2 text-sm font-bold py-2.5 rounded-full bg-[#A37A3E] text-white"
               >
                 <Download className="w-4 h-4" />
-                Download APK v1.0.0
+                Download APK v1.0.4
               </button>
             </div>
           </div>

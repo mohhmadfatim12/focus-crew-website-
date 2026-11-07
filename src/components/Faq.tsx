@@ -32,24 +32,24 @@ export const Faq: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-white border-t border-purple-100 text-left">
+    <section id="faq" className="py-24 bg-white border-t border-[#E5DFD3] text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Split FAQ Layout (Exact Zanderio FAQ Structure) */}
+        {/* Split FAQ Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column (Sticky Title & Action) */}
           <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7E3FF2] px-3.5 py-1 rounded-full bg-[#FAF7FF] border border-purple-200 inline-block shadow-2xs">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#A37A3E] px-3.5 py-1 rounded-full bg-[#F5EAD8] border border-[#A37A3E]/30 inline-block shadow-2xs">
               CLEAR ANSWERS
             </span>
             
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202621] tracking-tight font-serif">
               Frequently Asked Questions
             </h2>
             
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              No marketing double-speak. Here are straight, technical answers about how FocusCrew works on your phone.
+            <p className="text-[#5E665F] text-sm sm:text-base leading-relaxed">
+              No marketing double-speak. Here are straight, technical answers about how FocusCrew works on your Android phone.
             </p>
 
             <div className="pt-2">
@@ -57,17 +57,17 @@ export const Faq: React.FC = () => {
                 href="https://wa.me/923312466885?text=Hi%20Fatim,%20I%20have%20a%20question%20about%20FocusCrew"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#7E3FF2] hover:text-[#6C2FE0] bg-purple-50 px-4 py-2.5 rounded-full border border-purple-200 transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#284B39] hover:text-[#1E382B] bg-[#E1EDE5] px-4 py-2.5 rounded-full border border-[#284B39]/20 transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
-                <span>Have a specific question? Ask founder on WhatsApp →</span>
+                <span>Have a specific question? Ask Fatim on WhatsApp →</span>
               </a>
             </div>
 
             <div className="pt-3">
               <a
                 href="#download-section"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#A37A3E] hover:bg-[#8A642E] text-white text-sm font-bold shadow-md shadow-[#A37A3E]/20 transition-all cursor-pointer"
               >
                 <span>Get FocusCrew Production APK</span>
                 <ArrowRight className="w-4 h-4" />
@@ -82,7 +82,7 @@ export const Faq: React.FC = () => {
               return (
                 <div 
                   key={idx}
-                  className="rounded-2xl border border-purple-100 bg-[#FAF7FF]/70 hover:bg-[#FAF7FF] overflow-hidden transition-all duration-200 shadow-2xs"
+                  className="rounded-2xl border border-[#E5DFD3] bg-[#FBF9F5] hover:bg-[#F2EEE5]/60 overflow-hidden transition-all duration-200 shadow-2xs"
                 >
                   <button
                     onClick={() => {
@@ -90,18 +90,18 @@ export const Faq: React.FC = () => {
                     }}
                     className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                   >
-                    <span className="text-sm sm:text-base font-bold text-[#212529] font-sans">
+                    <span className="text-sm sm:text-base font-bold text-[#202621] font-sans">
                       {faq.q}
                     </span>
-                    <div className={`w-7 h-7 rounded-full bg-white border border-purple-200 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 bg-purple-100 text-[#7E3FF2]' : 'text-slate-400'
+                    <div className={`w-7 h-7 rounded-full bg-white border border-[#E5DFD3] flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 bg-[#F5EAD8] text-[#A37A3E]' : 'text-[#5E665F]'
                     }`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-purple-100/60 pt-3">
+                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#5E665F] leading-relaxed border-t border-[#E5DFD3] pt-3">
                       {faq.a}
                     </div>
                   )}

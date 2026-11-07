@@ -82,7 +82,7 @@ export const DownloadSection: React.FC = () => {
             <a
               href="/FocusCrew.apk"
               download="FocusCrew.apk"
-              className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
+              className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
             >
               <Download className="w-4 h-4 text-white" />
               <span>Download APK (11 MB Direct)</span>

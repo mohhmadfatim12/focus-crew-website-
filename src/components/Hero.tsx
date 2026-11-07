@@ -28,12 +28,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
   const platforms = [
     { name: 'Instagram Reels', icon: Camera, color: 'text-rose-500' },
     { name: 'YouTube Shorts', icon: PlaySquare, color: 'text-red-500' },
-    { name: 'TikTok Streams', icon: Radio, color: 'text-purple-600' },
+    { name: 'TikTok Streams', icon: Radio, color: 'text-[#A37A3E]' },
     { name: 'Google Chrome', icon: Globe, color: 'text-blue-500' },
     { name: 'Brave Browser', icon: Flame, color: 'text-amber-500' },
     { name: 'Incognito Mode', icon: EyeOff, color: 'text-slate-600' },
     { name: 'Reddit Feeds', icon: Layers, color: 'text-orange-500' },
-    { name: 'Android 15 OS', icon: Zap, color: 'text-emerald-500' },
+    { name: 'Android 15 OS', icon: Zap, color: 'text-[#284B39]' },
     { name: 'Safari & Firefox', icon: Compass, color: 'text-indigo-500' }
   ];
 
@@ -45,82 +45,82 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
         {/* Tilted Callout Pointer Badges & Live Status Telemetry Ticker */}
         <div className="relative max-w-4xl mx-auto mb-6 flex flex-col items-center gap-3">
           
-          {/* Live Telemetry Ticker Pill (Exact $10,000 Luxury Agency Style) */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-purple-200/80 shadow-sm text-[11px] font-mono text-slate-700 select-none">
+          {/* Live Telemetry Ticker Pill */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#E2CEB2] shadow-sm text-[11px] font-mono text-[#5E665F] select-none">
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#284B39] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#284B39]"></span>
             </span>
-            <span className="font-extrabold text-slate-900 tracking-tight">AUTONOMOUS ON-DEVICE SHIELD ARMED</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-purple-700 font-bold">154,820 Threats in RAM</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-emerald-700 font-bold">0.18ms</span>
+            <span className="font-extrabold text-[#202621] tracking-tight">AUTONOMOUS ON-DEVICE SHIELD ARMED</span>
+            <span className="text-[#D8D1C3]">•</span>
+            <span className="text-[#A37A3E] font-bold">154,820 Threats in RAM</span>
+            <span className="text-[#D8D1C3]">•</span>
+            <span className="text-[#284B39] font-bold">0.18ms</span>
           </div>
 
           <div className="w-full flex justify-between items-center px-2 sm:px-12 pointer-events-none">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float-p1">
-              <Shield className="w-3.5 h-3.5 text-[#0A6B4F]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF1EC] border border-[#C5DAC9] text-[#284B39] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float-p1">
+              <Shield className="w-3.5 h-3.5 text-[#284B39]" />
               <span>#1 On-Device Blocker</span>
-              <ArrowDownRight className="w-3.5 h-3.5 text-[#0A6B4F]" />
+              <ArrowDownRight className="w-3.5 h-3.5 text-[#284B39]" />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-p2">
-              <ArrowDownLeft className="w-3.5 h-3.5 text-[#7E3FF2]" />
-              <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5EAD8] border border-[#E2CEB2] text-[#A37A3E] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-p2">
+              <ArrowDownLeft className="w-3.5 h-3.5 text-[#A37A3E]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#A37A3E]" />
               <span>Built by Fatim Hasnain</span>
             </div>
           </div>
         </div>
 
-        {/* Centered H1 (Exact Zanderio Hierarchy) */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#212529] max-w-4xl mx-auto leading-[1.12]">
+        {/* Centered H1 */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#202621] max-w-4xl mx-auto leading-[1.12]">
           #1 Android Blocker That <br className="hidden sm:inline" />
-          <span className="text-[#7E3FF2]">Never Lets You Relapse</span>
+          <span className="text-[#A37A3E]">Never Lets You Relapse</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-[#5E665F] max-w-2xl mx-auto leading-relaxed">
           Turn your phone back into a high-leverage tool with an on-device wellness guardian that blocks adult content across all browsers, 
           puts a hard stop on infinite doomscrolling, and dissolves cravings with the 15-minute Freedom Vault.
         </p>
 
         {/* Hook */}
-        <p className="mt-3 text-sm text-slate-800 font-medium">
+        <p className="mt-3 text-sm text-[#202621] font-medium">
           <strong>No subscriptions, no cloud proxies.</strong>{' '}
           <button 
             onClick={onOpenDownload} 
-            className="text-[#7E3FF2] hover:text-[#6C2FE0] font-bold underline cursor-pointer"
+            className="text-[#A37A3E] hover:text-[#8A642E] font-bold underline cursor-pointer"
           >
             Download the free Android APK →
           </button>
         </p>
 
-        {/* --- CENTRAL CONNECTED DIAGRAM CANVAS (EXACT ZANDERIO STYLE) --- */}
-        <div className="mt-12 relative rounded-3xl bg-[#FAF7FF] border border-purple-100/90 p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden luxury-mesh-grid">
+        {/* --- CENTRAL CONNECTED DIAGRAM CANVAS --- */}
+        <div className="mt-12 relative rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden luxury-mesh-grid">
           
-          {/* Ambient Breathing Aurora Light (Linear / Apple $10k Glow) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-gradient-to-tr from-purple-400/20 via-indigo-300/15 to-transparent blur-3xl pointer-events-none animate-aurora" />
+          {/* Ambient Breathing Aurora Light */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-gradient-to-tr from-[#A37A3E]/20 via-[#C89B55]/15 to-transparent blur-3xl pointer-events-none animate-aurora" />
           
           {/* Animated SVG Connector Lines with Moving Glow Points */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block opacity-45" viewBox="0 0 1000 650" fill="none">
             {/* Top-Left to Center */}
-            <path d="M 230 140 C 350 140, 380 230, 500 270" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            <path d="M 230 140 C 350 140, 380 230, 500 270" stroke="#A37A3E" strokeWidth="1.5" className="animate-line-flow" />
             {/* Mid-Left to Center */}
-            <path d="M 230 320 C 350 320, 390 310, 500 310" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            <path d="M 230 320 C 350 320, 390 310, 500 310" stroke="#A37A3E" strokeWidth="1.5" className="animate-line-flow" />
             {/* Bottom-Left to Center */}
-            <path d="M 230 500 C 350 500, 380 390, 500 350" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            <path d="M 230 500 C 350 500, 380 390, 500 350" stroke="#A37A3E" strokeWidth="1.5" className="animate-line-flow" />
             
             {/* Top-Right to Center */}
-            <path d="M 770 170 C 650 170, 620 250, 500 280" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            <path d="M 770 170 C 650 170, 620 250, 500 280" stroke="#A37A3E" strokeWidth="1.5" className="animate-line-flow" />
             {/* Bottom-Right to Center */}
-            <path d="M 770 480 C 650 480, 620 370, 500 340" stroke="#7E3FF2" strokeWidth="1.5" className="animate-line-flow" />
+            <path d="M 770 480 C 650 480, 620 370, 500 340" stroke="#A37A3E" strokeWidth="1.5" className="animate-line-flow" />
 
             {/* Glowing animated pulse nodes */}
-            <circle cx="360" cy="180" r="3.5" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="640" cy="210" r="3.5" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="370" cy="450" r="3.5" fill="#7E3FF2" className="animate-ping" />
-            <circle cx="630" cy="430" r="3.5" fill="#7E3FF2" className="animate-ping" />
+            <circle cx="360" cy="180" r="3.5" fill="#A37A3E" className="animate-ping" />
+            <circle cx="640" cy="210" r="3.5" fill="#A37A3E" className="animate-ping" />
+            <circle cx="370" cy="450" r="3.5" fill="#A37A3E" className="animate-ping" />
+            <circle cx="630" cy="430" r="3.5" fill="#A37A3E" className="animate-ping" />
           </svg>
 
           {/* Grid: Left Connected Cards + Center Interactive Phone + Right Connected Cards */}
@@ -129,45 +129,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             {/* Left Column (3 Connected Nodes) */}
             <div className="md:col-span-3 space-y-5 text-left">
               
-              {/* Node 1: Supported Browsers Pill (Like Zanderio's app pill) */}
-              <div className="p-3.5 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float flex items-center justify-between gap-2">
+              {/* Node 1: Supported Browsers Pill */}
+              <div className="p-3.5 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-[#F5EAD8] text-[#A37A3E] flex items-center justify-center">
                     <Globe className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">All Browsers Protected</div>
-                    <div className="text-[10px] text-slate-500">Chrome • Brave • Incognito</div>
+                    <div className="text-xs font-bold text-[#202621]">All Browsers Protected</div>
+                    <div className="text-[10px] text-[#5E665F]">Chrome • Brave • Incognito</div>
                   </div>
                 </div>
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#284B39] animate-pulse" />
               </div>
 
-              {/* Node 2: Threats Blocked Stat Card (Like Zanderio's $34k Sales card) */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float-reverse space-y-1.5">
+              {/* Node 2: Threats Blocked Stat Card */}
+              <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float-reverse space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-[#EAF1EC] text-[#284B39] flex items-center justify-center">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">
-                    0ms Latency
+                  <span className="text-[10px] font-mono text-[#284B39] bg-[#EAF1EC] px-2 py-0.5 rounded-full font-bold">
+                    0.18ms Latency
                   </span>
                 </div>
-                <div className="text-2xl font-extrabold text-[#212529] font-mono">1,429+</div>
-                <div className="text-xs font-bold text-slate-800">Adult Threats Blocked</div>
-                <p className="text-[10px] text-slate-500 leading-snug">
-                  Neutralized on-device before explicit data can reach your screen.
+                <div className="text-2xl font-extrabold text-[#202621] font-mono">154,820+</div>
+                <div className="text-xs font-bold text-[#202621]">RAM Domains Filtered</div>
+                <p className="text-[10px] text-[#5E665F] leading-snug">
+                  Neutralized on-device with zero cloud telemetry before data reaches the screen.
                 </p>
               </div>
 
-              {/* Node 3: Analytics Trend Chart Card (Like Zanderio's purple graph card) */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float space-y-2">
+              {/* Node 3: Analytics Trend Chart Card */}
+              <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float space-y-2">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
-                    <TrendingDown className="w-4 h-4 text-[#7E3FF2]" />
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#202621]">
+                    <TrendingDown className="w-4 h-4 text-[#A37A3E]" />
                     <span>Screen Time Drop</span>
                   </div>
-                  <span className="text-xs font-mono font-extrabold text-[#7E3FF2] bg-purple-50 px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono font-extrabold text-[#A37A3E] bg-[#F5EAD8] px-2 py-0.5 rounded">
                     -78%
                   </span>
                 </div>
@@ -178,49 +178,49 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                     <path
                       d="M 0 5 Q 30 10, 50 20 T 90 28 T 120 38"
                       fill="none"
-                      stroke="#7E3FF2"
+                      stroke="#A37A3E"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                     />
-                    <circle cx="120" cy="38" r="3.5" fill="#7E3FF2" />
+                    <circle cx="120" cy="38" r="3.5" fill="#A37A3E" />
                   </svg>
                 </div>
 
-                <div className="pt-1 border-t border-purple-50 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+                <div className="pt-1 border-t border-[#E5DFD3] flex items-center justify-between text-[10px] text-[#5E665F] font-mono">
                   <span>Day 1 (4.2h)</span>
-                  <span className="text-[#7E3FF2] font-bold">Day 30 (54m)</span>
+                  <span className="text-[#A37A3E] font-bold">Day 30 (54m)</span>
                 </div>
               </div>
 
             </div>
 
-            {/* Center: Titanium Smartphone Canvas with Floating Micro-Satellites */}
+            {/* Center: Smartphone Canvas with Floating Micro-Satellites */}
             <div id="interactive-demo" className="md:col-span-6 flex flex-col items-center justify-center relative">
               
-              {/* Floating Satellite 1: Top Floating Micro-Chip */}
-              <div className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full luxury-glass text-[11px] font-mono font-bold text-slate-800 shadow-md mb-3 animate-float-p1 luxury-orbit-pill z-20">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              {/* Floating Satellite 1 */}
+              <div className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full luxury-glass text-[11px] font-mono font-bold text-[#202621] shadow-md mb-3 animate-float-p1 luxury-orbit-pill z-20">
+                <span className="w-2 h-2 rounded-full bg-[#284B39] animate-pulse" />
                 <span>ACTIVE SHIELD: 0.18ms On-Device RAM Defense</span>
-                <span className="px-1.5 py-0.2 rounded bg-purple-100 text-[#7E3FF2] text-[9px]">0KB LEAK</span>
+                <span className="px-1.5 py-0.2 rounded bg-[#F5EAD8] text-[#A37A3E] text-[9px]">0KB LEAK</span>
               </div>
 
               <div className="relative w-full flex justify-center">
-                {/* Floating Satellite 2: Left Orbit Badge */}
+                {/* Floating Satellite 2 */}
                 <div className="absolute -left-6 top-1/4 hidden xl:flex flex-col gap-1 p-2.5 rounded-2xl luxury-glass shadow-lg animate-float-p3 z-20 max-w-[150px] text-left">
-                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-800">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#284B39]">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#284B39]" />
                     <span>0s Delay Drop</span>
                   </div>
-                  <span className="text-[9px] text-slate-500 leading-tight">Explicit domains dropped before connection.</span>
+                  <span className="text-[9px] text-[#5E665F] leading-tight">Explicit domains dropped before socket opens.</span>
                 </div>
 
-                {/* Floating Satellite 3: Right Orbit Badge */}
+                {/* Floating Satellite 3 */}
                 <div className="absolute -right-6 top-1/3 hidden xl:flex flex-col gap-1 p-2.5 rounded-2xl luxury-glass shadow-lg animate-float-p2 z-20 max-w-[150px] text-left">
-                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-purple-900">
-                    <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
+                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#A37A3E]">
+                    <Sparkles className="w-3.5 h-3.5 text-[#A37A3E]" />
                     <span>Urge Breaker</span>
                   </div>
-                  <span className="text-[9px] text-slate-500 leading-tight">15-minute cooling buffer dissolves 96% cravings.</span>
+                  <span className="text-[9px] text-[#5E665F] leading-tight">15-minute cooling buffer dissolves 96% cravings.</span>
                 </div>
 
                 <InteractivePhone />
@@ -230,54 +230,54 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             {/* Right Column (2 Connected Nodes) */}
             <div className="md:col-span-3 space-y-5 text-left">
               
-              {/* Node 4: Active Reel Counter Card (Like Zanderio's Active Cart card) */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float space-y-2">
+              {/* Node 4: Active Reel Counter Card */}
+              <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float space-y-2">
                 <div className="flex items-center justify-between">
-                  <div className="w-7 h-7 rounded-lg bg-purple-50 text-[#7E3FF2] flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-[#F5EAD8] text-[#A37A3E] flex items-center justify-center">
                     <Smartphone className="w-4 h-4" />
                   </div>
-                  <span className="text-[10px] font-mono text-[#7E3FF2] font-bold bg-purple-50 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono text-[#A37A3E] font-bold bg-[#F5EAD8] px-2 py-0.5 rounded-full">
                     Active Limit
                   </span>
                 </div>
-                <div className="text-2xl font-extrabold text-[#7E3FF2] font-mono">15 / 15</div>
-                <div className="text-xs font-bold text-slate-800">Daily Reels Allowed</div>
+                <div className="text-2xl font-extrabold text-[#A37A3E] font-mono">15 / 15</div>
+                <div className="text-xs font-bold text-[#202621]">Daily Reels Allowed</div>
                 
                 {/* Progress bar */}
-                <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div className="bg-[#7E3FF2] h-full w-full" />
+                <div className="w-full bg-[#F2EEE5] h-2 rounded-full overflow-hidden">
+                  <div className="bg-[#A37A3E] h-full w-full" />
                 </div>
-                <p className="text-[10px] text-slate-500 leading-snug">
-                  8s breathing pause activates immediately on swipe 15.
+                <p className="text-[10px] text-[#5E665F] leading-snug">
+                  8s Trance Breaker pause activates immediately on swipe 15.
                 </p>
               </div>
 
-              {/* Node 5: Freedom Vault & Local TUN Node */}
-              <div className="p-4 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float-reverse space-y-2">
+              {/* Node 5: Freedom Vault Node */}
+              <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float-reverse space-y-2">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900">
-                    <Lock className="w-3.5 h-3.5 text-[#7E3FF2]" />
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#202621]">
+                    <Lock className="w-3.5 h-3.5 text-[#A37A3E]" />
                     <span>Freedom Vault</span>
                   </div>
-                  <span className="text-[10px] font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded font-bold">
+                  <span className="text-[10px] font-mono text-[#A37A3E] bg-[#F5EAD8] px-1.5 py-0.5 rounded font-bold">
                     Zero-Bypass
                   </span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-[#FAF8FF] border border-purple-100 text-[11px] text-purple-900 font-medium">
+                <div className="p-2.5 rounded-xl bg-[#FBF9F5] border border-[#E5DFD3] text-[11px] text-[#202621] font-medium">
                   "15-minute emergency delay. Urges fade before timer hits zero."
                 </div>
-                <p className="text-[10px] text-slate-500 leading-snug">
+                <p className="text-[10px] text-[#5E665F] leading-snug">
                   96% of relapses prevented by introducing mandatory delay.
                 </p>
               </div>
 
               {/* Node 6: Instant APK Pill */}
-              <div className="p-3.5 rounded-2xl bg-white border border-purple-100 shadow-sm card-shadow-hover animate-float flex items-center justify-between">
+              <div className="p-3.5 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-amber-500" />
-                  <span className="text-xs font-bold text-slate-800">100% Free Core APK</span>
+                  <Zap className="w-4 h-4 text-[#A37A3E]" />
+                  <span className="text-xs font-bold text-[#202621]">100% Free Core APK</span>
                 </div>
-                <span className="text-[10px] font-mono text-slate-400">18.4MB</span>
+                <span className="text-[10px] font-mono text-[#5E665F]">11.0 MB</span>
               </div>
 
             </div>
@@ -286,20 +286,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
         </div>
 
-        {/* --- PARTNERS MARQUEE BAR (EXACT ZANDERIO STYLE) --- */}
-        <div className="mt-14 pt-8 border-t border-purple-100 overflow-hidden">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest font-mono mb-6">
+        {/* --- PLATFORMS MARQUEE BAR --- */}
+        <div className="mt-14 pt-8 border-t border-[#E5DFD3] overflow-hidden">
+          <p className="text-xs font-semibold text-[#5E665F] uppercase tracking-widest font-mono mb-6">
             Active Protection Across All Your Feeds & Browsers
           </p>
 
           <div className="relative w-full overflow-hidden mask-fade">
-            <div className="animate-marquee flex items-center gap-10 text-slate-700 text-sm font-semibold whitespace-nowrap">
+            <div className="animate-marquee flex items-center gap-10 text-[#202621] text-sm font-semibold whitespace-nowrap">
               {platforms.concat(platforms).map((p, i) => {
                 const IconComponent = p.icon;
                 return (
-                  <div key={i} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200/80 shadow-2xs shrink-0 hover:border-purple-200 transition-colors">
+                  <div key={i} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-50 border border-[#E5DFD3] shadow-2xs shrink-0 hover:border-[#A37A3E] transition-colors">
                     <IconComponent className={`w-4 h-4 ${p.color}`} />
-                    <span className="font-bold text-slate-800 text-xs sm:text-sm">{p.name}</span>
+                    <span className="font-bold text-[#202621] text-xs sm:text-sm">{p.name}</span>
                   </div>
                 );
               })}
@@ -311,3 +311,4 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
     </section>
   );
 };
+export default Hero;

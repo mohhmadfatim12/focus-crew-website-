@@ -31,8 +31,8 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#1A1D20] flex flex-col font-sans selection:bg-[#7E3FF2] selection:text-white antialiased">
-      {/* 1. Navbar (Zanderio Style with Purple Pill CTA) */}
+    <div className="min-h-screen bg-white text-[#202621] flex flex-col font-sans selection:bg-[#F5EAD8] selection:text-[#202621] antialiased">
+      {/* 1. Navbar (Exact Structure with Honey Brass CTA) */}
       <Navbar onOpenDownload={scrollToDownload} />
 
       {/* Main Content Flow */}

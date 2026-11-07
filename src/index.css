@@ -5,15 +5,31 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-    --brand-purple: #7E3FF2;
-    --brand-purple-hover: #6C2FE0;
-    --brand-lavender: #FAF7FF;
+
+    /* FocusCrew Sovereign Brand Palette (Synchronized with Android App Color.kt) */
+    --color-cashmere: #FBF9F5;
+    --color-linen: #F2EEE5;
+    --color-linen-high: #ECE7DC;
+    --color-paper: #FFFFFF;
+    --color-espresso: #202621;
+    --color-charcoal: #5E665F;
+    --color-brass: #A37A3E;
+    --color-brass-hover: #8A642E;
+    --color-brass-container: #F5EAD8;
+    --color-sage: #284B39;
+    --color-sage-hover: #1E382A;
+    --color-sage-container: #E1EDE5;
+    --color-sage-pill: #EAF1EC;
+    --color-terracotta: #8F3B3B;
+    --color-terracotta-container: #FCE8E8;
+    --color-obsidian: #121413;
+    --color-outline: #D8D1C3;
   }
 
   body {
     font-family: var(--font-sans);
     background-color: #FFFFFF;
-    color: #1A1D20;
+    color: #202621;
     overflow-x: hidden;
     letter-spacing: -0.011em;
   }
@@ -29,14 +45,14 @@
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8FF;
+  background: #FBF9F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8B4FE;
+  background: #D8D1C3;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7E3FF2;
+  background: #A37A3E;
 }
 
 /* Infinite Logo Marquee Animation */
@@ -110,10 +126,10 @@
 
 /* 8-Second Breathing Simulator Cycle: 4s Inhale, 2s Hold, 2s Exhale */
 @keyframes breatheCycle {
-  0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126, 63, 242, 0.4); }
-  50% { transform: scale(1.22); box-shadow: 0 0 40px 15px rgba(126, 63, 242, 0.25); }
-  75% { transform: scale(1.22); box-shadow: 0 0 30px 10px rgba(126, 63, 242, 0.2); }
-  100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(126, 63, 242, 0); }
+  0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(163, 122, 62, 0.4); }
+  50% { transform: scale(1.22); box-shadow: 0 0 40px 15px rgba(163, 122, 62, 0.25); }
+  75% { transform: scale(1.22); box-shadow: 0 0 30px 10px rgba(163, 122, 62, 0.2); }
+  100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(163, 122, 62, 0); }
 }
 
 .animate-breathe {
@@ -145,13 +161,13 @@
 /* Zanderio Card Shadow & Interactive Hover */
 .zanderio-card {
   background: #FFFFFF;
-  border: 1px solid rgba(126, 63, 242, 0.12);
-  box-shadow: 0 4px 20px -2px rgba(126, 63, 242, 0.05);
+  border: 1px solid rgba(163, 122, 62, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(163, 122, 62, 0.06);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .zanderio-card:hover {
-  border-color: rgba(126, 63, 242, 0.35);
-  box-shadow: 0 14px 36px -4px rgba(126, 63, 242, 0.14);
+  border-color: rgba(163, 122, 62, 0.4);
+  box-shadow: 0 14px 36px -4px rgba(163, 122, 62, 0.15);
   transform: translateY(-3px);
 }
 
@@ -159,61 +175,61 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-shadow-hover:hover {
-  border-color: rgba(126, 63, 242, 0.4);
-  box-shadow: 0 16px 40px -6px rgba(126, 63, 242, 0.15);
+  border-color: rgba(163, 122, 62, 0.45);
+  box-shadow: 0 16px 40px -6px rgba(163, 122, 62, 0.18);
   transform: translateY(-4px);
 }
 
 /* Dot grid background pattern */
 .bg-dot-pattern {
-  background-image: radial-gradient(rgba(126, 63, 242, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(163, 122, 62, 0.15) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* =========================================================================
-   Zanderio AI Exact Signature Visual Elements
+   Zanderio AI Exact Signature Visual Elements (Honey Brass Theme)
    ========================================================================= */
 
 /* Signature 4-Card U-Gradient Borders & Floating Circles */
 .acs-card-u-bottom {
-  background: linear-gradient(rgba(0, 0, 0, 0) 50%, #7E3FF2 50%);
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, #A37A3E 50%);
   border-radius: 24px;
   padding: 16px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .acs-card-u-bottom:hover {
   transform: translateY(-4px);
-  filter: drop-shadow(0 12px 24px rgba(126, 63, 242, 0.2));
+  filter: drop-shadow(0 12px 24px rgba(163, 122, 62, 0.25));
 }
 
 .acs-card-u-top {
-  background: linear-gradient(#7E3FF2 50%, rgba(0, 0, 0, 0) 50%);
+  background: linear-gradient(#A37A3E 50%, rgba(0, 0, 0, 0) 50%);
   border-radius: 24px;
   padding: 16px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .acs-card-u-top:hover {
   transform: translateY(-4px);
-  filter: drop-shadow(0 12px 24px rgba(126, 63, 242, 0.2));
+  filter: drop-shadow(0 12px 24px rgba(163, 122, 62, 0.25));
 }
 
 .acs-circle-icon {
   background-color: #FFFFFF;
-  border: 3.5px solid #7E3FF2;
+  border: 3.5px solid #A37A3E;
   border-radius: 50%;
   width: 72px;
   height: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 16px rgba(126, 63, 242, 0.2);
+  box-shadow: 0 6px 16px rgba(163, 122, 62, 0.22);
   transition: all 0.3s ease;
   z-index: 20;
 }
 .acs-card-u-bottom:hover .acs-circle-icon,
 .acs-card-u-top:hover .acs-circle-icon {
   transform: scale(1.08);
-  border-color: #6C2FE0;
+  border-color: #8A642E;
 }
 
 .acs-stat-card {
@@ -232,27 +248,27 @@
 .acs-stat-value {
   font-size: 34px;
   font-weight: 800;
-  color: #1C1C1C;
+  color: #202621;
   font-family: var(--font-sans);
   letter-spacing: -0.02em;
 }
 
 .acs-stat-text {
   font-size: 13px;
-  color: #4B5563;
+  color: #5E665F;
   line-height: 1.6;
   margin-top: 12px;
   font-family: var(--font-sans);
 }
 
 .acs-btn {
-  background: #7E3FF2;
+  background: #A37A3E;
   color: #FFFFFF;
   border-radius: 50px;
   padding: 14px 38px;
   font-weight: 700;
   font-size: 14px;
-  box-shadow: 0 8px 24px rgba(126, 63, 242, 0.25);
+  box-shadow: 0 8px 24px rgba(163, 122, 62, 0.25);
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
@@ -260,16 +276,16 @@
   cursor: pointer;
 }
 .acs-btn:hover {
-  background: #6C2FE0;
+  background: #8A642E;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(126, 63, 242, 0.35);
+  box-shadow: 0 12px 30px rgba(163, 122, 62, 0.35);
 }
 
 /* =========================================================================
-   $10,000+ Luxury Agency Floating Elements & Atmospheric Motion Suite
+   Luxury Agency Floating Elements & Atmospheric Motion Suite
    ========================================================================= */
 
-/* Smooth Sinusoidal Floating Keyframes with Distinct Phases */
+/* Smooth Sinusoidal Floating Keyframes */
 @keyframes floatPhase1 {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -322,7 +338,7 @@
   animation: floatPhase4 6s ease-in-out infinite;
 }
 
-/* Ambient Breathing Aurora Glow Keyframe */
+/* Ambient Breathing Glow Keyframe */
 @keyframes auroraPulse {
   0%, 100% {
     opacity: 0.45;
@@ -352,28 +368,28 @@
 }
 
 .luxury-shimmer-border {
-  background: linear-gradient(60deg, #7E3FF2, #A855F7, #38BDF8, #7E3FF2);
+  background: linear-gradient(60deg, #A37A3E, #C89B55, #284B39, #A37A3E);
   background-size: 300% 300%;
   animation: shimmerBorder 6s ease infinite;
 }
 
 /* Glassmorphism Luxury Surface */
 .luxury-glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(126, 63, 242, 0.16);
-  box-shadow: 0 12px 36px -4px rgba(126, 63, 242, 0.1),
+  border: 1px solid rgba(163, 122, 62, 0.2);
+  box-shadow: 0 12px 36px -4px rgba(163, 122, 62, 0.12),
               0 4px 12px -2px rgba(0, 0, 0, 0.04);
 }
 
 .luxury-glass-dark {
-  background: rgba(26, 26, 46, 0.85);
+  background: rgba(18, 20, 19, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
-              0 0 40px rgba(126, 63, 242, 0.2);
+              0 0 40px rgba(163, 122, 62, 0.2);
 }
 
 /* Orbiting Satellite Glow Pill */
@@ -382,16 +398,15 @@
 }
 .luxury-orbit-pill:hover {
   transform: scale(1.06) translateY(-4px) !important;
-  box-shadow: 0 16px 40px -4px rgba(126, 63, 242, 0.25);
-  border-color: rgba(126, 63, 242, 0.5);
+  box-shadow: 0 16px 40px -4px rgba(163, 122, 62, 0.25);
+  border-color: rgba(163, 122, 62, 0.5);
 }
 
 /* Luxury Radial Spotlight Grid */
 .luxury-mesh-grid {
   background-image: 
-    radial-gradient(circle at 50% 30%, rgba(126, 63, 242, 0.1) 0%, transparent 60%),
-    linear-gradient(to right, rgba(126, 63, 242, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(126, 63, 242, 0.04) 1px, transparent 1px);
+    radial-gradient(circle at 50% 30%, rgba(163, 122, 62, 0.08) 0%, transparent 60%),
+    linear-gradient(to right, rgba(163, 122, 62, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(163, 122, 62, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 36px 36px, 36px 36px;
 }
-

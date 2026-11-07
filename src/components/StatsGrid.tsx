@@ -16,8 +16,8 @@ export const StatsGrid: React.FC = () => {
       type: 'top'
     },
     {
-      metric: '150,000+',
-      desc: 'adult domains and explicit keywords blocked inside your phone\'s RAM in 0.2ms before the browser can even transmit a byte.',
+      metric: '154,820+',
+      desc: 'adult domains and explicit keywords blocked inside your phone\'s RAM in 0.18ms before the browser can even transmit a byte.',
       icon: ShieldCheck,
       type: 'bottom'
     },
@@ -30,21 +30,21 @@ export const StatsGrid: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-purple-100 text-center">
+    <section className="py-24 bg-white border-t border-[#E5DFD3] text-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Exact Zanderio Typography) */}
+        {/* Section Header */}
         <div className="max-w-3xl mx-auto mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#212529] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202621] tracking-tight">
             What’s Draining Your Ambition?
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed max-w-2xl mx-auto">
             FocusCrew solves this by acting as an on-device system guardian, delivering zero-latency DNS protection 
             and mindful friction gates that stop mindless scrolling before it takes over your day.
           </p>
         </div>
 
-        {/* 4 Cards Grid with Exact Zanderio Alternating Top/Bottom U-Borders & Floating Circles */}
+        {/* 4 Cards Grid with Alternating Top/Bottom U-Borders & Floating Circles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center max-w-6xl mx-auto">
           {stats.map((s, idx) => {
             const Icon = s.icon;
@@ -53,10 +53,10 @@ export const StatsGrid: React.FC = () => {
             return (
               <div key={idx} className="flex flex-col items-center relative py-4">
                 
-                {/* Top Circle for 'bottom' cards (Cards 1 & 3) */}
+                {/* Top Circle for 'bottom' cards */}
                 {isBottom && (
                   <div className="acs-circle-icon -mb-9 z-20">
-                    <Icon className="w-7 h-7 text-[#7E3FF2]" />
+                    <Icon className="w-7 h-7 text-[#A37A3E]" />
                   </div>
                 )}
 
@@ -79,10 +79,10 @@ export const StatsGrid: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom Circle for 'top' cards (Cards 2 & 4) */}
+                {/* Bottom Circle for 'top' cards */}
                 {!isBottom && (
                   <div className="acs-circle-icon -mt-9 z-20">
-                    <Icon className="w-7 h-7 text-[#7E3FF2]" />
+                    <Icon className="w-7 h-7 text-[#A37A3E]" />
                   </div>
                 )}
 
@@ -91,7 +91,7 @@ export const StatsGrid: React.FC = () => {
           })}
         </div>
 
-        {/* Centered Action Button (Exact Zanderio Pill Button) */}
+        {/* Centered Action Button */}
         <div className="mt-14">
           <a
             href="#download-section"
