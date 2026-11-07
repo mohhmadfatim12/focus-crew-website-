@@ -8,50 +8,43 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #06080D;
-    color: #F1F5F9;
+    background-color: #FFFFFF;
+    color: #0F172A;
   }
 }
 
-/* Custom Scrollbar */
+/* Crisp Clean Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080B12;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94A3B8;
 }
 
-/* Tactical Background Grid Pattern */
-.bg-grid-pattern {
-  background-size: 40px 40px;
+/* Subtle Light Engineering Grid */
+.bg-light-grid {
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
-.bg-radial-vignette {
-  background: radial-gradient(circle at 50% 20%, rgba(14, 165, 233, 0.08) 0%, rgba(6, 8, 13, 0) 70%);
+/* Paper Card Shadow */
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 4px 12px 0 rgba(0, 0, 0, 0.03);
 }
 
-.text-glow-cyan {
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+.card-shadow-hover {
+  transition: all 0.2s ease-in-out;
 }
-
-.box-glow-cyan {
-  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.15);
-}
-
-.box-glow-emerald {
-  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.15);
-}
-
-.box-glow-rose {
-  box-shadow: 0 0 30px -5px rgba(244, 63, 94, 0.15);
+.card-shadow-hover:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 12px 24px -4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }

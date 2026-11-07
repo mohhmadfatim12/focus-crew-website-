@@ -21,7 +21,7 @@ export const DnsSimulator: React.FC = () => {
   } | null>({
     domain: 'adult-content-stream.xxx',
     isBlocked: true,
-    reason: 'Adult & Explicit Domain Category Match',
+    reason: 'Adult & Explicit Category Signature Match',
     rule: 'FuzzyAdultDetector: Rule #A92 [xxx, adult, stream]',
     action: 'NXDOMAIN Synthesized (0.0.0.0) — Query Dropped Locally',
     latency: '0.24ms',
@@ -42,7 +42,6 @@ export const DnsSimulator: React.FC = () => {
     soundFx.playShieldTone();
     const clean = domainToTest.trim().toLowerCase();
     
-    // Adult keywords detector simulation
     const adultPatterns = ['porn', 'xxx', 'adult', 'sex', 'nsfw', 'xvideo', 'cam', 'erotic', 'onlyfans'];
     const hasAdultPattern = adultPatterns.some(p => clean.includes(p));
     
@@ -72,7 +71,7 @@ export const DnsSimulator: React.FC = () => {
       setInspectionResult({
         domain: clean,
         isBlocked: false,
-        reason: 'Clean Domain — No Threat Found',
+        reason: 'Clean Productive Domain — No Threat Found',
         rule: 'Standard Passthrough via Local DNS Parser',
         action: 'FORWARDED -> Upstream Clean Resolver (1.1.1.3)',
         latency: `${(Math.random() * 0.3 + 0.2).toFixed(2)}ms`,
@@ -82,35 +81,32 @@ export const DnsSimulator: React.FC = () => {
   };
 
   return (
-    <section id="dns-engine" className="py-24 bg-[#05070B] relative border-t border-slate-900">
+    <section id="dns-engine" className="py-24 bg-white relative border-t border-slate-200">
       
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400">
-            <Cpu className="w-3.5 h-3.5" />
-            LIVE DNS PACKET LABORATORY
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
+            <Cpu className="w-3.5 h-3.5 text-blue-600" />
+            ON-DEVICE PACKET DIAGNOSTICS
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Test the on-device packet engine.
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Test the local DNS packet engine.
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Every DNS query on port 53 is intercepted inside your Android kernel on <code className="text-cyan-400 font-mono">10.0.0.2</code>. 
+          <p className="text-slate-600 text-sm sm:text-base">
+            Every DNS query on port 53 is intercepted inside your Android kernel on <code className="text-blue-700 font-mono font-semibold bg-blue-50 px-1 py-0.5 rounded">10.0.0.2</code>. 
             Test any domain below to see how FocusCrew makes instant binary routing decisions.
           </p>
         </div>
 
         {/* Interactive Lab Container */}
-        <div className="max-w-4xl mx-auto rounded-3xl bg-slate-950/80 border border-slate-800 shadow-2xl p-6 sm:p-8">
+        <div className="max-w-4xl mx-auto rounded-3xl bg-slate-50 border border-slate-200 shadow-sm p-6 sm:p-8 text-left">
           
           {/* Domain Input Field */}
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 font-mono text-xs">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 font-mono text-xs">
                 UDP:53 //
               </div>
               <input
@@ -121,13 +117,13 @@ export const DnsSimulator: React.FC = () => {
                   if (e.key === 'Enter') handleTestDomain(inputDomain);
                 }}
                 placeholder="Type any domain (e.g. adult-site.com, github.com)..."
-                className="w-full pl-22 pr-4 py-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-white font-mono text-sm placeholder:text-slate-600 focus:outline-none focus:border-cyan-400 transition-colors"
+                className="w-full pl-20 pr-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 font-mono text-sm placeholder:text-slate-400 focus:outline-none focus:border-blue-600 shadow-2xs transition-colors"
               />
             </div>
             
             <button
               onClick={() => handleTestDomain(inputDomain)}
-              className="px-6 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-cyan-500/20 active:scale-95 shrink-0"
+              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-95 shrink-0"
             >
               <span>Inspect Query</span>
               <ArrowRight className="w-4 h-4" />
@@ -146,10 +142,10 @@ export const DnsSimulator: React.FC = () => {
                 }}
                 className={`text-xs font-mono px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
                   preset.type === 'bad' 
-                    ? 'bg-rose-950/30 border-rose-800/40 text-rose-300 hover:border-rose-500' 
+                    ? 'bg-rose-50 border-rose-200 text-rose-700 hover:bg-rose-100' 
                     : preset.type === 'search'
-                      ? 'bg-amber-950/30 border-amber-800/40 text-amber-300 hover:border-amber-500'
-                      : 'bg-emerald-950/30 border-emerald-800/40 text-emerald-300 hover:border-emerald-500'
+                      ? 'bg-amber-50 border-amber-200 text-amber-800 hover:bg-amber-100'
+                      : 'bg-emerald-50 border-emerald-200 text-emerald-800 hover:bg-emerald-100'
                 }`}
               >
                 {preset.label}
@@ -157,72 +153,74 @@ export const DnsSimulator: React.FC = () => {
             ))}
           </div>
 
-          {/* Live Telemetry Terminal Screen */}
+          {/* Result Card */}
           {inspectionResult && (
-            <div className="mt-6 rounded-2xl bg-[#090C12] border border-slate-800/90 p-5 font-mono text-xs text-left shadow-inner">
+            <div className="mt-6 rounded-2xl bg-white border border-slate-200 p-5 font-mono text-xs shadow-sm">
               
-              {/* Terminal Title */}
-              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
+              {/* Header */}
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-4 h-4 text-cyan-400" />
-                  <span className="text-slate-400 font-bold">FocusCrew In-Memory Packet Analysis</span>
+                  <Terminal className="w-4 h-4 text-blue-600" />
+                  <span className="text-slate-700 font-bold">FocusCrew In-Memory Packet Analysis</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-slate-500">Latency:</span>
-                  <span className="text-emerald-400 font-bold">{inspectionResult.latency}</span>
+                  <span className="text-emerald-700 font-bold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                    {inspectionResult.latency}
+                  </span>
                 </div>
               </div>
 
               {/* Status Banner */}
-              <div className={`p-3.5 rounded-xl border flex items-center gap-3 mb-4 ${
+              <div className={`p-4 rounded-xl border flex items-center gap-3 mb-4 ${
                 inspectionResult.isBlocked
-                  ? 'bg-rose-950/40 border-rose-500/60 text-rose-200'
-                  : 'bg-emerald-950/40 border-emerald-500/60 text-emerald-200'
+                  ? 'bg-rose-50 border-rose-200 text-rose-900'
+                  : 'bg-emerald-50 border-emerald-200 text-emerald-900'
               }`}>
                 {inspectionResult.isBlocked ? (
-                  <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
+                  <XCircle className="w-5 h-5 text-rose-600 shrink-0" />
                 ) : (
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
                 )}
                 <div>
                   <div className="font-bold text-sm tracking-wide">
                     {inspectionResult.isBlocked ? 'THREAT INTERCEPTED & DROPPED' : 'QUERY RESOLVED CLEANLY'}
                   </div>
-                  <div className="text-[11px] opacity-80 mt-0.5">
+                  <div className="text-[11px] text-slate-600 mt-0.5">
                     {inspectionResult.reason}
                   </div>
                 </div>
               </div>
 
-              {/* Telemetry Breakdown Details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] text-slate-300">
-                <div className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/60 space-y-1">
-                  <span className="text-[10px] text-slate-500 uppercase">Target Domain</span>
-                  <div className="font-bold text-white truncate">{inspectionResult.domain}</div>
+              {/* Breakdown Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] text-slate-700">
+                <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
+                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Target Domain</span>
+                  <div className="font-bold text-slate-900 truncate">{inspectionResult.domain}</div>
                 </div>
 
-                <div className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/60 space-y-1">
-                  <span className="text-[10px] text-slate-500 uppercase">Synthesized Action</span>
-                  <div className={`font-bold truncate ${inspectionResult.isBlocked ? 'text-rose-400' : 'text-emerald-400'}`}>
+                <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
+                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Synthesized Action</span>
+                  <div className={`font-bold truncate ${inspectionResult.isBlocked ? 'text-rose-700' : 'text-emerald-700'}`}>
                     {inspectionResult.action}
                   </div>
                 </div>
 
-                <div className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/60 space-y-1">
-                  <span className="text-[10px] text-slate-500 uppercase">Enforcement Rule</span>
-                  <div className="font-semibold text-cyan-300 truncate">{inspectionResult.rule}</div>
+                <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
+                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Enforcement Rule</span>
+                  <div className="font-semibold text-blue-700 truncate">{inspectionResult.rule}</div>
                 </div>
 
-                <div className="bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/60 space-y-1">
-                  <span className="text-[10px] text-slate-500 uppercase">Raw DNS Packet Header</span>
-                  <div className="font-mono text-slate-400 text-[10px] truncate">{inspectionResult.hexHeader}</div>
+                <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
+                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Raw DNS Header</span>
+                  <div className="font-mono text-slate-600 text-[10px] truncate">{inspectionResult.hexHeader}</div>
                 </div>
               </div>
 
-              {/* Privacy Guarantee Note */}
-              <div className="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-[10px] text-slate-500">
+              {/* Footer */}
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500">
                 <span>Local Socket: 10.0.0.2:53 (Android VpnService)</span>
-                <span className="text-cyan-400 font-semibold">Zero External Network Logs</span>
+                <span className="text-slate-700 font-semibold">Zero External Network Logs</span>
               </div>
 
             </div>

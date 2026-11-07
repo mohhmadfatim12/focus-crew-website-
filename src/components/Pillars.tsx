@@ -18,9 +18,9 @@ export const Pillars: React.FC = () => {
     {
       id: 'titan-fortress',
       title: 'Titan Anti-Porn Fortress',
-      tag: 'KERNEL-LEVEL DNS FILTER',
+      tag: 'LOCAL DNS PACKET FILTER',
       icon: ShieldAlert,
-      color: 'cyan',
+      color: 'blue',
       headline: 'Blocks adult content across every browser, app, and incognito window.',
       summary: 'Standard blockers are browser extensions that can be bypassed in 3 clicks. FocusCrew operates at the Android local network socket level via a zero-leak DNS loopback.',
       specs: [
@@ -46,12 +46,12 @@ class FocusCrewVpnService : VpnService() {
     },
     {
       id: 'reel-counter',
-      title: 'Reel & Shorts Doomscroll Disruptor',
+      title: 'Reel & Shorts Disruptor',
       tag: 'BEHAVIORAL FRICTION GATE',
       icon: Smartphone,
       color: 'indigo',
       headline: 'Makes unconscious, zombie-scrolling conscious again.',
-      summary: 'Short-form algorithms are engineered by behavioral psychologists using variable-ratio reward schedules. FocusCrew injects deliberate friction to return agency to your mind.',
+      summary: 'Short-form algorithms are engineered using variable-ratio reward schedules. FocusCrew injects deliberate friction to return agency to your prefrontal cortex.',
       specs: [
         'Real-time scroll counting across Instagram Reels, YouTube Shorts, & TikTok',
         'Customizable daily reel thresholds (e.g., 10, 15, or 25 reels maximum)',
@@ -73,7 +73,7 @@ fun onReelScrolled(surface: VideoFeedSurface) {
     },
     {
       id: 'task-alarm',
-      title: 'Military TaskAlarm & Planner',
+      title: 'Military TaskAlarm',
       tag: 'SYSTEM-LEVEL WAKE LOCK',
       icon: Bell,
       color: 'amber',
@@ -99,8 +99,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     },
     {
       id: 'freedom-vault',
-      title: 'Freedom Vault & Relapse Prevention',
-      tag: 'PSYCHOLOGICAL DELAY BARRIER',
+      title: 'Freedom Vault & Delay',
+      tag: 'PSYCHOLOGICAL BARRIER',
       icon: Lock,
       color: 'rose',
       headline: 'The 15-Minute Rule: Shatters the impulse window.',
@@ -128,23 +128,22 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
   ];
 
   return (
-    <section id="titan-fortress" className="py-24 bg-[#07090E] relative border-t border-slate-900">
+    <section id="titan-fortress" className="py-24 bg-slate-50 relative border-t border-slate-200">
       
-      {/* Background Accent Lines */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400">
-            <Layers className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
+            <Layers className="w-3.5 h-3.5 text-blue-600" />
             FOUR ARCHITECTURAL PILLARS
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Engineered for radical discipline.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Built for radical self-mastery.
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            FocusCrew does not rely on willpower. It enforces unyielding architectural barriers 
-            directly on your Android device so you succeed even when motivation fails.
+          <p className="text-slate-600 text-base sm:text-lg">
+            FocusCrew does not rely on fragile willpower. It enforces unyielding architectural barriers 
+            directly on your Android device so you succeed even when motivation dips.
           </p>
         </div>
 
@@ -160,28 +159,28 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
                   soundFx.playChime();
                   setActivePillar(idx);
                 }}
-                className={`p-4 rounded-2xl border text-left transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                className={`p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? 'bg-slate-900/90 border-cyan-500/60 shadow-xl shadow-cyan-950/50 -translate-y-0.5'
-                    : 'bg-slate-900/30 border-slate-800/80 hover:bg-slate-900/50 hover:border-slate-700'
+                    ? 'bg-white border-blue-600 shadow-md ring-1 ring-blue-600'
+                    : 'bg-white/70 border-slate-200 hover:bg-white hover:border-slate-300'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <div className={`p-2.5 rounded-xl ${
-                      isSelected ? 'bg-cyan-500/20 text-cyan-400' : 'bg-slate-800 text-slate-400'
+                      isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
                     }`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-slate-500">
+                    <span className="text-[10px] font-mono font-bold text-slate-400">
                       0{idx + 1}
                     </span>
                   </div>
-                  <h3 className="font-bold text-sm sm:text-base text-white tracking-tight">
+                  <h3 className="font-bold text-sm sm:text-base text-slate-900 tracking-tight">
                     {pillar.title}
                   </h3>
                 </div>
-                <div className="mt-3 flex items-center gap-1 text-[10px] font-mono text-cyan-400 font-semibold uppercase">
+                <div className="mt-3 flex items-center gap-1 text-[10px] font-mono text-blue-600 font-bold uppercase">
                   <span>{pillar.tag}</span>
                   <ChevronRight className="w-3 h-3" />
                 </div>
@@ -190,21 +189,21 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
           })}
         </div>
 
-        {/* Active Pillar Deep-Dive Display Card */}
-        <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-slate-900/90 via-[#0C1019] to-slate-950 border border-slate-800 shadow-2xl">
+        {/* Active Pillar Deep-Dive Card */}
+        <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm text-left">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-400">
+            <div className="lg:col-span-7 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-blue-800">
                 <span>PILLAR 0{activePillar + 1}: {pillars[activePillar].tag}</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 {pillars[activePillar].headline}
               </h3>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 {pillars[activePillar].summary}
               </p>
 
@@ -212,10 +211,10 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
               <div className="space-y-2.5 pt-2">
                 {pillars[activePillar].specs.map((spec, sIdx) => (
                   <div key={sIdx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3" />
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-300 font-medium">
+                    <span className="text-xs sm:text-sm text-slate-700 font-medium">
                       {spec}
                     </span>
                   </div>
@@ -225,33 +224,33 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
 
             {/* Right: Technical Code Preview */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-black/90 border border-slate-800 overflow-hidden shadow-xl text-left">
+              <div className="rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden shadow-lg text-left">
                 {/* Code Window Header */}
-                <div className="px-4 py-3 bg-slate-950 border-b border-slate-800/80 flex items-center justify-between">
+                <div className="px-4 py-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                   </div>
                   <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1">
-                    <Terminal className="w-3 h-3 text-cyan-400" />
-                    FocusCrew Core Engine
+                    <Terminal className="w-3 h-3 text-blue-400" />
+                    FocusCrew Kotlin Native
                   </span>
                 </div>
 
                 {/* Code Content */}
-                <div className="p-4 font-mono text-xs text-slate-300 overflow-x-auto leading-relaxed">
+                <div className="p-4 font-mono text-xs text-slate-200 overflow-x-auto leading-relaxed">
                   <pre>
                     <code>{pillars[activePillar].codeSnippet}</code>
                   </pre>
                 </div>
 
                 {/* Footer status inside code card */}
-                <div className="px-4 py-2 bg-slate-950/80 border-t border-slate-900 text-[10px] font-mono text-slate-500 flex justify-between items-center">
-                  <span>Verified Kotlin 2.0 Native</span>
-                  <span className="text-emerald-400 flex items-center gap-1">
+                <div className="px-4 py-2 bg-slate-900 border-t border-slate-800 text-[10px] font-mono text-slate-400 flex justify-between items-center">
+                  <span>Verified Android Architecture</span>
+                  <span className="text-emerald-400 flex items-center gap-1 font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    Production Ready
+                    100% Production Grade
                   </span>
                 </div>
               </div>

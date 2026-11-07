@@ -128,74 +128,76 @@ export const InteractivePhone: React.FC = () => {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[360px] select-none">
+    <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[360px] select-none text-left">
       
-      {/* Outer Glow Halo */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-600/10 to-emerald-500/20 rounded-[55px] blur-2xl opacity-60 pointer-events-none" />
+      {/* Natural Ambient Drop Shadow (No neon halos) */}
+      <div className="absolute -inset-2 bg-slate-300/40 rounded-[55px] blur-xl opacity-70 pointer-events-none" />
 
-      {/* Titanium Hardware Phone Bezel */}
-      <div className="relative rounded-[48px] p-3.5 bg-gradient-to-b from-[#222736] via-[#121622] to-[#0A0D15] border-2 border-slate-700/80 shadow-2xl shadow-black/80">
+      {/* Titanium/Aluminum Hardware Phone Bezel */}
+      <div className="relative rounded-[48px] p-3 bg-gradient-to-b from-[#E2E8F0] via-[#CBD5E1] to-[#E2E8F0] border-2 border-slate-300 shadow-2xl">
         
-        {/* Subtle Side Button Highlights */}
-        <div className="absolute -left-[5px] top-28 w-[3px] h-10 bg-slate-600 rounded-l-sm" />
-        <div className="absolute -left-[5px] top-42 w-[3px] h-14 bg-slate-600 rounded-l-sm" />
-        <div className="absolute -right-[5px] top-32 w-[3px] h-16 bg-slate-600 rounded-r-sm" />
+        {/* Hardware Buttons */}
+        <div className="absolute -left-[4px] top-28 w-[3px] h-10 bg-slate-400 rounded-l-sm" />
+        <div className="absolute -left-[4px] top-42 w-[3px] h-14 bg-slate-400 rounded-l-sm" />
+        <div className="absolute -right-[4px] top-32 w-[3px] h-16 bg-slate-400 rounded-r-sm" />
 
-        {/* Screen Display Area */}
-        <div className="relative w-full h-[620px] rounded-[38px] bg-[#080B11] border border-slate-800/90 overflow-hidden flex flex-col justify-between text-slate-100 font-sans shadow-inner">
+        {/* Screen Display Area (Pure White Canvas) */}
+        <div className="relative w-full h-[620px] rounded-[38px] bg-white border border-slate-200 overflow-hidden flex flex-col justify-between text-slate-800 font-sans shadow-inner">
           
-          {/* Top Notch & Punch-hole Camera + Status Bar */}
-          <div className="pt-2 px-5 pb-1 flex items-center justify-between text-[11px] font-mono text-slate-400 border-b border-slate-900/60 bg-[#080B11]/90 z-20">
-            <span className="font-semibold text-white tracking-wide">{currentTime}</span>
+          {/* Status Bar */}
+          <div className="pt-2.5 px-5 pb-1 flex items-center justify-between text-[11px] font-mono text-slate-600 border-b border-slate-100 bg-white z-20">
+            <span className="font-semibold text-slate-900 tracking-tight">{currentTime}</span>
             
-            {/* Punch-hole camera */}
-            <div className="w-3.5 h-3.5 rounded-full bg-black border border-slate-800 flex items-center justify-center">
-              <div className="w-1.5 h-1.5 rounded-full bg-slate-900" />
+            {/* Camera Punch Hole */}
+            <div className="w-3.5 h-3.5 rounded-full bg-slate-900 flex items-center justify-center">
+              <div className="w-1.5 h-1.5 rounded-full bg-slate-950" />
             </div>
 
             <div className="flex items-center gap-1.5">
-              <span className="text-[9px] font-bold text-cyan-400 bg-cyan-950/60 px-1 rounded">VPN</span>
-              <Wifi className="w-3 h-3 text-slate-400" />
-              <Battery className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="text-[9px] font-bold text-blue-700 bg-blue-50 px-1 py-0.2 rounded border border-blue-200">
+                VPN
+              </span>
+              <Wifi className="w-3 h-3 text-slate-600" />
+              <Battery className="w-3.5 h-3.5 text-emerald-600" />
             </div>
           </div>
 
           {/* App Header Inside Phone */}
-          <div className="px-4 py-2 flex items-center justify-between border-b border-slate-800/40 bg-slate-950/40">
+          <div className="px-4 py-2.5 flex items-center justify-between border-b border-slate-100 bg-slate-50/70">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-md overflow-hidden border border-cyan-500/40 bg-slate-900">
-                <img src="/app-icon-round.png" alt="Icon" className="w-full h-full object-cover" />
+              <div className="w-6 h-6 rounded-md overflow-hidden border border-slate-200 bg-white p-0.5">
+                <img src="/app-icon-round.png" alt="Icon" className="w-full h-full object-cover rounded" />
               </div>
-              <span className="text-xs font-extrabold text-white tracking-tight">FocusCrew</span>
+              <span className="text-xs font-extrabold text-slate-900 tracking-tight">FocusCrew</span>
             </div>
             
-            <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Fortress Live</span>
+            <div className="flex items-center gap-1.5 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Shield On</span>
             </div>
           </div>
 
           {/* Main Scrollable Screen Content */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 relative text-left">
+          <div className="flex-1 overflow-y-auto px-4 py-3 relative bg-white">
             
             {/* TAB 1: TITAN FORTRESS */}
             {activeTab === 'fortress' && (
-              <div className="space-y-3 animate-fadeIn">
+              <div className="space-y-3">
                 
                 {/* Shield Status Card */}
-                <div className={`p-3.5 rounded-2xl border transition-all duration-300 ${
+                <div className={`p-4 rounded-2xl border transition-all duration-200 ${
                   isShieldActive 
-                    ? 'bg-gradient-to-br from-cyan-950/40 via-slate-900 to-slate-950 border-cyan-500/40 shadow-lg shadow-cyan-950/40' 
-                    : 'bg-slate-900/60 border-slate-800'
+                    ? 'bg-blue-50/60 border-blue-200 shadow-sm' 
+                    : 'bg-slate-50 border-slate-200'
                 }`}>
                   <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className={`p-2 rounded-xl ${isShieldActive ? 'bg-cyan-500/20 text-cyan-400' : 'bg-slate-800 text-slate-500'}`}>
+                    <div className="flex items-center gap-2.5">
+                      <div className={`p-2 rounded-xl ${isShieldActive ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-500'}`}>
                         {isShieldActive ? <ShieldCheck className="w-5 h-5" /> : <Shield className="w-5 h-5" />}
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-white">Titan Anti-Porn</div>
-                        <div className="text-[10px] font-mono text-slate-400">DNS Packet Filter</div>
+                        <div className="text-xs font-bold text-slate-900">Titan Anti-Porn</div>
+                        <div className="text-[10px] font-mono text-slate-500">Local DNS Loopback</div>
                       </div>
                     </div>
                     
@@ -206,57 +208,59 @@ export const InteractivePhone: React.FC = () => {
                         setIsShieldActive(!isShieldActive);
                       }}
                       className={`relative w-11 h-6 rounded-full transition-colors cursor-pointer ${
-                        isShieldActive ? 'bg-cyan-500' : 'bg-slate-800'
+                        isShieldActive ? 'bg-blue-600' : 'bg-slate-300'
                       }`}
                     >
-                      <span className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-slate-950 transition-transform ${
+                      <span className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform shadow ${
                         isShieldActive ? 'translate-x-5' : 'translate-x-0'
                       }`} />
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 mt-3 pt-2.5 border-t border-slate-800/80">
-                    <div className="bg-slate-950/60 p-2 rounded-xl border border-slate-800/60">
-                      <div className="text-[9px] font-mono uppercase text-slate-400">Blocked Today</div>
-                      <div className="text-base font-extrabold text-cyan-400 font-mono">{blockedQueriesCount.toLocaleString()}</div>
+                  <div className="grid grid-cols-2 gap-2 mt-3 pt-2.5 border-t border-slate-200/80">
+                    <div className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
+                      <div className="text-[9px] font-mono uppercase text-slate-500">Blocked Today</div>
+                      <div className="text-base font-extrabold text-slate-900 font-mono mt-0.5">
+                        {blockedQueriesCount.toLocaleString()}
+                      </div>
                     </div>
-                    <div className="bg-slate-950/60 p-2 rounded-xl border border-slate-800/60">
-                      <div className="text-[9px] font-mono uppercase text-slate-400">SafeSearch</div>
-                      <div className="text-xs font-extrabold text-emerald-400 mt-0.5">Enforced</div>
+                    <div className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs">
+                      <div className="text-[9px] font-mono uppercase text-slate-500">SafeSearch</div>
+                      <div className="text-xs font-extrabold text-emerald-600 mt-1">Enforced</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Threat Simulation Alert Flash */}
                 {lastBlockedDomain && (
-                  <div className="p-2.5 rounded-xl bg-rose-950/70 border border-rose-500/60 text-rose-200 text-[11px] font-mono flex items-center gap-2 animate-bounce">
-                    <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
+                  <div className="p-2.5 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-[11px] font-mono flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
                     <div className="truncate">
-                      <span className="font-bold text-rose-300">BLOCKED:</span> {lastBlockedDomain}
+                      <span className="font-bold">BLOCKED:</span> {lastBlockedDomain}
                     </div>
                   </div>
                 )}
 
-                {/* Local VPN Engine Telemetry */}
-                <div className="p-3 rounded-2xl bg-slate-900/40 border border-slate-800/70 space-y-2 text-[11px]">
-                  <div className="flex items-center justify-between text-slate-400 font-mono text-[10px]">
-                    <span>LOCAL VPN INTERFACE</span>
-                    <span className="text-emerald-400 font-semibold">10.0.0.2:53 (TUN)</span>
+                {/* Local Telemetry Details */}
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5 text-[11px]">
+                  <div className="flex items-center justify-between text-slate-600 font-mono text-[10px]">
+                    <span>LOCAL SOCKET</span>
+                    <span className="text-slate-900 font-bold">10.0.0.2:53 (TUN)</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-400 font-mono text-[10px]">
+                  <div className="flex items-center justify-between text-slate-600 font-mono text-[10px]">
                     <span>DNS PACKET PARSER</span>
-                    <span className="text-cyan-400 font-semibold">Native DnsPacketParser.kt</span>
+                    <span className="text-blue-600 font-bold">DnsPacketParser.kt</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-400 font-mono text-[10px]">
+                  <div className="flex items-center justify-between text-slate-600 font-mono text-[10px]">
                     <span>CLOUD TELEMETRY</span>
-                    <span className="text-rose-400 font-semibold">0 BYTES (DISABLED)</span>
+                    <span className="text-emerald-700 font-bold">0 BYTES (DISABLED)</span>
                   </div>
                 </div>
 
-                {/* Action button: Test Attack Block */}
+                {/* Action button */}
                 <button
                   onClick={simulateThreat}
-                  className="w-full py-2.5 px-3 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 text-xs font-bold text-slate-200 flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-95"
+                  className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-xs font-bold text-white flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm active:scale-95"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-400" />
                   <span>Simulate Adult Domain Query</span>
@@ -266,39 +270,39 @@ export const InteractivePhone: React.FC = () => {
 
             {/* TAB 2: REEL & SHORTS COUNTER */}
             {activeTab === 'reel' && (
-              <div className="space-y-3 animate-fadeIn">
-                <div className="p-3.5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/30 border border-indigo-500/30">
+              <div className="space-y-3">
+                <div className="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-200">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 rounded-xl bg-indigo-600 text-white">
                         <Smartphone className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-white">Reel Habit Breaker</div>
-                        <div className="text-[10px] text-slate-400">Doomscroll Friction Gate</div>
+                        <div className="text-xs font-bold text-slate-900">Reel Habit Breaker</div>
+                        <div className="text-[10px] text-slate-500">Short-Form Friction Gate</div>
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-500/30">
-                      Active
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200">
+                      Armed
                     </span>
                   </div>
 
                   {/* Reel Gauge Bar */}
                   <div className="mt-3 space-y-1.5">
                     <div className="flex justify-between text-[11px] font-mono">
-                      <span className="text-slate-400">Reels Watched Today</span>
-                      <span className={`font-bold ${reelCount >= reelLimit ? 'text-rose-400' : 'text-indigo-300'}`}>
+                      <span className="text-slate-600 font-medium">Reels Watched Today</span>
+                      <span className={`font-bold ${reelCount >= reelLimit ? 'text-rose-600' : 'text-slate-900'}`}>
                         {reelCount} / {reelLimit} max
                       </span>
                     </div>
-                    <div className="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                    <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
                       <div 
                         className={`h-full transition-all duration-300 ${
                           reelCount >= reelLimit 
                             ? 'bg-rose-500' 
                             : reelCount > 12 
                               ? 'bg-amber-500' 
-                              : 'bg-indigo-500'
+                              : 'bg-indigo-600'
                         }`}
                         style={{ width: `${Math.min((reelCount / reelLimit) * 100, 100)}%` }}
                       />
@@ -306,36 +310,38 @@ export const InteractivePhone: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Supported Apps List */}
-                <div className="p-3 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-2 text-[11px]">
-                  <div className="text-[10px] font-mono uppercase text-slate-400 tracking-wider">Monitored Surfaces</div>
-                  <div className="flex items-center justify-between text-slate-300 py-1 border-b border-slate-800/40">
+                {/* Monitored Surfaces List */}
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-[11px]">
+                  <div className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-semibold">
+                    Monitored Surfaces
+                  </div>
+                  <div className="flex items-center justify-between text-slate-700 py-1 border-b border-slate-200/60">
                     <span className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-500" />
+                      <span className="w-2 h-2 rounded-full bg-pink-500" />
                       Instagram Reels
                     </span>
-                    <span className="text-slate-500 font-mono text-[10px]">Interception On</span>
+                    <span className="text-slate-500 font-mono text-[10px] font-medium">Active</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-300 py-1 border-b border-slate-800/40">
+                  <div className="flex items-center justify-between text-slate-700 py-1 border-b border-slate-200/60">
                     <span className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                      <span className="w-2 h-2 rounded-full bg-red-500" />
                       YouTube Shorts
                     </span>
-                    <span className="text-slate-500 font-mono text-[10px]">Interception On</span>
+                    <span className="text-slate-500 font-mono text-[10px] font-medium">Active</span>
                   </div>
-                  <div className="flex items-center justify-between text-slate-300 py-1">
+                  <div className="flex items-center justify-between text-slate-700 py-1">
                     <span className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      <span className="w-2 h-2 rounded-full bg-cyan-600" />
                       TikTok & Feeds
                     </span>
-                    <span className="text-slate-500 font-mono text-[10px]">Interception On</span>
+                    <span className="text-slate-500 font-mono text-[10px] font-medium">Active</span>
                   </div>
                 </div>
 
-                {/* Interactive Scroll Simulation Button */}
+                {/* Button */}
                 <button
                   onClick={handleNextReel}
-                  className="w-full py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/20 active:scale-95 transition-all cursor-pointer"
+                  className="w-full py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   <span>Simulate Next Reel Swipe (+1)</span>
@@ -345,55 +351,53 @@ export const InteractivePhone: React.FC = () => {
 
             {/* TAB 3: TASK ALARM */}
             {activeTab === 'alarm' && (
-              <div className="space-y-3 animate-fadeIn">
-                <div className="p-3.5 rounded-2xl bg-gradient-to-br from-slate-900 to-amber-950/30 border border-amber-500/30">
-                  <div className="flex items-center justify-between mb-1">
-                    <div className="flex items-center gap-2">
-                      <div className="p-2 rounded-xl bg-amber-500/20 text-amber-400">
-                        <Bell className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-white">Military TaskAlarm</div>
-                        <div className="text-[10px] text-slate-400">Exact Wake-Lock Engine</div>
-                      </div>
+              <div className="space-y-3">
+                <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <div className="p-2 rounded-xl bg-amber-500 text-slate-950 font-bold">
+                      <Bell className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-900">TaskAlarm & Planner</div>
+                      <div className="text-[10px] text-slate-500">System Wake-Lock Engine</div>
                     </div>
                   </div>
-                  <div className="text-[10px] font-mono text-amber-300 mt-2 bg-amber-950/40 p-2 rounded-lg border border-amber-500/20">
+                  <div className="text-[10px] font-mono text-amber-900 font-semibold mt-2 bg-amber-100/70 p-2 rounded-lg border border-amber-200">
                     Next Task: 15:00 — Deep Code Review & Execution
                   </div>
                 </div>
 
-                {/* Scheduled Tasks in FocusCrew */}
+                {/* Scheduled Tasks List */}
                 <div className="space-y-1.5">
-                  <div className="p-2 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between text-[11px]">
+                  <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span className="line-through text-slate-500">07:00 AM — Cold Shower & Run</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span className="line-through text-slate-400">07:00 AM — Morning Run</span>
                     </div>
-                    <span className="text-[9px] font-mono text-emerald-400 font-bold">DONE</span>
+                    <span className="text-[9px] font-mono text-emerald-700 font-bold">DONE</span>
                   </div>
-                  <div className="p-2 rounded-xl bg-amber-950/30 border border-amber-500/40 flex items-center justify-between text-[11px]">
+                  <div className="p-2 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
-                      <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0 animate-spin" />
-                      <span className="font-semibold text-slate-200">15:00 — FocusCrew Sprint</span>
+                      <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                      <span className="font-semibold text-slate-900">15:00 — FocusCrew Sprint</span>
                     </div>
-                    <span className="text-[9px] font-mono text-amber-400 font-bold">ALARM ARMED</span>
+                    <span className="text-[9px] font-mono text-amber-700 font-bold">ARMED</span>
                   </div>
-                  <div className="p-2 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-center justify-between text-[11px]">
+                  <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
-                      <Clock className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                      <span className="text-slate-400">20:30 — Read 25 Pages</span>
+                      <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span className="text-slate-600">20:30 — Read 25 Pages</span>
                     </div>
                     <span className="text-[9px] font-mono text-slate-500">SCHEDULED</span>
                   </div>
                 </div>
 
-                {/* Trigger Alarm Test Button */}
+                {/* Trigger Button */}
                 <button
                   onClick={triggerAlarmTest}
-                  className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition-all cursor-pointer"
+                  className="w-full py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
                 >
-                  <Bell className="w-3.5 h-3.5 text-slate-950 fill-current" />
+                  <Bell className="w-3.5 h-3.5 fill-current" />
                   <span>Test Full-Screen Wake Alarm</span>
                 </button>
               </div>
@@ -401,39 +405,39 @@ export const InteractivePhone: React.FC = () => {
 
             {/* TAB 4: FREEDOM VAULT */}
             {activeTab === 'vault' && (
-              <div className="space-y-3 animate-fadeIn">
-                <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-center">
-                  <div className="w-10 h-10 mx-auto rounded-full bg-slate-800/90 border border-slate-700 flex items-center justify-center mb-2">
-                    {isVaultLocked ? <Lock className="w-5 h-5 text-rose-400" /> : <Unlock className="w-5 h-5 text-emerald-400" />}
+              <div className="space-y-3">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                  <div className="w-10 h-10 mx-auto rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center mb-2">
+                    {isVaultLocked ? <Lock className="w-5 h-5 text-slate-800" /> : <Unlock className="w-5 h-5 text-emerald-600" />}
                   </div>
-                  <div className="text-xs font-bold text-white">Freedom Vault Encryption</div>
-                  <div className="text-[10px] text-slate-400 mt-0.5">
-                    {isVaultLocked ? 'Locked with 15-min cooldown delay' : 'Vault Temporarily Unlocked'}
+                  <div className="text-xs font-bold text-slate-900">Freedom Vault Master Lock</div>
+                  <div className="text-[10px] text-slate-500 mt-0.5">
+                    {isVaultLocked ? 'Protected by 15-minute emergency delay' : 'Vault Temporarily Unlocked'}
                   </div>
 
-                  {/* PIN Display */}
+                  {/* PIN Dots */}
                   <div className="flex justify-center gap-3 my-3">
                     {[0, 1, 2, 3].map((i) => (
                       <div
                         key={i}
                         className={`w-3.5 h-3.5 rounded-full border transition-all ${
                           vaultPin.length > i 
-                            ? 'bg-cyan-400 border-cyan-300 shadow-sm shadow-cyan-400' 
-                            : 'border-slate-700 bg-slate-950'
+                            ? 'bg-slate-900 border-slate-900 shadow-xs' 
+                            : 'border-slate-300 bg-white'
                         }`}
                       />
                     ))}
                   </div>
 
-                  {/* Emergency Delay Trigger */}
+                  {/* Emergency Delay */}
                   {emergencyCountdown !== null ? (
-                    <div className="p-2 rounded-xl bg-amber-950/40 border border-amber-500/40 text-[10px] font-mono text-amber-300">
-                      Emergency Unlock Cooldown: {emergencyCountdown}s remaining. Breathe and reflect.
+                    <div className="p-2 rounded-xl bg-amber-50 border border-amber-300 text-[10px] font-mono text-amber-900">
+                      Emergency Delay: {emergencyCountdown}s remaining. Breathe and pause.
                     </div>
                   ) : isVaultLocked ? (
                     <button
                       onClick={() => setEmergencyCountdown(15)}
-                      className="text-[10px] font-mono text-slate-400 hover:text-slate-200 underline cursor-pointer"
+                      className="text-[10px] font-mono text-slate-600 hover:text-slate-900 underline cursor-pointer"
                     >
                       Request Emergency Unlock (15m Delay)
                     </button>
@@ -443,15 +447,15 @@ export const InteractivePhone: React.FC = () => {
                         setIsVaultLocked(true);
                         setVaultPin('');
                       }}
-                      className="text-[10px] font-mono text-cyan-400 hover:underline cursor-pointer"
+                      className="text-[10px] font-mono text-blue-600 hover:underline cursor-pointer"
                     >
                       Relock Freedom Vault Now
                     </button>
                   )}
                 </div>
 
-                {/* Simulated Keypad */}
-                <div className="grid grid-cols-3 gap-1.5 p-2 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                {/* Keypad */}
+                <div className="grid grid-cols-3 gap-1.5 p-2 rounded-2xl bg-slate-100/80 border border-slate-200">
                   {['1', '2', '3', '4', '5', '6', '7', '8', '9', 'C', '0', '✓'].map((key) => (
                     <button
                       key={key}
@@ -467,7 +471,7 @@ export const InteractivePhone: React.FC = () => {
                           if (vaultPin.length < 4) setVaultPin(prev => prev + key);
                         }
                       }}
-                      className="py-2 rounded-lg bg-slate-900/80 hover:bg-slate-800 font-mono text-xs font-semibold text-slate-200 active:bg-cyan-500 active:text-slate-950 transition-colors cursor-pointer"
+                      className="py-2 rounded-lg bg-white hover:bg-slate-50 border border-slate-200/80 font-mono text-xs font-semibold text-slate-800 shadow-2xs active:bg-slate-900 active:text-white transition-colors cursor-pointer"
                     >
                       {key}
                     </button>
@@ -479,18 +483,18 @@ export const InteractivePhone: React.FC = () => {
           </div>
 
           {/* Bottom App Navigation Bar Inside Phone */}
-          <div className="p-2 border-t border-slate-900/80 bg-[#06080D]/95 grid grid-cols-4 gap-1 z-20">
+          <div className="p-2 border-t border-slate-200 bg-white grid grid-cols-4 gap-1 z-20">
             <button
               onClick={() => {
                 soundFx.playChime();
                 setActiveTab('fortress');
               }}
               className={`flex flex-col items-center py-1.5 rounded-xl transition-all cursor-pointer ${
-                activeTab === 'fortress' ? 'text-cyan-400 bg-cyan-950/40' : 'text-slate-500 hover:text-slate-300'
+                activeTab === 'fortress' ? 'text-blue-600 bg-blue-50 font-bold' : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Shield className="w-4 h-4 mb-0.5" />
-              <span className="text-[9px] font-bold font-mono">Fortress</span>
+              <span className="text-[9px] font-mono">Fortress</span>
             </button>
 
             <button
@@ -499,11 +503,11 @@ export const InteractivePhone: React.FC = () => {
                 setActiveTab('reel');
               }}
               className={`flex flex-col items-center py-1.5 rounded-xl transition-all cursor-pointer ${
-                activeTab === 'reel' ? 'text-indigo-400 bg-indigo-950/40' : 'text-slate-500 hover:text-slate-300'
+                activeTab === 'reel' ? 'text-indigo-600 bg-indigo-50 font-bold' : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Smartphone className="w-4 h-4 mb-0.5" />
-              <span className="text-[9px] font-bold font-mono">ReelGate</span>
+              <span className="text-[9px] font-mono">ReelGate</span>
             </button>
 
             <button
@@ -512,11 +516,11 @@ export const InteractivePhone: React.FC = () => {
                 setActiveTab('alarm');
               }}
               className={`flex flex-col items-center py-1.5 rounded-xl transition-all cursor-pointer ${
-                activeTab === 'alarm' ? 'text-amber-400 bg-amber-950/40' : 'text-slate-500 hover:text-slate-300'
+                activeTab === 'alarm' ? 'text-amber-600 bg-amber-50 font-bold' : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Bell className="w-4 h-4 mb-0.5" />
-              <span className="text-[9px] font-bold font-mono">Alarm</span>
+              <span className="text-[9px] font-mono">Alarm</span>
             </button>
 
             <button
@@ -525,39 +529,39 @@ export const InteractivePhone: React.FC = () => {
                 setActiveTab('vault');
               }}
               className={`flex flex-col items-center py-1.5 rounded-xl transition-all cursor-pointer ${
-                activeTab === 'vault' ? 'text-rose-400 bg-rose-950/40' : 'text-slate-500 hover:text-slate-300'
+                activeTab === 'vault' ? 'text-slate-900 bg-slate-100 font-bold' : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Lock className="w-4 h-4 mb-0.5" />
-              <span className="text-[9px] font-bold font-mono">Vault</span>
+              <span className="text-[9px] font-mono">Vault</span>
             </button>
           </div>
 
-          {/* Android Bottom Gesture Bar */}
-          <div className="py-1 flex justify-center bg-[#06080D]">
-            <div className="w-24 h-1 rounded-full bg-slate-700/80" />
+          {/* Android Home Indicator */}
+          <div className="py-1 flex justify-center bg-white">
+            <div className="w-24 h-1 rounded-full bg-slate-300" />
           </div>
 
-          {/* --- OVERLAY 1: CALM FRICTION SCREEN (WHEN REEL LIMIT HIT) --- */}
+          {/* Friction Screen Overlay */}
           {showFrictionModal && (
-            <div className="absolute inset-0 z-30 bg-[#080B11]/95 backdrop-blur-md p-6 flex flex-col justify-between text-center animate-fadeIn">
+            <div className="absolute inset-0 z-30 bg-white/95 backdrop-blur-md p-6 flex flex-col justify-between text-center animate-fadeIn">
               <div className="pt-8">
-                <div className="w-14 h-14 mx-auto rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 mb-3 animate-pulse">
+                <div className="w-14 h-14 mx-auto rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-3">
                   <Flame className="w-7 h-7" />
                 </div>
-                <h4 className="text-sm font-extrabold text-white">Dopamine Threshold Hit</h4>
-                <p className="text-[11px] text-slate-300 mt-1">
+                <h4 className="text-sm font-extrabold text-slate-900">Dopamine Threshold Hit</h4>
+                <p className="text-[11px] text-slate-600 mt-1">
                   You have watched {reelLimit} short-form reels today.
                 </p>
-                <div className="mt-4 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] text-slate-300">
-                  <div className="text-[9px] uppercase font-mono text-cyan-400 font-bold mb-1">Mindful Interruption</div>
+                <div className="mt-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-[11px] text-slate-700">
+                  <div className="text-[9px] uppercase font-mono text-indigo-700 font-bold mb-1">Mindful Interruption</div>
                   Take 3 slow breaths before deciding whether to keep scrolling or return to your real goals.
                 </div>
               </div>
 
               <div className="space-y-2 pb-6">
                 {frictionSeconds > 0 ? (
-                  <div className="py-2.5 rounded-xl bg-slate-900 text-xs font-mono font-bold text-slate-400 border border-slate-800">
+                  <div className="py-2.5 rounded-xl bg-slate-100 text-xs font-mono font-bold text-slate-600 border border-slate-200">
                     Friction Gate Active ({frictionSeconds}s)
                   </div>
                 ) : (
@@ -566,7 +570,7 @@ export const InteractivePhone: React.FC = () => {
                       setShowFrictionModal(false);
                       setReelCount(0);
                     }}
-                    className="w-full py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs cursor-pointer"
+                    className="w-full py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs cursor-pointer"
                   >
                     Close Feeds & Reclaim My Time
                   </button>
@@ -574,7 +578,7 @@ export const InteractivePhone: React.FC = () => {
                 
                 <button
                   onClick={() => setShowFrictionModal(false)}
-                  className="text-[10px] text-slate-500 hover:text-slate-300 underline cursor-pointer"
+                  className="text-[10px] text-slate-500 hover:text-slate-800 underline cursor-pointer"
                 >
                   Dismiss for 5 minutes
                 </button>
@@ -582,18 +586,18 @@ export const InteractivePhone: React.FC = () => {
             </div>
           )}
 
-          {/* --- OVERLAY 2: FULL-SCREEN TASKALARM WAKE-LOCK MODAL --- */}
+          {/* Alarm Overlay */}
           {isAlarmModalOpen && (
-            <div className="absolute inset-0 z-40 bg-gradient-to-b from-amber-950/90 via-slate-950 to-black p-5 flex flex-col justify-between text-center animate-fadeIn border-2 border-amber-500/80">
+            <div className="absolute inset-0 z-40 bg-white p-5 flex flex-col justify-between text-center animate-fadeIn border-2 border-amber-400 shadow-2xl">
               <div className="pt-6">
-                <div className="w-16 h-16 mx-auto rounded-full bg-amber-500/30 border-2 border-amber-400 flex items-center justify-center text-amber-300 mb-2 animate-ping">
+                <div className="w-16 h-16 mx-auto rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 mb-2">
                   <Bell className="w-8 h-8 fill-current" />
                 </div>
-                <div className="text-[10px] font-mono text-amber-400 uppercase tracking-widest font-extrabold">
+                <div className="text-[10px] font-mono text-amber-800 uppercase tracking-widest font-extrabold">
                   TaskAlarm Wake Lock
                 </div>
-                <h3 className="text-base font-extrabold text-white mt-1">Deep Work Sprint</h3>
-                <p className="text-[11px] text-amber-200/80 mt-0.5">FocusCrew v1.0.0 Production</p>
+                <h3 className="text-base font-extrabold text-slate-900 mt-1">Deep Work Sprint</h3>
+                <p className="text-[11px] text-slate-600 mt-0.5">FocusCrew v1.0.0 Production</p>
 
                 {/* Alarm Sound Status & Toggle */}
                 <div className="mt-4 flex items-center justify-center gap-2">
@@ -603,8 +607,8 @@ export const InteractivePhone: React.FC = () => {
                     }}
                     className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold border ${
                       isBuzzerActive 
-                        ? 'bg-amber-500 text-slate-950 border-amber-400 animate-pulse' 
-                        : 'bg-slate-900 text-slate-400 border-slate-700'
+                        ? 'bg-amber-500 text-slate-950 border-amber-600 shadow' 
+                        : 'bg-slate-100 text-slate-700 border-slate-300'
                     }`}
                   >
                     {isBuzzerActive ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
@@ -613,21 +617,21 @@ export const InteractivePhone: React.FC = () => {
                 </div>
 
                 {/* Wakefulness Challenge */}
-                <div className="mt-5 p-3 rounded-2xl bg-black/80 border border-amber-500/40 text-left">
-                  <div className="text-[10px] font-mono text-amber-400 font-bold uppercase">Wake Challenge (Anti-Snooze)</div>
-                  <div className="text-xs text-white font-medium mt-1">Solve to prove alertness:</div>
-                  <div className="text-sm font-mono font-bold text-amber-300 my-1">24 + 18 = ?</div>
-                  <div className="flex gap-2">
+                <div className="mt-5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 text-left">
+                  <div className="text-[10px] font-mono text-amber-900 font-bold uppercase">Wake Challenge (Anti-Snooze)</div>
+                  <div className="text-xs text-slate-700 font-medium mt-1">Solve to prove alertness:</div>
+                  <div className="text-sm font-mono font-bold text-slate-900 my-1">24 + 18 = ?</div>
+                  <div className="flex gap-2 mt-2">
                     <input
                       type="text"
                       placeholder="Answer"
                       value={mathAnswer}
                       onChange={(e) => setMathAnswer(e.target.value)}
-                      className="w-24 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-xs font-mono text-white focus:outline-none focus:border-amber-400"
+                      className="w-24 px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-xs font-mono text-slate-900 focus:outline-none focus:border-amber-500"
                     />
                     <button
                       onClick={dismissAlarm}
-                      className="px-3 py-1 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs rounded font-sans cursor-pointer"
+                      className="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg font-sans cursor-pointer shadow-sm"
                     >
                       Verify & Dismiss
                     </button>
@@ -638,7 +642,7 @@ export const InteractivePhone: React.FC = () => {
               <div className="pb-4">
                 <button
                   onClick={cancelAlarmModal}
-                  className="text-[10px] text-slate-500 hover:text-slate-400 underline cursor-pointer"
+                  className="text-[10px] text-slate-500 hover:text-slate-800 underline cursor-pointer"
                 >
                   Emergency Close Test Modal
                 </button>
@@ -651,9 +655,9 @@ export const InteractivePhone: React.FC = () => {
 
       {/* Simulator Device Caption */}
       <div className="mt-3 text-center">
-        <span className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 bg-slate-900/60 px-3 py-1 rounded-full border border-slate-800">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-          Interactive Demo — Click tabs & buttons to test live
+        <span className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-600 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+          <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+          Interactive Demo — Click tabs to test in real time
         </span>
       </div>
 

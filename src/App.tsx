@@ -19,7 +19,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#06080D] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white antialiased">
       {/* Sticky Tactical Navbar */}
       <Navbar onOpenDownload={scrollToDownload} />
 
