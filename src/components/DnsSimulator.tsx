@@ -22,7 +22,7 @@ export const DnsSimulator: React.FC = () => {
     isBlocked: true,
     isSearch: false,
     reason: 'Explicit Adult Domain Signature Match',
-    action: 'SYNTHESIZED NXDOMAIN (0.0.0.0) — Query Dropped in RAM',
+    action: 'NEUTRALIZED ON-DEVICE — Threat Terminated Instantly',
     latency: '0.19ms'
   });
 
@@ -49,7 +49,7 @@ export const DnsSimulator: React.FC = () => {
         isBlocked: true,
         isSearch: false,
         reason: 'Adult & Explicit Website Signature',
-        action: 'DROPPED IN MEMORY -> Returned 0.0.0.0 NXDOMAIN (0KB Sent)',
+        action: 'NEUTRALIZED ON-DEVICE -> 0KB Transmitted (Radio Silent)',
         latency: `${(Math.random() * 0.15 + 0.12).toFixed(2)}ms`
       });
     } else if (isSearchEngine) {
@@ -58,7 +58,7 @@ export const DnsSimulator: React.FC = () => {
         isBlocked: false,
         isSearch: true,
         reason: 'Search Engine (SafeSearch Rule Applied)',
-        action: 'ROUTED TO FORCED SAFESEARCH (All explicit search results hidden)',
+        action: 'ROUTED TO STRICT SAFESEARCH (All explicit search results hidden)',
         latency: `${(Math.random() * 0.2 + 0.18).toFixed(2)}ms`
       });
     } else {
@@ -67,7 +67,7 @@ export const DnsSimulator: React.FC = () => {
         isBlocked: false,
         isSearch: false,
         reason: 'Clean Work & Productivity Domain',
-        action: 'RESOLVED -> Passed to Clean DNS Resolver (1.1.1.3)',
+        action: 'VERIFIED PRODUCTIVE -> Direct Secure Passthrough',
         latency: `${(Math.random() * 0.2 + 0.15).toFixed(2)}ms`
       });
     }
@@ -134,7 +134,7 @@ export const DnsSimulator: React.FC = () => {
                 placeholder="Enter domain (e.g. adult-site.xxx or github.com)"
                 className="w-full px-4 py-3 rounded-2xl border border-slate-200 text-sm font-mono text-slate-900 bg-[#FAF8FF] focus:outline-none focus:border-[#7E3FF2] focus:bg-white transition-all"
               />
-              <span className="absolute right-4 top-3.5 text-xs text-slate-400 font-mono">PORT 53</span>
+              <span className="absolute right-4 top-3.5 text-xs text-slate-400 font-mono">LIVE SHIELD</span>
             </div>
 
             <button
@@ -153,7 +153,7 @@ export const DnsSimulator: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-purple-100 text-slate-500">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-[#7E3FF2]" />
-                <span className="font-bold text-slate-700">SOCKET 10.0.0.2:53 • PACKET REPORT</span>
+                <span className="font-bold text-slate-700">ON-DEVICE REAL-TIME SHIELD REPORT</span>
               </div>
               <div className="flex items-center gap-3">
                 <span>Latency: <strong className="text-slate-900">{inspectionResult.latency}</strong></span>

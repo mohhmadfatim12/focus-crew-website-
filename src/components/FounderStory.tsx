@@ -73,16 +73,20 @@ export const FounderStory: React.FC = () => {
               {/* Developer Spec Checklist */}
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between text-xs font-mono py-2 border-b border-slate-100">
-                  <span className="text-slate-400">APP IDENTIFIER:</span>
-                  <span className="font-bold text-slate-800">com.focuscrew.app</span>
+                  <span className="text-slate-400">PRODUCT STATUS:</span>
+                  <span className="font-bold text-slate-800">Official Production Release</span>
                 </div>
                 <div className="flex items-center justify-between text-xs font-mono py-2 border-b border-slate-100">
-                  <span className="text-slate-400">CORE ARCHITECTURE:</span>
-                  <span className="font-bold text-purple-700">Native Android 10.0.0.2:53</span>
+                  <span className="text-slate-400">SECURITY ARCHITECTURE:</span>
+                  <span className="font-bold text-purple-700">Autonomous On-Device Fortress</span>
                 </div>
                 <div className="flex items-center justify-between text-xs font-mono py-2 border-b border-slate-100">
                   <span className="text-slate-400">TELEMETRY / ADS:</span>
                   <span className="font-bold text-emerald-700">0 Bytes • Zero Tracking</span>
+                </div>
+                <div className="flex items-center justify-between text-xs font-mono py-2 border-b border-slate-100">
+                  <span className="text-slate-400">INTELLECTUAL PROPERTY:</span>
+                  <span className="font-bold text-slate-800">Proprietary & Copyright Protected</span>
                 </div>
                 <div className="flex items-center justify-between text-xs font-mono py-2">
                   <span className="text-slate-400">DIRECT WHATSAPP:</span>

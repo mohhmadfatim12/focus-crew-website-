@@ -217,8 +217,8 @@ export const InteractivePhone: React.FC = () => {
 
                 <div className="p-2.5 rounded-2xl bg-[#FAF8FF] border border-purple-100 space-y-1.5 text-[10px]">
                   <div className="flex items-center justify-between text-slate-600 font-mono">
-                    <span>LOOPBACK SOCKET</span>
-                    <span className="text-slate-900 font-bold">10.0.0.2:53 (TUN)</span>
+                    <span>SECURITY SHIELD</span>
+                    <span className="text-purple-700 font-bold">AUTONOMOUS ON-DEVICE</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-600 font-mono">
                     <span>REMOTE TRAFFIC</span>

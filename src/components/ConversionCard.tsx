@@ -41,7 +41,7 @@ export const ConversionCard: React.FC = () => {
 
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                 No credit card required. No cloud account logins. Install the verified Android APK 
-                and immediately initialize local loopback DNS blocking.
+                and immediately initialize autonomous on-device shield protection.
               </p>
 
               {/* Instant Form */}

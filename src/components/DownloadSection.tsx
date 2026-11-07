@@ -27,9 +27,9 @@ export const DownloadSection: React.FC = () => {
       details: 'FocusCrew does not include Google tracking libraries or commercial ad SDKs, allowing for 100% on-device autonomy.'
     },
     {
-      title: 'Step 2: Initialize the Local VPN DNS Loopback',
-      desc: 'Upon launching, toggle the Titan Anti-Porn Fortress. Android will prompt: "FocusCrew wants to set up a VPN connection." Tap OK.',
-      details: 'This is a local loopback on 10.0.0.2:53. It connects directly back to your phone\'s RAM. Zero bytes of your web traffic leave your device.'
+      title: 'Step 2: Initialize On-Device Shield Protection',
+      desc: 'Upon launching, toggle the Titan Anti-Porn Fortress. Android will prompt: "FocusCrew wants to set up a secure local connection." Tap OK.',
+      details: 'This establishes an autonomous on-device shield operating directly in RAM. Zero bytes of your web traffic ever leave your device.'
     },
     {
       title: 'Step 3: Enable Accessibility & Arm the Freedom Vault',

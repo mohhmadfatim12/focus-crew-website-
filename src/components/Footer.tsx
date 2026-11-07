@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Reel Counter</a></li>
-              <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Titan DNS Loopback</a></li>
+              <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Titan Shield Engine</a></li>
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Freedom Vault</a></li>
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">SafeSearch Enforcer</a></li>
             </ul>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li><span className="text-slate-500">Android 8.0 - 15</span></li>
-              <li><span className="text-slate-500">Local VPN Interface</span></li>
+              <li><span className="text-slate-500">On-Device Sovereign Shield</span></li>
               <li><span className="text-slate-500">Zero Cloud Routing</span></li>
               <li><span className="text-slate-500">18.4 MB Binary</span></li>
             </ul>

@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                 <div className="text-2xl font-extrabold text-[#212529] font-mono">1,429+</div>
                 <div className="text-xs font-bold text-slate-800">Adult Threats Blocked</div>
                 <p className="text-[10px] text-slate-500 leading-snug">
-                  Returns 0.0.0.0 NXDOMAIN in RAM before the socket establishes.
+                  Neutralized on-device before explicit data can reach your screen.
                 </p>
               </div>
 
@@ -213,7 +213,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                     <span>Freedom Vault</span>
                   </div>
                   <span className="text-[10px] font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded font-bold">
-                    10.0.0.2:53
+                    Zero-Bypass
                   </span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-[#FAF8FF] border border-purple-100 text-[11px] text-purple-900 font-medium">

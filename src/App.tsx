@@ -8,8 +8,8 @@ import { StatsGrid } from './components/StatsGrid';
 import { DeepPurpleBanner } from './components/DeepPurpleBanner';
 import { DnsSimulator } from './components/DnsSimulator';
 import { DopamineCalculator } from './components/DopamineCalculator';
-import { ArchitectureFlow } from './components/ArchitectureFlow';
-import { ComparisonMatrix } from './components/ComparisonMatrix';
+import { IntellectualPropertyNotice } from './components/IntellectualPropertyNotice';
+import { FloatingWatermark } from './components/FloatingWatermark';
 import { FounderStory } from './components/FounderStory';
 import { Faq } from './components/Faq';
 import { ConversionCard } from './components/ConversionCard';
@@ -61,23 +61,23 @@ export function App() {
         {/* 9. Interactive Time Reclaim Calculator (Slider & Tangible Life Metrics) */}
         <DopamineCalculator />
 
-        {/* 10. Zero-Server Local Loopback Architecture Flow */}
-        <ArchitectureFlow />
-
-        {/* 12. Honest Comparison Matrix (FocusCrew vs Opal vs Freedom) */}
-        <ComparisonMatrix />
-
-        {/* 13. Solo Creator & Founder Story (Mohammad Fatim Hasnain - Meet the Owner) */}
+        {/* 10. Solo Creator & Founder Story (Mohammad Fatim Hasnain - Meet the Owner) */}
         <FounderStory />
 
-        {/* 14. Split FAQ Section (Direct Human Answers) */}
+        {/* 11. Official Intellectual Property & Startup Protection Notice */}
+        <IntellectualPropertyNotice />
+
+        {/* 12. Split FAQ Section (Direct Human Answers) */}
         <Faq />
 
-        {/* 15. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
+        {/* 13. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
         <ConversionCard />
       </main>
 
-      {/* 16. Structured SaaS Footer */}
+      {/* Floating Protected IP Watermark Badge */}
+      <FloatingWatermark />
+
+      {/* 14. Structured SaaS Footer */}
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ export const Faq: React.FC = () => {
   const faqs = [
     {
       q: 'Does FocusCrew see my browsing history, messages, or sell my data?',
-      a: 'Never. FocusCrew has zero servers, zero cloud databases, and zero tracking SDKs. It runs 100% on your phone using Android\'s local loopback at 10.0.0.2:53. It only inspects domain names (DNS Port 53) in memory. It cannot see your encrypted HTTPS traffic, passwords, messages, or photos.'
+      a: 'Never. FocusCrew has zero external servers, zero cloud databases, and zero tracking SDKs. It operates 100% on your phone using an autonomous on-device security shield. It neutralizes threats in memory without recording or transmitting your encrypted traffic, passwords, messages, or private files.'
     },
     {
       q: 'Why can\'t I just turn off FocusCrew when I get an urge?',
@@ -19,7 +19,7 @@ export const Faq: React.FC = () => {
     },
     {
       q: 'Does FocusCrew work in Incognito, Private Browsing, and guest modes?',
-      a: 'Yes. FocusCrew intercepts DNS queries at the device networking loopback socket (10.0.0.2:53). Because it operates below the browser layer, opening Chrome Incognito, Firefox Private Tab, or Brave Tor tabs cannot bypass the block. SafeSearch VIP rewrites remain 100% active.'
+      a: 'Yes. FocusCrew enforces protection directly at the operating system level. Because it operates below the browser layer, opening Chrome Incognito, Firefox Private Tab, or Brave Tor tabs cannot bypass the block. Strict SafeSearch filters remain 100% locked.'
     },
     {
       q: 'Can I use other apps and browsers normally?',

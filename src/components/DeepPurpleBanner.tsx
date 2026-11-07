@@ -9,7 +9,7 @@ export const DeepPurpleBanner: React.FC = () => {
     setTestResult({
       domain: testDomain || 'unknown-adult-source.xxx',
       latency: '0.18ms',
-      status: '0.0.0.0 NXDOMAIN (BLOCKED IN RAM)'
+      status: 'THREAT INTERCEPTED & DROPPED (0 BYTES LEAKED)'
     });
   };
 
@@ -38,14 +38,14 @@ export const DeepPurpleBanner: React.FC = () => {
 
               <p className="text-white/90 text-sm sm:text-base leading-relaxed">
                 Standard blocker apps are easily uninstalled or toggled off when an urge strikes at midnight.
-                FocusCrew binds directly to your device's internal loopback socket—enforcing instant zero-latency protection, strict search lockdown, and an unskippable 15-minute urge dissolution buffer.
+                FocusCrew enforces instant zero-latency protection, strict search lockdown, and an unskippable 15-minute urge dissolution buffer right on your device.
               </p>
 
               {/* 3 White Pill Feature Badges (Exact Zanderio Pill Style) */}
               <div className="space-y-3 pt-2">
                 <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-[#212529] text-xs sm:text-sm font-semibold shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#7E3FF2]" />
-                  <span>On-device DNS loopback — 150,000+ adult domains blocked locally in RAM</span>
+                  <span>On-device protection — 150,000+ adult domains neutralized locally with zero cloud lag</span>
                 </div>
                 <br />
                 <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white text-[#212529] text-xs sm:text-sm font-semibold shadow-sm">
@@ -70,8 +70,8 @@ export const DeepPurpleBanner: React.FC = () => {
                       <ShieldCheck className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-extrabold text-slate-900">Titan DNS Engine</div>
-                      <div className="text-[10px] text-slate-500 font-mono">10.0.0.2:53 • Active Loopback</div>
+                      <div className="text-xs font-extrabold text-slate-900">Titan Shield Engine</div>
+                      <div className="text-[10px] text-slate-500 font-mono">On-Device Autonomous Security</div>
                     </div>
                   </div>
 
@@ -84,13 +84,13 @@ export const DeepPurpleBanner: React.FC = () => {
                 {/* Live Diagnostics Block */}
                 <div className="p-4 rounded-2xl bg-[#FAF8FF] border border-purple-100 space-y-3">
                   <div className="text-[10px] font-mono uppercase text-[#7E3FF2] font-bold flex items-center justify-between">
-                    <span>Live Socket Diagnostics</span>
+                    <span>Live Shield Diagnostics</span>
                     <span className="text-slate-400">0.2ms latency</span>
                   </div>
                   
                   <div className="space-y-1.5 text-xs font-mono">
                     <div className="flex justify-between py-1 border-b border-purple-100/60 text-slate-600">
-                      <span>RAM Filter List:</span>
+                      <span>Threat Rules Database:</span>
                       <span className="font-bold text-slate-900">154,820 rules</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-purple-100/60 text-slate-600">

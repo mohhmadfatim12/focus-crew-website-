@@ -15,8 +15,8 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
       tag: '0.2ms Latency',
       title: 'Titan DNS Shield',
       headline: 'Blocks every adult site before a single byte leaves your phone.',
-      desc: 'You open Chrome in private incognito mode. Before the browser can even connect to the site, FocusCrew intercepts the UDP packet on your device\'s local 10.0.0.2:53 socket. It returns 0.0.0.0 NXDOMAIN in 0.2 milliseconds. The site never loads. No external VPN server is used.',
-      badge: 'Local Socket Loopback',
+      desc: 'You open Chrome in private incognito mode. Before the browser can even connect to the site, FocusCrew intervenes on-device in under 0.2 milliseconds. The site never loads. No external VPN proxy or cloud server is ever touched.',
+      badge: 'On-Device Zero-Leak Shield',
       demoType: 'dns'
     },
     {
@@ -149,7 +149,7 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
               {steps[activeStep].demoType === 'dns' && (
                 <div className="p-4 rounded-xl bg-white border border-purple-200 font-mono text-xs space-y-2.5">
                   <div className="flex items-center justify-between text-slate-500 border-b border-slate-100 pb-2">
-                    <span>UDP 10.0.0.2:53 • QUERY INTERCEPTOR</span>
+                    <span>ON-DEVICE SHIELD • THREAT INTERCEPTOR</span>
                     <span className="text-emerald-600 font-bold">LATENCY: 0.18ms</span>
                   </div>
                   <div className="text-slate-700">
@@ -160,10 +160,10 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                       <AlertOctagon className="w-4 h-4" />
                       BLOCK: High-Risk Adult Signature Match
                     </span>
-                    <span className="text-red-900">SYNTHESIZED 0.0.0.0 NXDOMAIN</span>
+                    <span className="text-red-900">INSTANT DROP</span>
                   </div>
                   <div className="text-[11px] text-slate-400">
-                    * Connection terminated before wireless antenna transmitted packets. 0KB leak.
+                    * Connection neutralized before data reached the phone. 0KB leak.
                   </div>
                 </div>
               )}
@@ -171,7 +171,7 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
               {steps[activeStep].demoType === 'reels' && (
                 <div className="p-4 rounded-xl bg-white border border-purple-200 font-mono text-xs space-y-3">
                   <div className="flex items-center justify-between text-slate-500 border-b border-slate-100 pb-2">
-                    <span>ACCESSIBILITY HOOK • INSTAGRAM / TIKTOK</span>
+                    <span>BEHAVIORAL INTERVENTION • SHORT-FORM PLAYER</span>
                     <span className="text-amber-600 font-bold">SWIPE GATE</span>
                   </div>
                   <div className="flex items-center justify-between">
@@ -194,7 +194,7 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                     <span className="text-emerald-600 font-bold">STRICT LOCKED</span>
                   </div>
                   <div className="text-slate-700">
-                    &gt; Target: <span className="font-bold text-slate-900">google.com → forcesafesearch.google.com (216.239.38.120)</span>
+                    &gt; Search Security: <span className="font-bold text-slate-900">Google, Bing & YouTube Strict Safe Filtering</span>
                   </div>
                   <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between">
                     <span className="text-emerald-900 font-bold">Google, Bing & YouTube Restricted Mode</span>
