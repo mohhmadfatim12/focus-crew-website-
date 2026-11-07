@@ -42,18 +42,34 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Tilted Callout Pointer Badges (Exact Zanderio Pointer Icon Style) */}
-        <div className="relative max-w-3xl mx-auto mb-6 flex justify-between items-center px-2 sm:px-12 pointer-events-none">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float">
-            <Shield className="w-3.5 h-3.5 text-[#0A6B4F]" />
-            <span>#1 On-Device Blocker</span>
-            <ArrowDownRight className="w-3.5 h-3.5 text-[#0A6B4F]" />
+        {/* Tilted Callout Pointer Badges & Live Status Telemetry Ticker */}
+        <div className="relative max-w-4xl mx-auto mb-6 flex flex-col items-center gap-3">
+          
+          {/* Live Telemetry Ticker Pill (Exact $10,000 Luxury Agency Style) */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-purple-200/80 shadow-sm text-[11px] font-mono text-slate-700 select-none">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-extrabold text-slate-900 tracking-tight">AUTONOMOUS ON-DEVICE SHIELD ARMED</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-purple-700 font-bold">154,820 Threats in RAM</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-emerald-700 font-bold">0.18ms</span>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
-            <ArrowDownLeft className="w-3.5 h-3.5 text-[#7E3FF2]" />
-            <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
-            <span>Built by Fatim Hasnain</span>
+          <div className="w-full flex justify-between items-center px-2 sm:px-12 pointer-events-none">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float-p1">
+              <Shield className="w-3.5 h-3.5 text-[#0A6B4F]" />
+              <span>#1 On-Device Blocker</span>
+              <ArrowDownRight className="w-3.5 h-3.5 text-[#0A6B4F]" />
+            </div>
+
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-p2">
+              <ArrowDownLeft className="w-3.5 h-3.5 text-[#7E3FF2]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
+              <span>Built by Fatim Hasnain</span>
+            </div>
           </div>
         </div>
 
@@ -81,7 +97,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
         </p>
 
         {/* --- CENTRAL CONNECTED DIAGRAM CANVAS (EXACT ZANDERIO STYLE) --- */}
-        <div className="mt-12 relative rounded-3xl bg-[#FAF7FF] border border-purple-100/90 p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden">
+        <div className="mt-12 relative rounded-3xl bg-[#FAF7FF] border border-purple-100/90 p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden luxury-mesh-grid">
+          
+          {/* Ambient Breathing Aurora Light (Linear / Apple $10k Glow) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-gradient-to-tr from-purple-400/20 via-indigo-300/15 to-transparent blur-3xl pointer-events-none animate-aurora" />
           
           {/* Animated SVG Connector Lines with Moving Glow Points */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block opacity-45" viewBox="0 0 1000 650" fill="none">
@@ -175,9 +194,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
             </div>
 
-            {/* Center: Titanium Smartphone Canvas */}
-            <div id="interactive-demo" className="md:col-span-6 flex justify-center">
-              <InteractivePhone />
+            {/* Center: Titanium Smartphone Canvas with Floating Micro-Satellites */}
+            <div id="interactive-demo" className="md:col-span-6 flex flex-col items-center justify-center relative">
+              
+              {/* Floating Satellite 1: Top Floating Micro-Chip */}
+              <div className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full luxury-glass text-[11px] font-mono font-bold text-slate-800 shadow-md mb-3 animate-float-p1 luxury-orbit-pill z-20">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>ACTIVE SHIELD: 0.18ms On-Device RAM Defense</span>
+                <span className="px-1.5 py-0.2 rounded bg-purple-100 text-[#7E3FF2] text-[9px]">0KB LEAK</span>
+              </div>
+
+              <div className="relative w-full flex justify-center">
+                {/* Floating Satellite 2: Left Orbit Badge */}
+                <div className="absolute -left-6 top-1/4 hidden xl:flex flex-col gap-1 p-2.5 rounded-2xl luxury-glass shadow-lg animate-float-p3 z-20 max-w-[150px] text-left">
+                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-800">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>0s Delay Drop</span>
+                  </div>
+                  <span className="text-[9px] text-slate-500 leading-tight">Explicit domains dropped before connection.</span>
+                </div>
+
+                {/* Floating Satellite 3: Right Orbit Badge */}
+                <div className="absolute -right-6 top-1/3 hidden xl:flex flex-col gap-1 p-2.5 rounded-2xl luxury-glass shadow-lg animate-float-p2 z-20 max-w-[150px] text-left">
+                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-purple-900">
+                    <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
+                    <span>Urge Breaker</span>
+                  </div>
+                  <span className="text-[9px] text-slate-500 leading-tight">15-minute cooling buffer dissolves 96% cravings.</span>
+                </div>
+
+                <InteractivePhone />
+              </div>
             </div>
 
             {/* Right Column (2 Connected Nodes) */}
