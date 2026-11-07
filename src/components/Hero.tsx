@@ -7,7 +7,16 @@ import {
   TrendingDown,
   Smartphone,
   Zap,
-  Globe
+  Globe,
+  Sparkles,
+  Shield,
+  Camera,
+  PlaySquare,
+  EyeOff,
+  Radio,
+  Flame,
+  Layers,
+  Compass
 } from 'lucide-react';
 import { InteractivePhone } from './InteractivePhone';
 
@@ -17,15 +26,15 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
   const platforms = [
-    { name: 'Instagram Reels', icon: '📸' },
-    { name: 'YouTube Shorts', icon: '▶️' },
-    { name: 'TikTok', icon: '🎵' },
-    { name: 'Google Chrome', icon: '🌐' },
-    { name: 'Brave Browser', icon: '🦁' },
-    { name: 'Incognito Mode', icon: '🕶️' },
-    { name: 'Reddit In-App', icon: '🤖' },
-    { name: 'Android 15', icon: '⚡' },
-    { name: 'Firefox Focus', icon: '🦊' }
+    { name: 'Instagram Reels', icon: Camera, color: 'text-rose-500' },
+    { name: 'YouTube Shorts', icon: PlaySquare, color: 'text-red-500' },
+    { name: 'TikTok Streams', icon: Radio, color: 'text-purple-600' },
+    { name: 'Google Chrome', icon: Globe, color: 'text-blue-500' },
+    { name: 'Brave Browser', icon: Flame, color: 'text-amber-500' },
+    { name: 'Incognito Mode', icon: EyeOff, color: 'text-slate-600' },
+    { name: 'Reddit Feeds', icon: Layers, color: 'text-orange-500' },
+    { name: 'Android 15 OS', icon: Zap, color: 'text-emerald-500' },
+    { name: 'Safari & Firefox', icon: Compass, color: 'text-indigo-500' }
   ];
 
   return (
@@ -34,15 +43,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Tilted Callout Pointer Badges (Exact Zanderio Pointer Icon Style) */}
-        <div className="relative max-w-3xl mx-auto mb-5 flex justify-between items-center px-2 sm:px-12 pointer-events-none">
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float">
-            <span>🛡️ #1 On-Device Blocker</span>
-            <ArrowDownRight className="w-4 h-4 text-[#0A6B4F]" />
+        <div className="relative max-w-3xl mx-auto mb-6 flex justify-between items-center px-2 sm:px-12 pointer-events-none">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8FBF4] border border-[#9DECD2] text-[#0A6B4F] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float">
+            <Shield className="w-3.5 h-3.5 text-[#0A6B4F]" />
+            <span>#1 On-Device Blocker</span>
+            <ArrowDownRight className="w-3.5 h-3.5 text-[#0A6B4F]" />
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
-            <ArrowDownLeft className="w-4 h-4 text-[#7E3FF2]" />
-            <span>⚡ Built by Fatim Hasnain</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
+            <ArrowDownLeft className="w-3.5 h-3.5 text-[#7E3FF2]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#7E3FF2]" />
+            <span>Built by Fatim Hasnain</span>
           </div>
         </div>
 
@@ -54,8 +65,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
         {/* Subtitle */}
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Turn your phone back into a high-leverage tool with an on-device wellness guardian that blocks porn across all browsers, 
-          puts a hard stop on Instagram Reels, and wakes you up on time.
+          Turn your phone back into a high-leverage tool with an on-device wellness guardian that blocks adult content across all browsers, 
+          puts a hard stop on infinite doomscrolling, and dissolves cravings with the 15-minute Freedom Vault.
         </p>
 
         {/* Hook */}
@@ -236,12 +247,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
           <div className="relative w-full overflow-hidden mask-fade">
             <div className="animate-marquee flex items-center gap-10 text-slate-700 text-sm font-semibold whitespace-nowrap">
-              {platforms.concat(platforms).map((p, i) => (
-                <div key={i} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200/80 shadow-2xs shrink-0">
-                  <span className="text-base">{p.icon}</span>
-                  <span className="font-bold text-slate-800 text-xs sm:text-sm">{p.name}</span>
-                </div>
-              ))}
+              {platforms.concat(platforms).map((p, i) => {
+                const IconComponent = p.icon;
+                return (
+                  <div key={i} className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200/80 shadow-2xs shrink-0 hover:border-purple-200 transition-colors">
+                    <IconComponent className={`w-4 h-4 ${p.color}`} />
+                    <span className="font-bold text-slate-800 text-xs sm:text-sm">{p.name}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
