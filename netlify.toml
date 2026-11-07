@@ -1,0 +1,38 @@
+# Netlify Configuration for FocusCrew Website (Vite + React + Tailwind v4)
+
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PNPM_FLAGS = "--frozen-lockfile=false"
+
+# Single-Page App (SPA) Catch-all routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# APK Binary Download MIME and Attachment Header
+[[headers]]
+  for = "/FocusCrew.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment; filename=\"FocusCrew.apk\""
+    Cache-Control = "public, max-age=86400"
+
+# Long-term Cache for Bundled Static Assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Baseline Production Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
