@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FAF0FF] border border-[#E9D0FE] text-[#7E3FF2] text-xs font-bold shadow-xs rotate-[3deg] pointer-events-auto animate-float-reverse">
             <ArrowDownLeft className="w-4 h-4 text-[#7E3FF2]" />
-            <span>⚡ Zero-Relapse Fortress</span>
+            <span>⚡ Built by Fatim Hasnain</span>
           </div>
         </div>
 

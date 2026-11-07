@@ -23,6 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
     { name: 'Titan Fortress', href: '#titan-fortress' },
     { name: 'DNS Engine', href: '#dns-engine' },
     { name: 'Time Audit', href: '#cost-calculator' },
+    { name: 'Meet Creator', href: '#creator' },
     { name: 'FAQ', href: '#faq' },
   ];
 

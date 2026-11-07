@@ -135,6 +135,23 @@ export const ConversionCard: React.FC = () => {
                     <div className="text-purple-300 font-bold mt-0.5">100% FREE CORE</div>
                   </div>
                 </div>
+
+                <div className="pt-2 flex flex-col sm:flex-row gap-2">
+                  <a
+                    href="https://wa.me/923312466885?text=Hi%20Fatim,%20I%20have%20a%20question%20about%20FocusCrew"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2 px-3 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <span>WhatsApp: +92 331 2466885</span>
+                  </a>
+                  <a
+                    href="mailto:mfatimhasnain12@gmail.com"
+                    className="py-2 px-3 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 text-xs font-mono flex items-center justify-center transition-colors"
+                  >
+                    <span>Email Fatim</span>
+                  </a>
+                </div>
               </div>
             </div>
 

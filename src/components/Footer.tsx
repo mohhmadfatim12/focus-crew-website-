@@ -28,15 +28,18 @@ export const Footer: React.FC = () => {
               dismantles short-form doomscrolling, and wakes you to your goals with unignorable task alarms.
             </p>
 
-            <div className="space-y-1 text-xs">
+            <div className="space-y-1.5 text-xs">
               <div className="flex items-center gap-2 text-slate-700">
                 <Mail className="w-3.5 h-3.5 text-[#7E3FF2] shrink-0" />
                 <a href="mailto:mfatimhasnain12@gmail.com" className="hover:text-[#7E3FF2] underline font-medium">
                   mfatimhasnain12@gmail.com
                 </a>
               </div>
-              <div className="text-slate-400 text-[11px] font-mono">
-                Engineered with Kotlin Native & Jetpack Compose
+              <div className="text-slate-600 font-mono text-[11px]">
+                Owner & Creator: <strong className="text-slate-900">Mohammad Fatim Hasnain</strong>
+              </div>
+              <div className="text-purple-700 font-mono text-[11px]">
+                WhatsApp: <a href="https://wa.me/923312466885" target="_blank" rel="noopener noreferrer" className="hover:underline font-bold">+92 331 2466885</a>
               </div>
             </div>
           </div>
@@ -102,7 +105,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
           <div>
-            Copyright © 2026 FocusCrew. All rights reserved. Built for radical focus.
+            Owned & Created by Mohammad Fatim Hasnain. Copyright © 2026 FocusCrew. All rights reserved.
           </div>
 
           <button

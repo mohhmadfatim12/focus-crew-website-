@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { DualFeatureBento } from './components/DualFeatureBento';
@@ -10,11 +11,19 @@ import { DopamineCalculator } from './components/DopamineCalculator';
 import { SuccessStories } from './components/SuccessStories';
 import { ArchitectureFlow } from './components/ArchitectureFlow';
 import { ComparisonMatrix } from './components/ComparisonMatrix';
+import { FounderStory } from './components/FounderStory';
 import { Faq } from './components/Faq';
 import { ConversionCard } from './components/ConversionCard';
 import { Footer } from './components/Footer';
+import { initSmoothScroll } from './utils/motion';
 
 export function App() {
+  // Initialize Lenis + GSAP smooth scroll
+  useEffect(() => {
+    const cleanup = initSmoothScroll();
+    return cleanup;
+  }, []);
+
   const scrollToDownload = () => {
     const el = document.getElementById('download-section');
     if (el) {
@@ -23,7 +32,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#212529] flex flex-col font-sans selection:bg-[#7E3FF2] selection:text-white antialiased">
+    <div className="min-h-screen bg-white text-[#1A1D20] flex flex-col font-sans selection:bg-[#7E3FF2] selection:text-white antialiased">
       {/* 1. Navbar (Zanderio Style with Purple Pill CTA) */}
       <Navbar onOpenDownload={scrollToDownload} />
 
@@ -41,7 +50,7 @@ export function App() {
         {/* 5. Stop Doomscrolling Friction Engine (Live 8s Breathing Circle) */}
         <StopDoomscrollSection />
 
-        {/* 6. 4-Card Stats Grid (Why Willpower Fails) */}
+        {/* 6. 4-Card Stats Grid (Why Willpower Fails - Zanderio U-Borders) */}
         <StatsGrid />
 
         {/* 7. Signature Full-Width Deep-Purple Section (Military TaskAlarm & Buzzer) */}
@@ -62,14 +71,17 @@ export function App() {
         {/* 12. Honest Comparison Matrix (FocusCrew vs Opal vs Freedom) */}
         <ComparisonMatrix />
 
-        {/* 13. Split FAQ Section (Direct Human Answers) */}
+        {/* 13. Solo Creator & Founder Story (Mohammad Fatim Hasnain - Meet the Owner) */}
+        <FounderStory />
+
+        {/* 14. Split FAQ Section (Direct Human Answers) */}
         <Faq />
 
-        {/* 14. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
+        {/* 15. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
         <ConversionCard />
       </main>
 
-      {/* 15. Structured SaaS Footer */}
+      {/* 16. Structured SaaS Footer */}
       <Footer />
     </div>
   );
