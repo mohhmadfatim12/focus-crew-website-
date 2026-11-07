@@ -137,3 +137,4 @@ export const IntellectualPropertyNotice: React.FC = () => {
     </section>
   );
 };
+

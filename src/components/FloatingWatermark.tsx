@@ -24,3 +24,4 @@ export const FloatingWatermark: React.FC = () => {
     </aside>
   );
 };
+
