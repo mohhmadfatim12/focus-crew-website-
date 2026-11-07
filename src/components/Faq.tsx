@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown, ArrowRight, MessageSquare } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const Faq: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -19,8 +18,8 @@ export const Faq: React.FC = () => {
       a: 'No. Normal VPN apps drain battery because they stream all your video and audio through distant servers. FocusCrew only intercepts tiny DNS domain queries (less than 1KB) right on your phone, while normal video and web traffic goes directly through your standard Wi-Fi. It uses less than 1% battery per day.'
     },
     {
-      q: 'Does TaskAlarm wake me up if my phone is on silent or Do Not Disturb?',
-      a: 'Yes. TaskAlarm uses Android\'s high-priority alarm channel and full-screen wake lock. It turns your screen on, cuts through Do Not Disturb, and rings until you solve the math problem on the screen. You can\'t just tap snooze in your sleep.'
+      q: 'Does FocusCrew work in Incognito, Private Browsing, and guest modes?',
+      a: 'Yes. FocusCrew intercepts DNS queries at the device networking loopback socket (10.0.0.2:53). Because it operates below the browser layer, opening Chrome Incognito, Firefox Private Tab, or Brave Tor tabs cannot bypass the block. SafeSearch VIP rewrites remain 100% active.'
     },
     {
       q: 'Can I use other apps and browsers normally?',
@@ -58,7 +57,6 @@ export const Faq: React.FC = () => {
                 href="https://wa.me/923312466885?text=Hi%20Fatim,%20I%20have%20a%20question%20about%20FocusCrew"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => soundFx.playChime()}
                 className="inline-flex items-center gap-2 text-xs font-bold text-[#7E3FF2] hover:text-[#6C2FE0] bg-purple-50 px-4 py-2.5 rounded-full border border-purple-200 transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
@@ -69,7 +67,6 @@ export const Faq: React.FC = () => {
             <div className="pt-3">
               <a
                 href="#download-section"
-                onClick={() => soundFx.playShieldTone()}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer"
               >
                 <span>Get FocusCrew Production APK</span>
@@ -89,7 +86,6 @@ export const Faq: React.FC = () => {
                 >
                   <button
                     onClick={() => {
-                      soundFx.playChime();
                       setOpenIdx(isOpen ? null : idx);
                     }}
                     className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"

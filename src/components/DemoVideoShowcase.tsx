@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Smartphone, Bell, Lock, ArrowRight, CheckCircle2, AlertOctagon, Download, Sparkles } from 'lucide-react';
-import { soundFx } from '../utils/audio';
+import { Shield, Smartphone, Search, Lock, ArrowRight, CheckCircle2, AlertOctagon, Download, Sparkles } from 'lucide-react';
 
 interface DemoVideoProps {
   onOpenDownload: () => void;
@@ -31,14 +30,14 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
       demoType: 'reels'
     },
     {
-      id: 'alarm',
-      icon: Bell,
-      tag: 'System Wake Lock',
-      title: 'Military TaskAlarm',
-      headline: 'An alarm you can\'t turn off half-asleep.',
-      desc: 'Standard alarms let you tap snooze three times while unconscious. FocusCrew\'s TaskAlarm locks your entire screen, overrides Do Not Disturb, and plays a piercing multi-tone buzzer. The only way to stop the sound is to wake your brain up and solve a math equation.',
-      badge: 'Anti-Snooze Math Challenge',
-      demoType: 'alarm'
+      id: 'safesearch',
+      icon: Search,
+      tag: 'Strict Search Lockdown',
+      title: 'SafeSearch Enforcement',
+      headline: 'Forces strict safe results across Google, Bing & YouTube.',
+      desc: 'Most users bypass adult blockers by searching explicit thumbnails directly on Google Images or DuckDuckGo. FocusCrew enforces network-level SafeSearch overrides, locking every search engine into strict filtering mode with zero loophole bypass.',
+      badge: 'DNS VIP Rewrite Mode',
+      demoType: 'safesearch'
     },
     {
       id: 'vault',
@@ -60,7 +59,6 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
           <a
             href="#interactive-demo"
-            onClick={() => soundFx.playChime()}
             className="px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs sm:text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
@@ -69,7 +67,6 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
 
           <button
             onClick={() => {
-              soundFx.playShieldTone();
               onOpenDownload();
             }}
             className="px-6 py-3 rounded-full bg-white hover:bg-purple-50 text-[#7E3FF2] border border-purple-200 text-xs sm:text-sm font-bold shadow-2xs transition-all cursor-pointer flex items-center gap-2"
@@ -107,7 +104,6 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                   <button
                     key={s.id}
                     onClick={() => {
-                      soundFx.playChime();
                       setActiveStep(idx);
                     }}
                     className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
@@ -191,21 +187,21 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                 </div>
               )}
 
-              {steps[activeStep].demoType === 'alarm' && (
+              {steps[activeStep].demoType === 'safesearch' && (
                 <div className="p-4 rounded-xl bg-white border border-purple-200 font-mono text-xs space-y-3">
                   <div className="flex items-center justify-between text-slate-500 border-b border-slate-100 pb-2">
-                    <span>FULL-SCREEN WAKE LOCK • 06:30 AM</span>
-                    <span className="text-red-600 font-bold animate-pulse">BUZZER RINGING</span>
+                    <span>VIP SAFE OVERRIDE • ALL SEARCH ENGINES</span>
+                    <span className="text-emerald-600 font-bold">STRICT LOCKED</span>
                   </div>
                   <div className="text-slate-700">
-                    &gt; Alarm Priority: <span className="font-bold text-red-600">OVERRIDE_DND | FULL_SCREEN_INTENT</span>
+                    &gt; Target: <span className="font-bold text-slate-900">google.com → forcesafesearch.google.com (216.239.38.120)</span>
                   </div>
-                  <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
-                    <span className="text-slate-800 font-bold">Solve to Silence: 37 + 19 = ?</span>
-                    <span className="px-3 py-1 rounded bg-white border border-slate-300 font-bold text-purple-700">56</span>
+                  <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+                    <span className="text-emerald-900 font-bold">Google, Bing & YouTube Restricted Mode</span>
+                    <span className="px-3 py-1 rounded bg-white border border-emerald-300 font-bold text-emerald-700">ENFORCED</span>
                   </div>
                   <div className="text-[11px] text-slate-400">
-                    * Reflexive sleep-tapping impossible. Requires cognitive computation.
+                    * Incognito and guest browsing cannot disable SafeSearch VIP redirects.
                   </div>
                 </div>
               )}
@@ -256,7 +252,6 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
           <div className="mt-10">
             <button
               onClick={() => {
-                soundFx.playShieldTone();
                 onOpenDownload();
               }}
               className="acs-btn"

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Flame, CheckCircle, Sparkles } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const StopDoomscrollSection: React.FC = () => {
   const [breathingSeconds, setBreathingSeconds] = useState(8);
@@ -19,7 +18,6 @@ export const StopDoomscrollSection: React.FC = () => {
   }, [isBreathingActive, breathingSeconds]);
 
   const startBreathingTest = () => {
-    soundFx.playChime();
     setBreathingSeconds(8);
     setCompletedBreaths(false);
     setIsBreathingActive(true);

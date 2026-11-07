@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Download, Copy, Check } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const ConversionCard: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
@@ -10,7 +9,6 @@ export const ConversionCard: React.FC = () => {
   const sha256Checksum = '50ab3ebbf4dab8b0ebaeae54dbc45b147ed8f309a1b2c3d4e5f6789012345678';
 
   const copyHash = () => {
-    soundFx.playChime();
     navigator.clipboard.writeText(sha256Checksum);
     setCopiedHash(true);
     setTimeout(() => setCopiedHash(false), 2500);
@@ -18,7 +16,6 @@ export const ConversionCard: React.FC = () => {
 
   const handleDownloadRequest = (e: React.FormEvent) => {
     e.preventDefault();
-    soundFx.playShieldTone();
     setIsSubmitted(true);
     window.location.href = `mailto:mfatimhasnain12@gmail.com?subject=FocusCrew%20APK%20Request&body=Hi%20Fatim,%20please%20send%20the%20FocusCrew%20v1.0.0%20APK%20to%20${encodeURIComponent(userEmail)}`;
   };

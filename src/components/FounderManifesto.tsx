@@ -41,7 +41,7 @@ export const FounderManifesto: React.FC = () => {
               <p>
                 I built <strong className="text-slate-900">FocusCrew</strong> as an uncompromising fortress. When you lock the 
                 Freedom Vault, your highest future self holds the keys. Local DNS interception kills adult queries before they hit the wire. 
-                TaskAlarm demands active cognitive proof that you are awake. 
+                Strict SafeSearch and Reel limits dismantle the dopamine loops designed by tech giants. 
               </p>
 
               <p className="font-semibold text-slate-900">

@@ -7,7 +7,6 @@ import {
   Search,
   Zap
 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const DnsSimulator: React.FC = () => {
   const [inputDomain, setInputDomain] = useState('adult-content-stream.xxx');
@@ -37,7 +36,6 @@ export const DnsSimulator: React.FC = () => {
   ];
 
   const handleTestDomain = (domainToTest: string) => {
-    soundFx.playShieldTone();
     const clean = domainToTest.trim().toLowerCase();
     
     const adultPatterns = ['porn', 'xxx', 'adult', 'sex', 'nsfw', 'xvideo', 'cam', 'erotic', 'onlyfans', 'tubegalore'];

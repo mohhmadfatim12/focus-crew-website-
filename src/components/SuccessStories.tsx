@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Star, ShieldCheck, Terminal, GraduationCap, Briefcase, ArrowRight } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 interface Story {
   id: string;
@@ -61,12 +60,12 @@ export const SuccessStories: React.FC = () => {
         role: 'Final Year Medical Student',
         badge: 'OnePlus 12',
         stat1: { val: 'Top 1%', label: 'Exam Percentile' },
-        stat2: { val: '05:30', label: 'Alarm Wake' },
-        stat3: { val: '0', label: 'Snoozes' },
+        stat2: { val: '14 hrs', label: 'Daily Focus' },
+        stat3: { val: '0', label: 'Relapses' },
         avatarText: 'ZK',
-        headline: '“The TaskAlarm wake-lock is brutal. You literally cannot snooze it in your sleep.”',
-        quote: 'Standard alarms never worked for 5:30 AM study sessions because my half-asleep brain would hit snooze three times. FocusCrew takes over the entire screen, ignores Do Not Disturb, and makes me solve a double-digit math challenge before the piercing tone cuts off. It wakes my prefrontal cortex immediately.',
-        tags: ['TaskAlarm Wake Lock', 'Anti-Snooze Math', 'No Excuses']
+        headline: '“The 15-minute Freedom Vault completely killed my late-night study cravings.”',
+        quote: 'During high-stress medical board exam preparation, late-night exhaustion used to trigger mindless browsing and relapses. FocusCrew\'s local DNS shield dropped every explicit domain instantly, and the 15-minute emergency unlock buffer gave my rational brain time to cool off and go to sleep.',
+        tags: ['Freedom Vault Delay', 'Local DNS Shield', 'Zero Relapse']
       },
       {
         id: 'stu-2',
@@ -124,7 +123,6 @@ export const SuccessStories: React.FC = () => {
 
           <a
             href="#download-section"
-            onClick={() => soundFx.playChime()}
             className="px-5 py-2 rounded-full bg-purple-50 hover:bg-purple-100 text-[#7E3FF2] border border-purple-200 text-xs font-bold transition-all self-start sm:self-auto cursor-pointer"
           >
             View All Stories →
@@ -145,7 +143,6 @@ export const SuccessStories: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => {
-                  soundFx.playChime();
                   setActiveTab(cat.id as any);
                 }}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
@@ -258,7 +255,6 @@ export const SuccessStories: React.FC = () => {
         <div className="mt-14 text-center">
           <a
             href="#download-section"
-            onClick={() => soundFx.playShieldTone()}
             className="acs-btn"
           >
             <span>View How FocusCrew Reclaims Your Life</span>

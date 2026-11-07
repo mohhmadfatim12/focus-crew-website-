@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Sliders, Clock, BookOpen, Dumbbell, Code2, Sparkles, ArrowRight } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const DopamineCalculator: React.FC = () => {
   const [dailyHours, setDailyHours] = useState<number>(2.5);
@@ -18,9 +17,6 @@ export const DopamineCalculator: React.FC = () => {
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseFloat(e.target.value);
     setDailyHours(val);
-    if (Math.random() > 0.6) {
-      soundFx.playChime();
-    }
   };
 
   return (
@@ -144,7 +140,6 @@ export const DopamineCalculator: React.FC = () => {
 
               <a
                 href="#download-section"
-                onClick={() => soundFx.playShieldTone()}
                 className="px-4 py-2 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer whitespace-nowrap self-start sm:self-auto"
               >
                 <span>Reclaim Your Time</span>

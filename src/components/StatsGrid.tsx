@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Clock, ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const StatsGrid: React.FC = () => {
   const stats = [
@@ -96,7 +95,6 @@ export const StatsGrid: React.FC = () => {
         <div className="mt-14">
           <a
             href="#download-section"
-            onClick={() => soundFx.playShieldTone()}
             className="acs-btn"
           >
             <span>Why Modern High-Performers Choose FocusCrew</span>

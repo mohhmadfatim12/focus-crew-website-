@@ -7,7 +7,6 @@ import {
   Terminal, 
   ChevronDown
 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const DownloadSection: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
@@ -16,7 +15,6 @@ export const DownloadSection: React.FC = () => {
   const sha256Checksum = '50ab3ebbf4dab8b0ebaeae54dbc45b147ed8f309a1b2c3d4e5f6789012345678';
 
   const copyHash = () => {
-    soundFx.playChime();
     navigator.clipboard.writeText(sha256Checksum);
     setCopiedHash(true);
     setTimeout(() => setCopiedHash(false), 2500);
@@ -83,7 +81,6 @@ export const DownloadSection: React.FC = () => {
             {/* Direct Download Action Button */}
             <a
               href="mailto:mfatimhasnain12@gmail.com?subject=FocusCrew%20v1.0.0%20Direct%20APK%20Request&body=Hi%20Fatim,%20I%20would%20like%20to%20get%20the%20FocusCrew%20v1.0.0%20Android%20APK%20build."
-              onClick={() => soundFx.playShieldTone()}
               className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
             >
               <Download className="w-4 h-4 text-white" />
@@ -155,7 +152,6 @@ export const DownloadSection: React.FC = () => {
                 >
                   <button
                     onClick={() => {
-                      soundFx.playChime();
                       setActiveStep(activeStep === idx ? null : idx);
                     }}
                     className="w-full p-4 flex items-center justify-between text-left hover:bg-slate-50 transition-colors cursor-pointer"

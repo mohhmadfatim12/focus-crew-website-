@@ -10,7 +10,6 @@ import {
   Heart,
   Lock
 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const FounderStory: React.FC = () => {
   return (
@@ -105,7 +104,6 @@ export const FounderStory: React.FC = () => {
                 href="https://wa.me/923312466885?text=Hi%20Fatim,%20I'm%20using%20FocusCrew"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => soundFx.playChime()}
                 className="w-full py-3.5 rounded-2xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -200,7 +198,6 @@ export const FounderStory: React.FC = () => {
 
               <a
                 href="#download-section"
-                onClick={() => soundFx.playShieldTone()}
                 className="px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs font-bold flex items-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
               >
                 <Download className="w-4 h-4" />

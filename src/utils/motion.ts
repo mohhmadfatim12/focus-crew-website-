@@ -50,3 +50,4 @@ export function animateOnScroll(selector: string, vars: gsap.TweenVars) {
     ...vars,
   });
 }
+

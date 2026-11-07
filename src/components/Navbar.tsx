@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Menu, X, ArrowUpRight } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 interface NavbarProps {
   onOpenDownload: () => void;
@@ -39,7 +38,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
           {/* Brand Logo (Zanderio Style) */}
           <a 
             href="#" 
-            onClick={() => soundFx.playChime()}
             className="flex items-center gap-2.5 group focus:outline-none"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden border border-purple-200 bg-[#FAF5FF] p-1 flex items-center justify-center shadow-xs group-hover:border-[#7E3FF2] transition-colors">
@@ -77,7 +75,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="#interactive-demo"
-              onClick={() => soundFx.playChime()}
               className="text-sm font-semibold px-4 py-2 rounded-full text-slate-700 hover:text-[#7E3FF2] hover:bg-purple-50 transition-all"
             >
               Test Live Simulator
@@ -85,7 +82,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
             
             <button
               onClick={() => {
-                soundFx.playShieldTone();
                 onOpenDownload();
               }}
               className="group flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/35 transition-all cursor-pointer"
@@ -100,7 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => {
-                soundFx.playShieldTone();
                 onOpenDownload();
               }}
               className="sm:hidden flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-[#7E3FF2] text-white"

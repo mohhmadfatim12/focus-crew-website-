@@ -1,10 +1,8 @@
 import React from 'react';
 import { ArrowUp, Mail, ShieldCheck, Smartphone } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
-    soundFx.playChime();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -25,7 +23,7 @@ export const Footer: React.FC = () => {
 
             <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
               The #1 Android digital wellness suite that eliminates pornography at the DNS level, 
-              dismantles short-form doomscrolling, and wakes you to your goals with unignorable task alarms.
+              dismantles short-form doomscrolling, and protects your clarity with the 15-minute Freedom Vault.
             </p>
 
             <div className="space-y-1.5 text-xs">
@@ -64,7 +62,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Reel Counter</a></li>
-              <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">TaskAlarm</a></li>
+              <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Titan DNS Loopback</a></li>
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">Freedom Vault</a></li>
               <li><a href="#features" className="hover:text-[#7E3FF2] transition-colors">SafeSearch Enforcer</a></li>
             </ul>

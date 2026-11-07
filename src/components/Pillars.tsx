@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import {
   ShieldAlert,
   Smartphone,
-  Bell,
+  Search,
   Lock,
   Check,
   ChevronRight,
   Layers,
   Terminal
 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const Pillars: React.FC = () => {
   const [activePillar, setActivePillar] = useState<number>(0);
@@ -72,29 +71,28 @@ fun onReelScrolled(surface: VideoFeedSurface) {
 }`
     },
     {
-      id: 'task-alarm',
-      title: 'Military TaskAlarm',
-      tag: 'SYSTEM-LEVEL WAKE LOCK',
-      icon: Bell,
-      color: 'amber',
-      headline: 'Alarms you cannot snooze or swipe away half-asleep.',
-      summary: 'Traditional alarms let you mindlessly hit snooze and drift back into unconsciousness. TaskAlarm takes over the entire display with exact alarms and cognitive challenges.',
+      id: 'safesearch-lockdown',
+      title: 'Strict SafeSearch Enforcer',
+      tag: 'DNS VIP REWRITE ENGINE',
+      icon: Search,
+      color: 'emerald',
+      headline: 'Locks Google, Bing, and YouTube into strict filtering mode.',
+      summary: 'Users often try to bypass adult website blockers by searching explicit thumbnails directly on Google Images. FocusCrew forces network-level SafeSearch VIP redirects across all engines.',
       specs: [
-        'Android AlarmManager with setExactAndAllowWhileIdle precision',
-        'Full-screen wake lock activity (TaskAlarmFullScreenActivity.kt)',
-        'Dual-tone piercing audio ringer designed to cut through heavy sleep',
-        'Cognitive math challenge verification to prove full wakefulness',
-        'Persistent notification tray with immediate task completion hooks'
+        'Automatic CNAME VIP rewrites to forcesafesearch.google.com (216.239.38.120)',
+        'Bing strict mode enforcement via strict.bing.com routing',
+        'YouTube Restricted Mode VIP mapping across all video queries',
+        'Works uniformly across Chrome, Firefox, Opera, Brave, and Incognito tabs',
+        'Zero bypass possible without master Freedom Vault PIN authentication'
       ],
-      codeSnippet: `// TaskAlarmFullScreenActivity.kt — Exact Wake Enforcement
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    window.addFlags(
-        WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or
-        WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
-        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
-    )
-    AlarmSoundRinger.startBuzzer(context)
+      codeSnippet: `// SafeSearchDnsRewrite.kt — Enforced Search Lockdown
+fun rewriteSearchQuery(domain: String): String? {
+    return when {
+        domain.contains("google.") -> "forcesafesearch.google.com"
+        domain.contains("bing.com") -> "strict.bing.com"
+        domain.contains("youtube.com") -> "restrict.youtube.com"
+        else -> null
+    }
 }`
     },
     {
@@ -156,7 +154,6 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
               <button
                 key={pillar.id}
                 onClick={() => {
-                  soundFx.playChime();
                   setActivePillar(idx);
                 }}
                 className={`p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${isSelected

@@ -28,12 +28,12 @@ export const ComparisonMatrix: React.FC = () => {
       note: 'Tracks individual video swipes and triggers an 8-second breathing gate'
     },
     {
-      feature: 'Military TaskAlarm (Wake Lock + Math)',
+      feature: 'Zero Battery Drain (<1% / 24h - No Cloud VPN)',
       focuscrew: true,
       opal: false,
       freedom: false,
-      screenTime: false,
-      note: 'Takes over the entire screen, ignores DND, and requires arithmetic to silence'
+      screenTime: true,
+      note: 'Zero network relay overhead; processes entirely inside local Android kernel RAM'
     },
     {
       feature: 'Forced SafeSearch in All Browsers',

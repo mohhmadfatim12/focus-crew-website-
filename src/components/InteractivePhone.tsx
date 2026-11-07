@@ -3,23 +3,19 @@ import {
   Shield, 
   ShieldCheck, 
   Smartphone, 
-  Bell, 
+  Search, 
   Lock, 
   Unlock, 
   Wifi, 
   Battery, 
-  Volume2, 
-  VolumeX, 
   AlertTriangle, 
   CheckCircle2, 
-  Clock, 
   Flame, 
   Zap, 
   Eye
 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
-type ActiveTab = 'fortress' | 'reel' | 'alarm' | 'vault';
+type ActiveTab = 'fortress' | 'reel' | 'safesearch' | 'vault';
 
 export const InteractivePhone: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('fortress');
@@ -37,10 +33,8 @@ export const InteractivePhone: React.FC = () => {
   const [frictionSeconds, setFrictionSeconds] = useState(5);
   const [isSwiping, setIsSwiping] = useState(false);
 
-  // TaskAlarm State
-  const [isAlarmModalOpen, setIsAlarmModalOpen] = useState(false);
-  const [isBuzzerActive, setIsBuzzerActive] = useState(false);
-  const [mathAnswer, setMathAnswer] = useState('');
+  // SafeSearch State
+  const [searchTested, setSearchTested] = useState(false);
 
   // Freedom Vault State
   const [vaultPin, setVaultPin] = useState('');
@@ -82,7 +76,6 @@ export const InteractivePhone: React.FC = () => {
   }, [emergencyCountdown]);
 
   const simulateThreat = () => {
-    soundFx.playShieldTone();
     const mockThreats = [
       'tracker.nsfw-network.xxx',
       'api.adult-stream-cdn.com',
@@ -96,7 +89,6 @@ export const InteractivePhone: React.FC = () => {
   };
 
   const handleNextReel = () => {
-    soundFx.playChime();
     setIsSwiping(true);
     setTimeout(() => {
       setIsSwiping(false);
@@ -109,24 +101,9 @@ export const InteractivePhone: React.FC = () => {
     }, 200);
   };
 
-  const triggerAlarmTest = () => {
-    setIsAlarmModalOpen(true);
-    setMathAnswer('');
-    soundFx.startTaskAlarmBuzzer((active) => setIsBuzzerActive(active));
-  };
-
-  const dismissAlarm = () => {
-    if (mathAnswer.trim() === '42') {
-      soundFx.stopTaskAlarmBuzzer((active) => setIsBuzzerActive(active));
-      setIsAlarmModalOpen(false);
-    } else {
-      alert('Wrong answer! Solve 24 + 18 to turn off the alarm.');
-    }
-  };
-
-  const cancelAlarmModal = () => {
-    soundFx.stopTaskAlarmBuzzer((active) => setIsBuzzerActive(active));
-    setIsAlarmModalOpen(false);
+  const handleSafeSearchTest = () => {
+    setSearchTested(true);
+    setTimeout(() => setSearchTested(false), 3000);
   };
 
   return (
@@ -203,7 +180,6 @@ export const InteractivePhone: React.FC = () => {
                     
                     <button
                       onClick={() => {
-                        soundFx.playChime();
                         setIsShieldActive(!isShieldActive);
                       }}
                       className={`relative w-11 h-6 rounded-full transition-colors cursor-pointer ${
@@ -339,21 +315,26 @@ export const InteractivePhone: React.FC = () => {
               </div>
             )}
 
-            {/* TAB 3: ALARM */}
-            {activeTab === 'alarm' && (
+            {/* TAB 3: SAFESEARCH */}
+            {activeTab === 'safesearch' && (
               <div className="space-y-3">
-                <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200">
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="p-2 rounded-xl bg-amber-500 text-slate-950 font-bold">
-                      <Bell className="w-4 h-4" />
+                <div className="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-xl bg-emerald-600 text-white font-bold">
+                        <Search className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-slate-900">SafeSearch VIP</div>
+                        <div className="text-[10px] text-slate-500">Google • Bing • YouTube</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-xs font-bold text-slate-900">TaskAlarm</div>
-                      <div className="text-[10px] text-slate-500">Unignorable Wake Lock</div>
-                    </div>
+                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                      STRICT LOCKED
+                    </span>
                   </div>
-                  <div className="text-[10px] font-mono text-amber-900 font-semibold mt-2 bg-amber-100/70 p-2 rounded-lg border border-amber-200">
-                    Next Alarm: 07:00 AM — Morning Cardio & Deep Work
+                  <div className="text-[10px] font-mono text-emerald-900 font-semibold mt-2 bg-emerald-100/70 p-2 rounded-lg border border-emerald-200">
+                    DNS Rewrite: forcesafesearch.google.com
                   </div>
                 </div>
 
@@ -361,26 +342,32 @@ export const InteractivePhone: React.FC = () => {
                   <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span className="line-through text-slate-400">07:00 AM — Wake Up</span>
+                      <span className="font-semibold text-slate-900">Google Images & Web</span>
                     </div>
-                    <span className="text-[9px] font-mono text-emerald-700 font-bold">DONE</span>
+                    <span className="text-[9px] font-mono text-emerald-700 font-bold">LOCKED</span>
                   </div>
-                  <div className="p-2 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-between text-[11px]">
+                  <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-2">
-                      <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                      <span className="font-semibold text-slate-900">15:00 — Deep Code Sprint</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span className="font-semibold text-slate-900">YouTube Restricted Mode</span>
                     </div>
-                    <span className="text-[9px] font-mono text-amber-700 font-bold">ARMED</span>
+                    <span className="text-[9px] font-mono text-emerald-700 font-bold">LOCKED</span>
                   </div>
                 </div>
 
                 <button
-                  onClick={triggerAlarmTest}
-                  className="w-full py-2.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
+                  onClick={handleSafeSearchTest}
+                  className="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
                 >
-                  <Bell className="w-3.5 h-3.5 fill-current" />
-                  <span>Test Wake Lock Alarm</span>
+                  <Search className="w-3.5 h-3.5" />
+                  <span>Verify SafeSearch Filtering</span>
                 </button>
+
+                {searchTested && (
+                  <div className="p-2.5 rounded-xl bg-emerald-100 text-emerald-900 font-mono text-[10px] font-bold border border-emerald-300 text-center animate-fadeIn">
+                    ✓ VIP REWRITE CONFIRMED: 0 EXPLICIT RESULTS
+                  </div>
+                )}
               </div>
             )}
 
@@ -438,7 +425,6 @@ export const InteractivePhone: React.FC = () => {
                     <button
                       key={key}
                       onClick={() => {
-                        soundFx.playChime();
                         if (key === 'C') {
                           setVaultPin('');
                         } else if (key === '✓') {
@@ -464,7 +450,6 @@ export const InteractivePhone: React.FC = () => {
           <div className="p-1.5 border-t border-purple-100 bg-[#FAF7FF] grid grid-cols-4 gap-1 z-20">
             <button
               onClick={() => {
-                soundFx.playChime();
                 setActiveTab('fortress');
               }}
               className={`flex flex-col items-center py-1 rounded-xl transition-all cursor-pointer ${
@@ -477,7 +462,6 @@ export const InteractivePhone: React.FC = () => {
 
             <button
               onClick={() => {
-                soundFx.playChime();
                 setActiveTab('reel');
               }}
               className={`flex flex-col items-center py-1 rounded-xl transition-all cursor-pointer ${
@@ -490,20 +474,18 @@ export const InteractivePhone: React.FC = () => {
 
             <button
               onClick={() => {
-                soundFx.playChime();
-                setActiveTab('alarm');
+                setActiveTab('safesearch');
               }}
               className={`flex flex-col items-center py-1 rounded-xl transition-all cursor-pointer ${
-                activeTab === 'alarm' ? 'text-amber-600 bg-white font-bold shadow-2xs' : 'text-slate-500 hover:text-slate-800'
+                activeTab === 'safesearch' ? 'text-emerald-700 bg-white font-bold shadow-2xs' : 'text-slate-500 hover:text-slate-800'
               }`}
             >
-              <Bell className="w-3.5 h-3.5 mb-0.5" />
-              <span className="text-[9px] font-mono">Alarm</span>
+              <Search className="w-3.5 h-3.5 mb-0.5" />
+              <span className="text-[9px] font-mono">SafeSearch</span>
             </button>
 
             <button
               onClick={() => {
-                soundFx.playChime();
                 setActiveTab('vault');
               }}
               className={`flex flex-col items-center py-1 rounded-xl transition-all cursor-pointer ${
@@ -570,67 +552,7 @@ export const InteractivePhone: React.FC = () => {
             </div>
           )}
 
-          {/* Alarm Modal */}
-          {isAlarmModalOpen && (
-            <div className="absolute inset-0 z-40 bg-white p-5 flex flex-col justify-between text-center animate-fadeIn border-2 border-amber-400 shadow-2xl">
-              <div className="pt-5">
-                <div className="w-14 h-14 mx-auto rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-amber-700 mb-2 animate-bounce">
-                  <Bell className="w-7 h-7 fill-current" />
-                </div>
-                <div className="text-[10px] font-mono text-amber-800 uppercase tracking-widest font-extrabold">
-                  TaskAlarm Wake Lock
-                </div>
-                <h3 className="text-base font-extrabold text-slate-900 mt-1">07:00 AM — Morning Workout</h3>
-                <p className="text-[11px] text-slate-600 mt-0.5">FocusCrew Exact Alarm</p>
 
-                <div className="mt-3 flex items-center justify-center gap-2">
-                  <button
-                    onClick={() => {
-                      soundFx.toggleBuzzer((active) => setIsBuzzerActive(active));
-                    }}
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold border transition-colors ${
-                      isBuzzerActive 
-                        ? 'bg-amber-500 text-slate-950 border-amber-600 shadow' 
-                        : 'bg-slate-100 text-slate-700 border-slate-300'
-                    }`}
-                  >
-                    {isBuzzerActive ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
-                    <span>{isBuzzerActive ? 'Buzzer Ringing' : 'Test Tone'}</span>
-                  </button>
-                </div>
-
-                <div className="mt-4 p-3 rounded-2xl bg-amber-50/70 border border-amber-200 text-left">
-                  <div className="text-[10px] font-mono text-amber-900 font-bold uppercase">Wake Challenge (Anti-Snooze)</div>
-                  <div className="text-xs text-slate-700 font-medium mt-1">Solve to silence alarm:</div>
-                  <div className="text-sm font-mono font-bold text-slate-900 my-1">24 + 18 = ?</div>
-                  <div className="flex gap-2 mt-1.5">
-                    <input
-                      type="text"
-                      placeholder="Answer"
-                      value={mathAnswer}
-                      onChange={(e) => setMathAnswer(e.target.value)}
-                      className="w-20 px-2 py-1 rounded-lg bg-white border border-slate-300 text-xs font-mono text-slate-900 focus:outline-none focus:border-amber-500"
-                    />
-                    <button
-                      onClick={dismissAlarm}
-                      className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-lg font-sans cursor-pointer shadow-sm"
-                    >
-                      Dismiss
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pb-3">
-                <button
-                  onClick={cancelAlarmModal}
-                  className="text-[10px] text-slate-500 hover:text-slate-800 underline cursor-pointer"
-                >
-                  Emergency Close Test Modal
-                </button>
-              </div>
-            </div>
-          )}
 
         </div>
       </div>

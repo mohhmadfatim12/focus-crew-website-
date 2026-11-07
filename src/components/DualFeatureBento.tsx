@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Smartphone, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
-import { soundFx } from '../utils/audio';
 
 export const DualFeatureBento: React.FC = () => {
   return (
@@ -82,7 +81,6 @@ export const DualFeatureBento: React.FC = () => {
 
               <a
                 href="#interactive-demo"
-                onClick={() => soundFx.playChime()}
                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>Test Live Fortress</span>
@@ -148,7 +146,6 @@ export const DualFeatureBento: React.FC = () => {
 
               <a
                 href="#cost-calculator"
-                onClick={() => soundFx.playChime()}
                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>Calculate Time Lost</span>

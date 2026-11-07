@@ -53,7 +53,7 @@ export function App() {
         {/* 6. 4-Card Stats Grid (Why Willpower Fails - Zanderio U-Borders) */}
         <StatsGrid />
 
-        {/* 7. Signature Full-Width Deep-Purple Section (Military TaskAlarm & Buzzer) */}
+        {/* 7. Signature Full-Width Deep-Purple Section (On-Device Sovereign Fortress & SafeSearch) */}
         <DeepPurpleBanner />
 
         {/* 8. Interactive DNS Packet Inspector Lab (Light Theme) */}
