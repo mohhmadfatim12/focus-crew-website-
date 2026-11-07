@@ -1,32 +1,61 @@
-# React + TypeScript + Vite
+# FocusCrew™ — #1 Android Wellness Fortress
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **Created & Owned by Mohammad Fatim Hasnain**  
+> Direct APK Release • Autonomous On-Device Shield • 100% Free Core
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛡️ Overview
 
-## React Compiler
+**FocusCrew™** is an on-device digital detox and focus guardian engineered for high-agency individuals, developers, and students. It eliminates dopamine addiction loops and midnight relapses directly at the operating system layer:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Titan Shield Engine**: Autonomous on-device threat neutralization with 0.18ms RAM lookup time and 0 bytes cloud leakage.
+- **Short-Form Feed Disruptor**: Enforces a strict daily cap (e.g., 15 reels/shorts) with an unskippable 8-second mindful breathing gate.
+- **Freedom Vault Cooldown**: 15-minute emergency unlock buffer that outlasts impulsive urges.
+- **Strict SafeSearch Enforcer**: Enforces Google, Bing, and YouTube restricted modes without bypass.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## ⚡ Tech Stack & Architecture
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- **Framework**: React 19 + TypeScript + Vite
+- **Styling**: Tailwind CSS + Custom Skiper/Zanderio luxury design system
+- **Motion & Physics**: Lenis Smooth Scroll + GSAP ScrollTrigger + Custom Atmospheric Aurora Shaders
+- **Typography**: Outfit & Plus Jakarta Sans + JetBrains Mono
+- **Icons**: Lucide React
+- **Privacy Standard**: 100% On-Device • Zero Telemetry • Zero Remote VPN Server Lag
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/mohhmadfatim12/focus-crew-website-.git
+cd focus-crew-website-
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## ⚖️ Legal & Intellectual Property Notice
+
+**Copyright © 2026 FocusCrew™. All Rights Reserved.**
+
+FocusCrew is the proprietary invention and intellectual property of **Mohammad Fatim Hasnain**. Unauthorized copying, reverse-engineering, decompilation, or imitation of its behavioral mechanics, user interface patterns, or branding is strictly prohibited under international copyright and intellectual property laws.
