@@ -1,13 +1,14 @@
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Pillars } from './components/Pillars';
+import { DualFeatureBento } from './components/DualFeatureBento';
+import { StatsGrid } from './components/StatsGrid';
+import { DeepPurpleBanner } from './components/DeepPurpleBanner';
 import { DnsSimulator } from './components/DnsSimulator';
 import { DopamineCalculator } from './components/DopamineCalculator';
 import { ArchitectureFlow } from './components/ArchitectureFlow';
 import { ComparisonMatrix } from './components/ComparisonMatrix';
-import { FounderManifesto } from './components/FounderManifesto';
-import { DownloadSection } from './components/DownloadSection';
 import { Faq } from './components/Faq';
+import { ConversionCard } from './components/ConversionCard';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -19,41 +20,44 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white antialiased">
-      {/* Sticky Tactical Navbar */}
+    <div className="min-h-screen bg-white text-[#212529] flex flex-col font-sans selection:bg-[#7E3FF2] selection:text-white antialiased">
+      {/* Navbar (Zanderio Style) */}
       <Navbar onOpenDownload={scrollToDownload} />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero Section with Live Interactive Phone Simulator */}
+        {/* Hero Section with Zanderio-style Connected Canvas & Phone */}
         <Hero onOpenDownload={scrollToDownload} />
 
-        {/* 4 Architectural Pillars Deep-Dive */}
-        <Pillars />
+        {/* Dual Feature Bento (Service vs E-com layout in Zanderio) */}
+        <DualFeatureBento />
+
+        {/* 4-Card Stats Grid (What's Driving Your Customers Away layout) */}
+        <StatsGrid />
+
+        {/* Signature Full-Width Deep-Purple Feature Section */}
+        <DeepPurpleBanner />
 
         {/* Interactive Live DNS Packet Inspector Lab */}
         <DnsSimulator />
 
-        {/* Interactive Dopamine Cost & Screen-Time Calculator */}
+        {/* Interactive Time Reclaim Calculator */}
         <DopamineCalculator />
 
         {/* Zero-Server Local Loopback Architecture Flow */}
         <ArchitectureFlow />
 
-        {/* Hard Truth Comparison Matrix vs Opal / Freedom / ScreenTime */}
+        {/* Hard Truth Comparison Matrix */}
         <ComparisonMatrix />
 
-        {/* Founder Manifesto by Mohammad Fatim Hasnain */}
-        <FounderManifesto />
-
-        {/* Direct APK Release & 3-Step Setup Guide */}
-        <DownloadSection />
-
-        {/* Engineering & Security FAQ */}
+        {/* Split FAQ Section (Zanderio FAQ Layout) */}
         <Faq />
+
+        {/* Bottom Conversion Section (Request a Demo layout) */}
+        <ConversionCard />
       </main>
 
-      {/* Footer */}
+      {/* Structured SaaS Footer */}
       <Footer />
     </div>
   );

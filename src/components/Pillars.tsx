@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  ShieldAlert, 
-  Smartphone, 
-  Bell, 
-  Lock, 
-  Check, 
-  ChevronRight, 
-  Layers, 
+import {
+  ShieldAlert,
+  Smartphone,
+  Bell,
+  Lock,
+  Check,
+  ChevronRight,
+  Layers,
   Terminal
 } from 'lucide-react';
 import { soundFx } from '../utils/audio';
@@ -129,9 +129,9 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
 
   return (
     <section id="titan-fortress" className="py-24 bg-slate-50 relative border-t border-slate-200">
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
@@ -142,7 +142,7 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
             Built for radical self-mastery.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            FocusCrew does not rely on fragile willpower. It enforces unyielding architectural barriers 
+            FocusCrew does not rely on fragile willpower. It enforces unyielding architectural barriers
             directly on your Android device so you succeed even when motivation dips.
           </p>
         </div>
@@ -159,17 +159,15 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
                   soundFx.playChime();
                   setActivePillar(idx);
                 }}
-                className={`p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
-                  isSelected
-                    ? 'bg-white border-blue-600 shadow-md ring-1 ring-blue-600'
-                    : 'bg-white/70 border-slate-200 hover:bg-white hover:border-slate-300'
-                }`}
+                className={`p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${isSelected
+                  ? 'bg-white border-blue-600 shadow-md ring-1 ring-blue-600'
+                  : 'bg-white/70 border-slate-200 hover:bg-white hover:border-slate-300'
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <div className={`p-2.5 rounded-xl ${
-                      isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
-                    }`}>
+                    <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
+                      }`}>
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-mono font-bold text-slate-400">
@@ -192,7 +190,7 @@ fun requestEmergencyUnlock(): Flow<VaultState> {
         {/* Active Pillar Deep-Dive Card */}
         <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm text-left">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-xs font-mono font-bold text-blue-800">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 export const Faq: React.FC = () => {
@@ -8,7 +8,7 @@ export const Faq: React.FC = () => {
   const faqs = [
     {
       q: 'Does FocusCrew route my traffic through your servers or sell my data?',
-      a: 'Absolutely not. FocusCrew has zero servers, zero analytics SDKs, and zero cloud accounts. The VPN interface runs entirely on Android\'s local loopback at 10.0.0.2:53. DNS queries are parsed inside your phone\'s RAM. Your internet traffic never touches any external FocusCrew infrastructure.'
+      a: 'Absolutely not. FocusCrew has zero central servers, zero analytics SDKs, and zero cloud accounts. The VPN interface runs entirely on Android\'s local loopback at 10.0.0.2:53. DNS queries are parsed inside your phone\'s RAM. Your internet traffic never touches any external FocusCrew infrastructure.'
     },
     {
       q: 'Why can\'t I just bypass FocusCrew when I feel an urge or craving?',
@@ -33,56 +33,72 @@ export const Faq: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative border-t border-slate-200">
-      
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+    <section id="faq" className="py-24 bg-white border-t border-purple-100 text-left">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-700 shadow-2xs">
-            <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
-            FREQUENTLY ASKED QUESTIONS
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Direct answers. Zero fluff.
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
-            Everything you need to know about the security, architecture, and behavioral science of FocusCrew.
-          </p>
-        </div>
+        {/* Split FAQ Layout (Exact Zanderio FAQ Structure) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column (Sticky Title & Action) */}
+          <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7E3FF2] px-3 py-1 rounded-full bg-[#FAF7FF] border border-purple-200 inline-block">
+              HELP & ARCHITECTURE
+            </span>
+            
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#212529] tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Everything You Need to Know, All in One Place. Direct architectural answers with zero marketing spin.
+            </p>
 
-        {/* FAQ Accordion List */}
-        <div className="space-y-3">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-            return (
-              <div 
-                key={idx}
-                className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-2xs transition-all duration-200"
+            <div className="pt-3">
+              <a
+                href="#download-section"
+                onClick={() => soundFx.playShieldTone()}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white text-sm font-bold shadow-md shadow-purple-500/20 transition-all cursor-pointer"
               >
-                <button
-                  onClick={() => {
-                    soundFx.playChime();
-                    setOpenIdx(isOpen ? null : idx);
-                  }}
-                  className="w-full p-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors cursor-pointer"
-                >
-                  <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">
-                    {faq.q}
-                  </span>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 text-blue-600' : ''
-                  }`} />
-                </button>
+                <span>Get FocusCrew v1.0.0</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40 animate-fadeIn">
-                    <p>{faq.a}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {/* Right Column (Accordion Items) */}
+          <div className="lg:col-span-7 space-y-3">
+            {faqs.map((faq, idx) => {
+              const isOpen = openIdx === idx;
+              return (
+                <div 
+                  key={idx}
+                  className="rounded-2xl border border-purple-100 bg-[#FAF7FF]/60 hover:bg-[#FAF7FF] overflow-hidden transition-all duration-200"
+                >
+                  <button
+                    onClick={() => {
+                      soundFx.playChime();
+                      setOpenIdx(isOpen ? null : idx);
+                    }}
+                    className="w-full p-5 flex items-center justify-between text-left transition-colors cursor-pointer"
+                  >
+                    <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">
+                      {faq.q}
+                    </span>
+                    <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-[#7E3FF2]' : ''
+                    }`} />
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-purple-100/60 bg-white/60 animate-fadeIn">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
         </div>
 
       </div>

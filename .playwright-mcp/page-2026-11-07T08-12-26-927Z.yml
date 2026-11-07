@@ -1,0 +1,520 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "FocusCrew Logo FocusCrew v1.0.0" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img "FocusCrew Logo" [ref=e9]
+        - generic [ref=e10]:
+          - generic [ref=e11]: FocusCrew
+          - generic [ref=e12]: v1.0.0
+      - navigation [ref=e13]:
+        - link "Features" [ref=e14] [cursor=pointer]:
+          - /url: "#features"
+        - link "Titan Fortress" [ref=e15] [cursor=pointer]:
+          - /url: "#titan-fortress"
+        - link "DNS Engine" [ref=e16] [cursor=pointer]:
+          - /url: "#dns-engine"
+        - link "Time Audit" [ref=e17] [cursor=pointer]:
+          - /url: "#cost-calculator"
+        - link "FAQ" [ref=e18] [cursor=pointer]:
+          - /url: "#faq"
+      - generic [ref=e19]:
+        - link "Test Live Simulator" [ref=e20] [cursor=pointer]:
+          - /url: "#interactive-demo"
+        - button "Get APK Free" [ref=e21] [cursor=pointer]
+  - main [ref=e29]:
+    - generic [ref=e31]:
+      - generic:
+        - generic [ref=e32]: 🛡️ On-Device DNS Shield
+        - generic [ref=e37]: ⚡ Zero-Relapse Machine
+      - heading "#1 Android Wellness Agent That Never Lets You Relapse" [level=1] [ref=e42]
+      - paragraph [ref=e43]: Take back control of your attention with an on-device digital fortress built for high performers that blocks adult content, halts doomscrolling, and wakes you to your mission.
+      - paragraph [ref=e44]:
+        - text: No subscription traps, just pure discipline.
+        - button "Start your focus journey — free" [ref=e45] [cursor=pointer]
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e51]: Local Interface
+              - generic [ref=e52]: 0ms Latency
+            - generic [ref=e53]: 10.0.0.2:53
+            - paragraph [ref=e54]: Raw UDP port 53 packets parsed in RAM. Zero traffic sent to remote servers.
+            - generic [ref=e55]:
+              - generic [ref=e56]: Chrome
+              - generic [ref=e57]: •
+              - generic [ref=e58]: Brave
+              - generic [ref=e59]: •
+              - generic [ref=e60]: Reddit
+          - generic [ref=e61]:
+            - generic [ref=e62]: Reel Time Reduction
+            - generic [ref=e67]: "-78%"
+            - paragraph [ref=e70]: Mindful friction gates stop infinite scroll hypnosis at your custom threshold.
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: 13:12
+            - generic [ref=e82]: VPN
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - img "Icon" [ref=e93]
+              - generic [ref=e94]: FocusCrew
+            - generic [ref=e95]: Shield Live
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - generic [ref=e107]:
+                  - generic [ref=e108]: Titan Anti-Porn
+                  - generic [ref=e109]: Local DNS Loopback
+                - button [ref=e110] [cursor=pointer]
+              - generic [ref=e112]:
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Blocked Today
+                  - generic [ref=e115]: 1,428
+                - generic [ref=e116]:
+                  - generic [ref=e117]: SafeSearch
+                  - generic [ref=e118]: Enforced
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - generic [ref=e121]: LOCAL SOCKET
+                - generic [ref=e122]: 10.0.0.2:53 (TUN)
+              - generic [ref=e123]:
+                - generic [ref=e124]: DNS PACKET PARSER
+                - generic [ref=e125]: DnsPacketParser.kt
+              - generic [ref=e126]:
+                - generic [ref=e127]: CLOUD TELEMETRY
+                - generic [ref=e128]: 0 BYTES (DISABLED)
+            - button "Simulate Adult Domain Query" [ref=e129] [cursor=pointer]
+          - generic [ref=e133]:
+            - button "Fortress" [ref=e134] [cursor=pointer]
+            - button "ReelGate" [ref=e138] [cursor=pointer]
+            - button "Alarm" [ref=e142] [cursor=pointer]
+            - button "Vault" [ref=e147] [cursor=pointer]
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e162]: 1,429+
+            - generic [ref=e163]: Adult Queries Blocked
+            - paragraph [ref=e164]: Zero-leak loopback returns instantaneous 0.0.0.0 NXDOMAIN locally.
+          - generic [ref=e165]:
+            - generic [ref=e166]: Freedom Vault
+            - generic [ref=e172]: "\"Emergency unlock timer active. 15 minutes to reflect.\""
+            - paragraph [ref=e173]: Dopamine spikes subside in 12 mins. The vault breaks the relapse window.
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: Active Protection Across Monitored Surfaces
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]: 📸
+            - generic [ref=e179]: Instagram Reels
+          - generic [ref=e180]:
+            - generic [ref=e181]: ▶️
+            - generic [ref=e182]: YouTube Shorts
+          - generic [ref=e183]:
+            - generic [ref=e184]: 🎵
+            - generic [ref=e185]: TikTok
+          - generic [ref=e186]:
+            - generic [ref=e187]: 🌐
+            - generic [ref=e188]: Google Chrome
+          - generic [ref=e189]:
+            - generic [ref=e190]: 🦁
+            - generic [ref=e191]: Brave Browser
+          - generic [ref=e192]:
+            - generic [ref=e193]: 🤖
+            - generic [ref=e194]: Reddit
+          - generic [ref=e195]:
+            - generic [ref=e196]: ⚡
+            - generic [ref=e197]: Android 15
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - generic [ref=e202]:
+          - generic [ref=e203]: On your device, 24/7
+          - heading "Titan Anti-Porn Fortress" [level=3] [ref=e208]
+          - paragraph [ref=e209]: Eliminates adult content at the raw socket level across every browser, incognito window, and in-app webview.
+          - list [ref=e210]:
+            - listitem [ref=e211]:
+              - generic [ref=e212]: "1."
+              - generic [ref=e213]: Intercepts UDP queries on 10.0.0.2:53 before packets reach the wire
+            - listitem [ref=e214]:
+              - generic [ref=e215]: "2."
+              - generic [ref=e216]: Over 150,000 adult domains and regex keyword signatures checked in RAM
+            - listitem [ref=e217]:
+              - generic [ref=e218]: "3."
+              - generic [ref=e219]: Forces strict SafeSearch across Google, Bing, DuckDuckGo & YouTube
+            - listitem [ref=e220]:
+              - generic [ref=e221]: "4."
+              - generic [ref=e222]: Impossible to bypass with alternative browsers or private incognito tabs
+            - listitem [ref=e223]:
+              - generic [ref=e224]: "5."
+              - generic [ref=e225]: "Zero cloud telemetry: your private browsing never touches an external server"
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: Local DNS Socket
+            - generic [ref=e229]: 10.0.0.2:53 • TUN INTERFACE
+          - link "See Fortress in Action" [ref=e230] [cursor=pointer]:
+            - /url: "#interactive-demo"
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - generic [ref=e236]: Short-form habit breaker
+          - heading "Reel & Shorts Doomscroll Disruptor" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Confronts the variable-ratio dopamine algorithms engineered into modern social platforms.
+          - list [ref=e242]:
+            - listitem [ref=e243]:
+              - generic [ref=e244]: "1."
+              - generic [ref=e245]: Tracks real-time scroll events inside Instagram Reels, YouTube Shorts & TikTok
+            - listitem [ref=e246]:
+              - generic [ref=e247]: "2."
+              - generic [ref=e248]: Enforces customizable daily reel thresholds (e.g., 15 reels maximum)
+            - listitem [ref=e249]:
+              - generic [ref=e250]: "3."
+              - generic [ref=e251]: Triggers mindful 5–10s breathing gates when dopamine limits are exceeded
+            - listitem [ref=e252]:
+              - generic [ref=e253]: "4."
+              - generic [ref=e254]: Eliminates zombie scrolling without blocking helpful app messaging
+            - listitem [ref=e255]:
+              - generic [ref=e256]: "5."
+              - generic [ref=e257]: "Zero keystroke logging: uses accessibility window flags, not screen OCR"
+        - generic [ref=e258]:
+          - generic [ref=e259]:
+            - generic [ref=e260]: Friction Gate
+            - generic [ref=e261]: 15 REELS MAX • 10S PAUSE
+          - link "Audit Your Time Lost" [ref=e262] [cursor=pointer]:
+            - /url: "#cost-calculator"
+    - generic [ref=e267]:
+      - generic [ref=e268]:
+        - heading "What's Draining Your Ambition?" [level=2] [ref=e269]
+        - paragraph [ref=e270]: FocusCrew solves this by acting as an intelligent system guardian that removes cheap stimulation and algorithmic traps before cravings compromise your daily discipline.
+      - generic [ref=e271]:
+        - generic [ref=e275]:
+          - generic [ref=e276]: 913 hrs
+          - paragraph [ref=e277]: spent annually by the average adult staring into hypnotic short-form video feeds without conscious intent.
+        - generic [ref=e282]:
+          - generic [ref=e283]: 78%
+          - paragraph [ref=e284]: of impulsive dopamine cravings peak and dissolve within 12 minutes if immediate access friction is introduced.
+        - generic [ref=e289]:
+          - generic [ref=e290]: 96%
+          - paragraph [ref=e291]: of digital relapse episodes prevented by FocusCrew's mandatory 15-minute Freedom Vault emergency cooldown.
+        - generic [ref=e296]:
+          - generic [ref=e297]: $0 Cost
+          - paragraph [ref=e298]: to deploy the production APK. 100% free core architecture with zero recurring subscription paywalls.
+      - link "Why Modern High-Performers Choose FocusCrew" [ref=e301] [cursor=pointer]:
+        - /url: "#download-section"
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - generic [ref=e310]: SYSTEM WAKE ENFORCEMENT
+        - heading "Visual Habit Interruption & Military TaskAlarm" [level=2] [ref=e311]
+        - paragraph [ref=e312]: Standard alarms let you sleepwalk through your morning with reflexive snooze taps. FocusCrew overrides system Do Not Disturb and demands active proof of cognitive alertness.
+        - generic [ref=e313]:
+          - generic [ref=e314]: Identifies short-form video surfaces in real-time
+          - generic [ref=e317]: Enforces 10-second biological breathing pause gates
+          - generic [ref=e320]: Full-screen wake lock activity cuts through sleep
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - generic [ref=e331]:
+            - generic [ref=e332]: TaskAlarm Active
+            - generic [ref=e333]: 07:00 AM • Deep Work
+          - button "Test Tone" [ref=e334]
+        - generic [ref=e340]:
+          - generic [ref=e341]: Anti-Snooze Cognitive Challenge
+          - generic [ref=e342]: "Prove wakefulness to silence the alarm:"
+          - generic [ref=e343]: 24 + 18 = ?
+          - generic [ref=e344]:
+            - textbox "Answer" [ref=e345]
+            - button "Verify & Dismiss" [ref=e346] [cursor=pointer]
+        - generic [ref=e347]: FLAG_SHOW_WHEN_LOCKED • High Priority Audio Channel
+    - generic [ref=e349]:
+      - generic [ref=e350]:
+        - generic [ref=e351]: ON-DEVICE PACKET DIAGNOSTICS
+        - heading "Test the local DNS packet engine." [level=2] [ref=e355]
+        - paragraph [ref=e356]:
+          - text: Every DNS query on port 53 is intercepted inside your Android kernel on
+          - code [ref=e357]: 10.0.0.2
+          - text: . Test any domain below to see how FocusCrew makes instant binary routing decisions.
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - generic [ref=e360]:
+            - generic: UDP:53 //
+            - textbox "Type any domain (e.g. adult-site.com, github.com)..." [ref=e361]: adult-content-stream.xxx
+          - button "Inspect Query" [ref=e362] [cursor=pointer]
+        - generic [ref=e366]:
+          - generic [ref=e367]: "Quick Presets:"
+          - button "adult-portal.com" [ref=e368] [cursor=pointer]
+          - button "xvideos.com" [ref=e369] [cursor=pointer]
+          - button "tracker-nsfw.net" [ref=e370] [cursor=pointer]
+          - button "google.com" [ref=e371] [cursor=pointer]
+          - button "github.com" [ref=e372] [cursor=pointer]
+          - button "wikipedia.org" [ref=e373] [cursor=pointer]
+          - button "bing.com" [ref=e374] [cursor=pointer]
+        - generic [ref=e375]:
+          - generic [ref=e376]:
+            - generic [ref=e377]: FocusCrew In-Memory Packet Analysis
+            - generic [ref=e381]:
+              - generic [ref=e382]: "Latency:"
+              - generic [ref=e383]: 0.24ms
+          - generic [ref=e389]:
+            - generic [ref=e390]: THREAT INTERCEPTED & DROPPED
+            - generic [ref=e391]: Adult & Explicit Category Signature Match
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - text: Target Domain
+              - generic [ref=e394]: adult-content-stream.xxx
+            - generic [ref=e395]:
+              - text: Synthesized Action
+              - generic [ref=e396]: NXDOMAIN Synthesized (0.0.0.0) — Query Dropped Locally
+            - generic [ref=e397]:
+              - text: Enforcement Rule
+              - generic [ref=e398]: "FuzzyAdultDetector: Rule #A92 [xxx, adult, stream]"
+            - generic [ref=e399]:
+              - text: Raw DNS Header
+              - generic [ref=e400]: 0x1A2B 0x8183 0x0001 0x0000 0x0000 0x0000
+          - generic [ref=e401]:
+            - generic [ref=e402]: "Local Socket: 10.0.0.2:53 (Android VpnService)"
+            - generic [ref=e403]: Zero External Network Logs
+    - generic [ref=e405]:
+      - generic [ref=e406]:
+        - generic [ref=e407]: DOOMSCROLL TIME AUDIT
+        - heading "The invisible theft of your youth." [level=2] [ref=e409]
+        - paragraph [ref=e410]: Short-form algorithms don't just consume your time—they fragment your dopaminergic baseline. Adjust your daily screen time below to face the exact biological math.
+      - generic [ref=e411]:
+        - generic [ref=e412]:
+          - generic [ref=e413]:
+            - generic [ref=e414]: "Daily time spent on Reels, Shorts, TikTok & feeds:"
+            - generic [ref=e415]: 2.5 hours / day
+          - slider "Daily time spent on Reels, Shorts, TikTok & feeds:" [ref=e420] [cursor=pointer]: "2.5"
+          - generic [ref=e421]:
+            - generic [ref=e422]: 30 mins (Light)
+            - generic [ref=e423]: 2.5 hours (Average)
+            - generic [ref=e424]: 4.5 hours (Heavy)
+            - generic [ref=e425]: 6.0 hours (Compulsive)
+        - generic [ref=e426]:
+          - generic [ref=e427]:
+            - generic [ref=e428]: Time Lost Annually
+            - generic [ref=e429]: 913 hours
+            - paragraph [ref=e430]:
+              - text: That is
+              - generic [ref=e431]: 76 hours
+              - text: vanishing from your life every single month.
+          - generic [ref=e432]:
+            - generic [ref=e433]: Full Waking Days Lost
+            - generic [ref=e434]: 57.1 days
+            - paragraph [ref=e435]: Equivalent to spending nearly 2 full months of conscious life staring into glass.
+          - generic [ref=e436]:
+            - generic [ref=e437]: FocusCrew Reclaimed
+            - generic [ref=e438]: +712 hours
+            - paragraph [ref=e439]: Reclaimed into your consciousness by FocusCrew's friction gates and task alarms.
+        - generic [ref=e440]:
+          - heading "What 913 Hours Could Have Built This Year:" [level=4] [ref=e441]
+          - generic [ref=e445]:
+            - generic [ref=e450]:
+              - generic [ref=e451]: "152"
+              - generic [ref=e452]: Books Read & Absorbed
+            - generic [ref=e461]:
+              - generic [ref=e462]: "761"
+              - generic [ref=e463]: Intense Gym Sessions
+            - generic [ref=e470]:
+              - generic [ref=e471]: "5"
+              - generic [ref=e472]: Shipped Software MVPs
+    - generic [ref=e474]:
+      - generic [ref=e475]:
+        - generic [ref=e476]: ZERO-SERVER LOCAL LOOPBACK
+        - heading "How FocusCrew blocks without a proxy." [level=2] [ref=e482]
+        - paragraph [ref=e483]: Commercial VPN blockers route your private browsing traffic through their cloud servers. FocusCrew uses Android's local loopback to filter DNS in memory on your phone.
+      - generic [ref=e484]:
+        - generic [ref=e485]:
+          - generic [ref=e486]:
+            - generic [ref=e490]:
+              - text: "Stage 01: Ingress"
+              - heading "Android Apps" [level=4] [ref=e491]
+            - paragraph [ref=e492]: Chrome, Brave, Reddit, Instagram, or games initiate standard DNS queries on Port 53.
+          - generic [ref=e493]:
+            - generic [ref=e500]:
+              - text: "Stage 02: Interception"
+              - heading "10.0.0.2 TUN Socket" [level=4] [ref=e501]
+            - paragraph [ref=e502]: Android VpnService traps DNS packets locally. Traffic NEVER leaves the physical device.
+          - generic [ref=e503]:
+            - generic [ref=e508]:
+              - text: "Stage 03: Decision"
+              - heading "In-Memory Engine" [level=4] [ref=e509]
+            - paragraph [ref=e510]: 150K domain signatures & regex keywords inspected in RAM under 0.3 milliseconds.
+          - generic [ref=e511]:
+            - generic [ref=e516]:
+              - text: "Stage 04: Egress"
+              - heading "Instant Resolution" [level=4] [ref=e517]
+            - paragraph [ref=e518]: Threats receive 0.0.0.0 (NXDOMAIN). Safe requests forward to upstream DNS clean.
+        - generic [ref=e519]:
+          - generic [ref=e526]:
+            - heading "Zero HTTPS Decryption" [level=5] [ref=e527]
+            - paragraph [ref=e528]: FocusCrew only inspects DNS hostnames. It cannot read your bank details, chats, or passwords.
+          - generic [ref=e533]:
+            - heading "No Central Server" [level=5] [ref=e534]
+            - paragraph [ref=e535]: Even if FocusCrew's developers vanished, your app continues functioning on-device forever.
+          - generic [ref=e539]:
+            - heading "Sub-1% Battery Overhead" [level=5] [ref=e540]
+            - paragraph [ref=e541]: Because processing happens via native Linux C/Kotlin buffers, battery impact is imperceptible.
+    - generic [ref=e543]:
+      - generic [ref=e544]:
+        - generic [ref=e545]: UNCOMPROMISING COMPARISON
+        - heading "Why conventional blockers fail." [level=2] [ref=e548]
+        - paragraph [ref=e549]: Most wellbeing apps are built for retention, not recovery. They make bypasses trivial so users don't cancel their subscriptions. FocusCrew is built for total mastery.
+      - table [ref=e552]:
+        - rowgroup [ref=e553]:
+          - row [ref=e554]:
+            - columnheader "Capability" [ref=e555]
+            - columnheader "FocusCrew" [ref=e556]
+            - columnheader "Opal" [ref=e560]
+            - columnheader "Freedom" [ref=e561]
+            - columnheader "Default OS" [ref=e562]
+        - rowgroup [ref=e563]:
+          - row [ref=e564]:
+            - cell "Local DNS Loopback (100% On-Device) FocusCrew never routes your browsing through remote cloud proxies" [ref=e565]:
+              - generic [ref=e566]: Local DNS Loopback (100% On-Device)
+              - generic [ref=e567]: FocusCrew never routes your browsing through remote cloud proxies
+            - cell [ref=e568]
+            - cell [ref=e572]
+            - cell [ref=e576]
+            - cell [ref=e580]
+          - row [ref=e584]:
+            - cell "15-Minute Impulse Unlock Friction Enforces a biological pause that breaks neurochemical craving loops" [ref=e585]:
+              - generic [ref=e586]: 15-Minute Impulse Unlock Friction
+              - generic [ref=e587]: Enforces a biological pause that breaks neurochemical craving loops
+            - cell [ref=e588]
+            - cell "Limited" [ref=e592]
+            - cell "Partial" [ref=e593]
+            - cell [ref=e594]
+          - row [ref=e598]:
+            - cell "Short-Form Reel Counter (Reels/Shorts/TikTok) Monitors individual short-form video swipes with mindful friction" [ref=e599]:
+              - generic [ref=e600]: Short-Form Reel Counter (Reels/Shorts/TikTok)
+              - generic [ref=e601]: Monitors individual short-form video swipes with mindful friction
+            - cell [ref=e602]
+            - cell [ref=e606]
+            - cell [ref=e610]
+            - cell [ref=e614]
+          - row [ref=e618]:
+            - cell "Unignorable TaskAlarm (Wake Lock & Math Challenges) System-level full-screen activity that cuts through heavy sleep" [ref=e619]:
+              - generic [ref=e620]: Unignorable TaskAlarm (Wake Lock & Math Challenges)
+              - generic [ref=e621]: System-level full-screen activity that cuts through heavy sleep
+            - cell [ref=e622]
+            - cell [ref=e626]
+            - cell [ref=e630]
+            - cell [ref=e634]
+          - row [ref=e638]:
+            - cell "Forced SafeSearch across All Engines Locks Google, Bing, DuckDuckGo to strict safe results in all browsers" [ref=e639]:
+              - generic [ref=e640]: Forced SafeSearch across All Engines
+              - generic [ref=e641]: Locks Google, Bing, DuckDuckGo to strict safe results in all browsers
+            - cell [ref=e642]
+            - cell [ref=e646]
+            - cell "Partial" [ref=e650]
+            - cell "Partial" [ref=e651]
+          - row [ref=e652]:
+            - cell "Zero Account & Zero Telemetry Tracking Zero user accounts, zero analytics SDKs, zero data monetization" [ref=e653]:
+              - generic [ref=e654]: Zero Account & Zero Telemetry Tracking
+              - generic [ref=e655]: Zero user accounts, zero analytics SDKs, zero data monetization
+            - cell [ref=e656]
+            - cell [ref=e660]
+            - cell [ref=e664]
+            - cell [ref=e668]
+          - row [ref=e672]:
+            - cell "Subscription Cost No recurring subscription paywalls or artificial limitations" [ref=e673]:
+              - generic [ref=e674]: Subscription Cost
+              - generic [ref=e675]: No recurring subscription paywalls or artificial limitations
+            - cell "100% Free Core / Direct APK" [ref=e676]
+            - cell "$99.99 / year" [ref=e677]
+            - cell "$39.99 / year" [ref=e678]
+            - cell "Free (Inflexible)" [ref=e679]
+    - generic [ref=e682]:
+      - generic [ref=e683]:
+        - generic [ref=e684]: HELP & ARCHITECTURE
+        - heading "Frequently Asked Questions" [level=2] [ref=e685]
+        - paragraph [ref=e686]: Everything You Need to Know, All in One Place. Direct architectural answers with zero marketing spin.
+        - link "Get FocusCrew v1.0.0" [ref=e688] [cursor=pointer]:
+          - /url: "#download-section"
+      - generic [ref=e692]:
+        - generic [ref=e693]:
+          - button "Does FocusCrew route my traffic through your servers or sell my data?" [ref=e694] [cursor=pointer]
+          - paragraph [ref=e699]: Absolutely not. FocusCrew has zero central servers, zero analytics SDKs, and zero cloud accounts. The VPN interface runs entirely on Android's local loopback at 10.0.0.2:53. DNS queries are parsed inside your phone's RAM. Your internet traffic never touches any external FocusCrew infrastructure.
+        - button "Why can't I just bypass FocusCrew when I feel an urge or craving?" [ref=e701] [cursor=pointer]
+        - button "Will the local VPN blocker drain my phone battery?" [ref=e706] [cursor=pointer]
+        - button "Does TaskAlarm wake my phone if it is on Do Not Disturb or silent mode?" [ref=e711] [cursor=pointer]
+        - button "Can FocusCrew read my WhatsApp chats, passwords, or banking details?" [ref=e716] [cursor=pointer]
+        - button "Is FocusCrew free, or is there a hidden subscription trap?" [ref=e721] [cursor=pointer]
+    - generic [ref=e728]:
+      - generic [ref=e729]:
+        - generic [ref=e730]: DIRECT APK PRODUCTION RELEASE
+        - heading "Deploy FocusCrew to your Android device now." [level=2] [ref=e731]
+        - paragraph [ref=e732]: No credit card required. No cloud account logins. Install the verified Android APK and immediately initialize local loopback DNS blocking.
+        - generic [ref=e733]:
+          - generic [ref=e734]:
+            - textbox "Your Name" [ref=e735]
+            - textbox "Your Email" [ref=e736]
+          - generic [ref=e737]:
+            - button "Download FocusCrew APK (Direct)" [ref=e738] [cursor=pointer]
+            - button "Copy Checksum" [ref=e743] [cursor=pointer]
+        - generic [ref=e748]: "Package: com.focuscrew.app • Min: Android 8.0+ • 18.4 MB"
+      - generic [ref=e750]:
+        - generic [ref=e751]:
+          - generic [ref=e752]: FH
+          - generic [ref=e753]:
+            - heading "Mohammad Fatim Hasnain" [level=4] [ref=e754]
+            - paragraph [ref=e755]: Founder & Creator of FocusCrew
+        - paragraph [ref=e756]: "\"I built FocusCrew for myself when every other blocker gave me an easy 15-minute ignore button. Real sovereignty requires unshakeable, on-device boundaries.\""
+        - generic [ref=e757]:
+          - generic [ref=e758]:
+            - generic [ref=e759]: TELEMETRY
+            - generic [ref=e760]: 0 BYTES LOGGED
+          - generic [ref=e761]:
+            - generic [ref=e762]: LICENSE
+            - generic [ref=e763]: 100% FREE CORE
+  - contentinfo [ref=e764]:
+    - generic [ref=e765]:
+      - generic [ref=e766]:
+        - generic [ref=e767]:
+          - generic [ref=e768]:
+            - img "FocusCrew" [ref=e770]
+            - generic [ref=e771]: FocusCrew
+          - paragraph [ref=e772]: "The #1 Android digital wellness suite that eliminates pornography at the DNS level, dismantles short-form doomscrolling, and wakes you to your goals with unignorable task alarms."
+          - generic [ref=e773]:
+            - link "mfatimhasnain12@gmail.com" [ref=e778] [cursor=pointer]:
+              - /url: mailto:mfatimhasnain12@gmail.com
+            - generic [ref=e779]: Engineered with Kotlin Native & Jetpack Compose
+        - generic [ref=e780]:
+          - heading "FocusCrew" [level=4] [ref=e781]
+          - list [ref=e782]:
+            - listitem [ref=e783]:
+              - link "About App" [ref=e784] [cursor=pointer]:
+                - /url: "#features"
+            - listitem [ref=e785]:
+              - link "Titan Shield" [ref=e786] [cursor=pointer]:
+                - /url: "#titan-fortress"
+            - listitem [ref=e787]:
+              - link "DNS Lab" [ref=e788] [cursor=pointer]:
+                - /url: "#dns-engine"
+            - listitem [ref=e789]:
+              - link "FAQ" [ref=e790] [cursor=pointer]:
+                - /url: "#faq"
+        - generic [ref=e791]:
+          - heading "Features" [level=4] [ref=e792]
+          - list [ref=e793]:
+            - listitem [ref=e794]:
+              - link "Reel Counter" [ref=e795] [cursor=pointer]:
+                - /url: "#features"
+            - listitem [ref=e796]:
+              - link "TaskAlarm" [ref=e797] [cursor=pointer]:
+                - /url: "#features"
+            - listitem [ref=e798]:
+              - link "Freedom Vault" [ref=e799] [cursor=pointer]:
+                - /url: "#features"
+            - listitem [ref=e800]:
+              - link "SafeSearch Enforcer" [ref=e801] [cursor=pointer]:
+                - /url: "#features"
+        - generic [ref=e802]:
+          - heading "Platform" [level=4] [ref=e803]
+          - list [ref=e804]:
+            - listitem [ref=e805]: Android 8.0 - 15
+            - listitem [ref=e806]: Local VPN Interface
+            - listitem [ref=e807]: Zero Cloud Routing
+            - listitem [ref=e808]: 18.4 MB Binary
+        - generic [ref=e809]:
+          - heading "Verified" [level=4] [ref=e810]
+          - generic [ref=e811]:
+            - generic [ref=e812]: 100% On-Device
+            - generic [ref=e817]: Android 15 Ready
+      - generic [ref=e821]:
+        - generic [ref=e822]: Copyright © 2026 FocusCrew. All rights reserved. Built for radical focus.
+        - button "Back to top" [ref=e823] [cursor=pointer]
