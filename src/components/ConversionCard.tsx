@@ -6,7 +6,7 @@ export const ConversionCard: React.FC = () => {
   const [userEmail, setUserEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const sha256Checksum = '50ab3ebbf4dab8b0ebaeae54dbc45b147ed8f309a1b2c3d4e5f6789012345678';
+  const sha256Checksum = 'c75614867eaf70fea91a6bfbe1dc28dd658afad3e3566d817ef1655ab5872dc6';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256Checksum);
@@ -17,7 +17,10 @@ export const ConversionCard: React.FC = () => {
   const handleDownloadRequest = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    window.location.href = `mailto:mfatimhasnain12@gmail.com?subject=FocusCrew%20APK%20Request&body=Hi%20Fatim,%20please%20send%20the%20FocusCrew%20v1.0.0%20APK%20to%20${encodeURIComponent(userEmail)}`;
+    const link = document.createElement('a');
+    link.href = '/FocusCrew.apk';
+    link.download = 'FocusCrew.apk';
+    link.click();
   };
 
   return (
@@ -32,7 +35,7 @@ export const ConversionCard: React.FC = () => {
             {/* Left Column: Form & Direct Actions */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-purple-300 border border-white/10 inline-block">
-                DIRECT APK PRODUCTION RELEASE
+                DIRECT APK PRODUCTION RELEASE • v1.0.0
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
@@ -44,33 +47,17 @@ export const ConversionCard: React.FC = () => {
                 and immediately initialize autonomous on-device shield protection.
               </p>
 
-              {/* Instant Form */}
-              <form onSubmit={handleDownloadRequest} className="space-y-3 pt-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:border-[#7E3FF2]"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:outline-none focus:border-[#7E3FF2]"
-                  />
-                </div>
-
+              {/* Instant Form & Direct Download */}
+              <div className="space-y-3 pt-2">
                 <div className="flex flex-col sm:flex-row gap-3 pt-1">
-                  <button
-                    type="submit"
+                  <a
+                    href="/FocusCrew.apk"
+                    download="FocusCrew.apk"
                     className="px-8 py-3.5 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-sm shadow-lg shadow-purple-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
                   >
                     <Download className="w-4 h-4" />
-                    <span>Download FocusCrew APK (Direct)</span>
-                  </button>
+                    <span>Download FocusCrew APK (11 MB)</span>
+                  </a>
                   
                   <button
                     type="button"
@@ -91,16 +78,14 @@ export const ConversionCard: React.FC = () => {
                   </button>
                 </div>
 
-                {isSubmitted && (
-                  <p className="text-xs text-emerald-400 font-medium pt-1">
-                    ✓ Request initiated. Opening your email client to verify the direct APK package.
-                  </p>
-                )}
-              </form>
+                <p className="text-xs text-slate-400 font-mono">
+                  Verified Clean: Zero trackers • Zero ads • 100% on-device local engine
+                </p>
+              </div>
 
               {/* Checksum snippet */}
               <div className="pt-2 text-[11px] font-mono text-slate-400">
-                Package: <span className="text-white">com.focuscrew.app</span> • Min: Android 8.0+ • 18.4 MB
+                Package: <span className="text-white">com.focuscrew.app</span> • Min: Android 8.0+ • 11.0 MB • Signed Release JKS
               </div>
             </div>
 

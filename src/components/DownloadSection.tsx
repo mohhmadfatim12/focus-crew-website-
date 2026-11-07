@@ -12,7 +12,7 @@ export const DownloadSection: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
-  const sha256Checksum = '50ab3ebbf4dab8b0ebaeae54dbc45b147ed8f309a1b2c3d4e5f6789012345678';
+  const sha256Checksum = 'c75614867eaf70fea91a6bfbe1dc28dd658afad3e3566d817ef1655ab5872dc6';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256Checksum);
@@ -80,11 +80,12 @@ export const DownloadSection: React.FC = () => {
 
             {/* Direct Download Action Button */}
             <a
-              href="mailto:mfatimhasnain12@gmail.com?subject=FocusCrew%20v1.0.0%20Direct%20APK%20Request&body=Hi%20Fatim,%20I%20would%20like%20to%20get%20the%20FocusCrew%20v1.0.0%20Android%20APK%20build."
-              className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
+              href="/FocusCrew.apk"
+              download="FocusCrew.apk"
+              className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#7E3FF2] hover:bg-[#6C2FE0] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
             >
               <Download className="w-4 h-4 text-white" />
-              <span>Download APK (Direct Build)</span>
+              <span>Download APK (11 MB Direct)</span>
             </a>
           </div>
 
@@ -100,7 +101,7 @@ export const DownloadSection: React.FC = () => {
             </div>
             <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
               <span className="text-[10px] text-slate-400 uppercase font-semibold">Binary Footprint</span>
-              <div className="font-bold text-slate-900 mt-0.5">18.4 MB (Zero Bloat)</div>
+              <div className="font-bold text-slate-900 mt-0.5">11.0 MB (Zero Bloat)</div>
             </div>
             <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs">
               <span className="text-[10px] text-slate-400 uppercase font-semibold">Keystore Proof</span>
