@@ -8,7 +8,6 @@ import { StatsGrid } from './components/StatsGrid';
 import { DeepPurpleBanner } from './components/DeepPurpleBanner';
 import { DnsSimulator } from './components/DnsSimulator';
 import { DopamineCalculator } from './components/DopamineCalculator';
-import { SuccessStories } from './components/SuccessStories';
 import { ArchitectureFlow } from './components/ArchitectureFlow';
 import { ComparisonMatrix } from './components/ComparisonMatrix';
 import { FounderStory } from './components/FounderStory';
@@ -62,10 +61,7 @@ export function App() {
         {/* 9. Interactive Time Reclaim Calculator (Slider & Tangible Life Metrics) */}
         <DopamineCalculator />
 
-        {/* 10. Real Tabbed Success Stories (Engineers, Students, Founders) */}
-        <SuccessStories />
-
-        {/* 11. Zero-Server Local Loopback Architecture Flow */}
+        {/* 10. Zero-Server Local Loopback Architecture Flow */}
         <ArchitectureFlow />
 
         {/* 12. Honest Comparison Matrix (FocusCrew vs Opal vs Freedom) */}
