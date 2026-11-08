@@ -16,7 +16,10 @@ import {
   Radio,
   Flame,
   Layers,
-  Compass
+  Compass,
+  AlarmClock,
+  Headphones,
+  Brain
 } from 'lucide-react';
 import { InteractivePhone } from './InteractivePhone';
 
@@ -32,9 +35,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
     { name: 'Google Chrome', icon: Globe, color: 'text-blue-500' },
     { name: 'Brave Browser', icon: Flame, color: 'text-amber-500' },
     { name: 'Incognito Mode', icon: EyeOff, color: 'text-slate-600' },
+    { name: 'Unskippable Alarms', icon: AlarmClock, color: 'text-emerald-600' },
+    { name: '40Hz Gamma Audio', icon: Headphones, color: 'text-violet-600' },
     { name: 'Reddit Feeds', icon: Layers, color: 'text-orange-500' },
     { name: 'Android 15 OS', icon: Zap, color: 'text-[#284B39]' },
-    { name: 'Safari & Firefox', icon: Compass, color: 'text-indigo-500' }
+    { name: 'Freedom Vault', icon: Lock, color: 'text-[#A37A3E]' }
   ];
 
   return (
@@ -51,17 +56,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#284B39] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#284B39]"></span>
             </span>
-            <span className="font-extrabold text-[#202621] tracking-tight">AUTONOMOUS ON-DEVICE SHIELD ARMED</span>
+            <span className="font-extrabold text-[#202621] tracking-tight">AUTONOMOUS ON-DEVICE DEFENSE ARMED</span>
             <span className="text-[#D8D1C3]">•</span>
-            <span className="text-[#A37A3E] font-bold">154,820 Threats in RAM</span>
+            <span className="text-[#A37A3E] font-bold">154,820 RAM Rules</span>
             <span className="text-[#D8D1C3]">•</span>
-            <span className="text-[#284B39] font-bold">0.18ms</span>
+            <span className="text-[#284B39] font-bold">0.18ms Intercept</span>
           </div>
 
           <div className="w-full flex justify-between items-center px-2 sm:px-12 pointer-events-none">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF1EC] border border-[#C5DAC9] text-[#284B39] text-xs font-bold shadow-xs rotate-[-3deg] pointer-events-auto animate-float-p1">
               <Shield className="w-3.5 h-3.5 text-[#284B39]" />
-              <span>#1 On-Device Blocker</span>
+              <span>Quit Social Media & Porn Addiction</span>
               <ArrowDownRight className="w-3.5 h-3.5 text-[#284B39]" />
             </div>
 
@@ -75,24 +80,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
 
         {/* Centered H1 */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#202621] max-w-4xl mx-auto leading-[1.12]">
-          #1 Android Blocker That <br className="hidden sm:inline" />
-          <span className="text-[#A37A3E]">Never Lets You Relapse</span>
+          Quit Social Media & Porn Addiction <br className="hidden sm:inline" />
+          <span className="text-[#A37A3E]">At The Android System Level</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-4 text-base sm:text-lg text-[#5E665F] max-w-2xl mx-auto leading-relaxed">
-          Turn your phone back into a high-leverage tool with an on-device wellness guardian that blocks adult content across all browsers, 
-          puts a hard stop on infinite doomscrolling, and dissolves cravings with the 15-minute Freedom Vault.
+        <p className="mt-4 text-base sm:text-lg text-[#5E665F] max-w-3xl mx-auto leading-relaxed">
+          Destroy the two toxic dopamine loops destroying your ambition: mindless short-form doomscrolling (Instagram Reels, YouTube Shorts, TikTok) and adult content relapses. Powered by an on-device 154,820 RAM Bloom filter, live swipe counter HUD, unskippable task alarms, and the 15-minute Freedom Vault.
         </p>
 
         {/* Hook */}
         <p className="mt-3 text-sm text-[#202621] font-medium">
-          <strong>No subscriptions, no cloud proxies.</strong>{' '}
+          <strong>100% On-Device Privacy • No Cloud Proxies • Zero Subscriptions.</strong>{' '}
           <button 
             onClick={onOpenDownload} 
             className="text-[#A37A3E] hover:text-[#8A642E] font-bold underline cursor-pointer"
           >
-            Download the free Android APK →
+            Download the Free Android APK (v2.4.0) →
           </button>
         </p>
 
@@ -160,35 +164,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                 </p>
               </div>
 
-              {/* Node 3: Analytics Trend Chart Card */}
+              {/* Node 3: Unskippable Task Alarm */}
               <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-[#202621]">
-                    <TrendingDown className="w-4 h-4 text-[#A37A3E]" />
-                    <span>Screen Time Drop</span>
+                    <AlarmClock className="w-4 h-4 text-[#284B39]" />
+                    <span>Unskippable Task Alarm</span>
                   </div>
-                  <span className="text-xs font-mono font-extrabold text-[#A37A3E] bg-[#F5EAD8] px-2 py-0.5 rounded">
-                    -78%
+                  <span className="text-[10px] font-mono font-bold text-[#284B39] bg-[#EAF1EC] px-2 py-0.5 rounded">
+                    Math & Shake Gate
                   </span>
                 </div>
 
-                {/* Simulated Mini SVG Line Chart */}
-                <div className="h-10 w-full flex items-end pt-1">
-                  <svg className="w-full h-full overflow-visible" viewBox="0 0 120 40">
-                    <path
-                      d="M 0 5 Q 30 10, 50 20 T 90 28 T 120 38"
-                      fill="none"
-                      stroke="#A37A3E"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="120" cy="38" r="3.5" fill="#A37A3E" />
-                  </svg>
+                <div className="p-2.5 rounded-xl bg-[#FBF9F5] border border-[#E5DFD3] text-[11px] text-[#202621] space-y-1">
+                  <div className="font-bold flex items-center justify-between">
+                    <span>Awakening Protocol</span>
+                    <span className="text-[10px] text-[#284B39] font-mono">06:00 AM</span>
+                  </div>
+                  <div className="text-[10px] text-[#5E665F]">
+                    Requires solving math puzzles or 30 phone shakes to dismiss. Zero snooze loopholes.
+                  </div>
                 </div>
 
                 <div className="pt-1 border-t border-[#E5DFD3] flex items-center justify-between text-[10px] text-[#5E665F] font-mono">
-                  <span>Day 1 (4.2h)</span>
-                  <span className="text-[#A37A3E] font-bold">Day 30 (54m)</span>
+                  <span>DND Override Active</span>
+                  <span className="text-[#284B39] font-bold">100% Awakening</span>
                 </div>
               </div>
 
@@ -271,13 +271,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                 </p>
               </div>
 
-              {/* Node 6: Instant APK Pill */}
-              <div className="p-3.5 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-[#A37A3E]" />
-                  <span className="text-xs font-bold text-[#202621]">100% Free Core APK</span>
+              {/* Node 6: 40Hz Gamma & Deep Work Engine */}
+              <div className="p-4 rounded-2xl bg-white border border-[#E5DFD3] shadow-sm card-shadow-hover animate-float space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#202621]">
+                    <Headphones className="w-4 h-4 text-[#A37A3E]" />
+                    <span>40Hz Binaural Engine</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-[#A37A3E] bg-[#F5EAD8] px-2 py-0.5 rounded-full font-bold">
+                    Gamma Flow
+                  </span>
                 </div>
-                <span className="text-[10px] font-mono text-[#5E665F]">11.0 MB</span>
+                <div className="text-sm font-extrabold text-[#202621]">Ulysses Deep Lock</div>
+                <p className="text-[10px] text-[#5E665F] leading-snug">
+                  On-device 40Hz audio waves + Distraction Journal to lock into flow state without willpower exhaustion.
+                </p>
               </div>
 
             </div>

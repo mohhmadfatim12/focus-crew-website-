@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Shield, Smartphone, Search, Lock, ArrowRight, CheckCircle2, AlertOctagon, Download, Sparkles } from 'lucide-react';
+import { 
+  Shield, 
+  Smartphone, 
+  Search, 
+  Lock, 
+  ArrowRight, 
+  CheckCircle2, 
+  AlertOctagon, 
+  Download, 
+  Sparkles,
+  AlarmClock,
+  Headphones
+} from 'lucide-react';
 
 interface DemoVideoProps {
   onOpenDownload: () => void;
@@ -23,21 +35,21 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
       id: 'reels',
       icon: Smartphone,
       tag: 'Trance Breaker',
-      title: 'Reel Doomscroll Stop',
-      headline: 'Breaks the endless scroll hypnosis after 15 reels.',
-      desc: 'You open Instagram or TikTok to check one thing and start swiping. FocusCrew detects the short-form player in real-time. When you hit your daily allowance (e.g. 15 reels), the screen transitions to an 8-second Trance Breaker breathing gate. It forces your brain to wake up and put the phone down.',
+      title: 'Reel Counter & HUD',
+      headline: 'Breaks the endless scroll hypnosis with live swipe tracking.',
+      desc: 'You open Instagram, YouTube, or TikTok to check one thing and start swiping. FocusCrew overlays a real-time Reel Counter HUD. When you hit your daily allowance (e.g. 15 reels), the screen transitions to an 8-second Trance Breaker breathing gate, waking up your prefrontal cortex.',
       badge: 'Real-Time Reel Counter & Schedule',
       demoType: 'reels'
     },
     {
-      id: 'safesearch',
-      icon: Search,
-      tag: 'Strict Search VIP',
-      title: 'SafeSearch Enforcement',
-      headline: 'Forces strict safe results across Google, Bing & YouTube.',
-      desc: 'Most users bypass adult blockers by searching explicit thumbnails directly on Google Images or DuckDuckGo. FocusCrew enforces network-level SafeSearch overrides, locking every search engine into strict filtering mode with zero loophole bypass.',
-      badge: 'DNS VIP Rewrite Mode',
-      demoType: 'safesearch'
+      id: 'alarm',
+      icon: AlarmClock,
+      tag: 'Math & Shake',
+      title: 'Unskippable Task Alarm',
+      headline: 'Eliminates morning grogginess with cognitive awakening challenges.',
+      desc: 'Standard phone alarms are dismissed in a half-asleep reflex. FocusCrew\'s Task Alarm renders a full-screen overlay that overrides Do Not Disturb and system mute. It cannot be dismissed or snoozed until you solve mental math equations or complete 30 rapid phone shakes.',
+      badge: 'Cognitive Awakening Protocol',
+      demoType: 'alarm'
     },
     {
       id: 'vault',
@@ -48,6 +60,16 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
       desc: 'With normal blockers, when a craving hits at midnight, you open Android settings and turn it off in 3 seconds. With FocusCrew, unblocking requires entering a PIN followed by an unskippable 15-minute countdown. Over 96% of urges disappear during that 15 minutes.',
       badge: 'Urge Dissolution Buffer & Widget',
       demoType: 'vault'
+    },
+    {
+      id: 'audio',
+      icon: Headphones,
+      tag: 'Gamma Waves',
+      title: '40Hz Deep Work & Ulysses',
+      headline: 'Locks you into high-leverage focus with synthesized gamma audio.',
+      desc: 'Activate Ulysses mode to lock your phone to essential work tools while playing on-device 40Hz Gamma binaural frequencies that stimulate memory and executive function. An integrated Distraction Journal logs stray thoughts so you never derail flow state.',
+      badge: 'Neural Flow & Binaural Engine',
+      demoType: 'audio'
     }
   ];
 
@@ -82,21 +104,21 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
           {/* Header */}
           <div className="max-w-3xl mx-auto mb-10 space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#A37A3E] px-3.5 py-1 rounded-full bg-white border border-[#E2CEB2] inline-block shadow-2xs">
-              PRODUCT WALKTHROUGH
+              COMPREHENSIVE PRODUCT WALKTHROUGH
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202621] tracking-tight">
               See FocusCrew in Action
             </h2>
             <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed">
-              Here is how FocusCrew steps in when willpower is at zero—stopping relapses, killing doomscroll loops, and waking you up on time.
+              Explore how FocusCrew acts when willpower fails—intercepting adult content in RAM, breaking social media doomscroll hypnosis, enforcing wake-up alarms, and locking out impulsive urges.
             </p>
           </div>
 
           {/* Interactive Feature Stage */}
           <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-[#E5DFD3] p-6 sm:p-8 shadow-sm text-left">
             
-            {/* Step Switcher Tabs */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-8">
+            {/* Step Switcher Tabs (5 Columns) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-8">
               {steps.map((s, idx) => {
                 const Icon = s.icon;
                 const isActive = activeStep === idx;
@@ -145,7 +167,7 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                 </div>
               </div>
 
-              {/* Simulated Live Viewport Card */}
+              {/* Simulated Live Viewport Card 1: Titan DNS */}
               {steps[activeStep].demoType === 'dns' && (
                 <div className="p-4 rounded-xl bg-white border border-[#E5DFD3] font-mono text-xs space-y-2.5">
                   <div className="flex items-center justify-between text-[#5E665F] border-b border-[#E5DFD3] pb-2">
@@ -168,6 +190,7 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                 </div>
               )}
 
+              {/* Simulated Live Viewport Card 2: Reel Counter & Trance Breaker */}
               {steps[activeStep].demoType === 'reels' && (
                 <div className="p-4 rounded-xl bg-white border border-[#E5DFD3] font-mono text-xs space-y-3">
                   <div className="flex items-center justify-between text-[#5E665F] border-b border-[#E5DFD3] pb-2">
@@ -187,25 +210,29 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                 </div>
               )}
 
-              {steps[activeStep].demoType === 'safesearch' && (
+              {/* Simulated Live Viewport Card 3: Unskippable Task Alarm */}
+              {steps[activeStep].demoType === 'alarm' && (
                 <div className="p-4 rounded-xl bg-white border border-[#E5DFD3] font-mono text-xs space-y-3">
                   <div className="flex items-center justify-between text-[#5E665F] border-b border-[#E5DFD3] pb-2">
-                    <span>VIP SAFE OVERRIDE • ALL SEARCH ENGINES</span>
-                    <span className="text-[#284B39] font-bold">STRICT LOCKED</span>
+                    <span>TASK ALARM OVERLAY • MORNING AWAKENING</span>
+                    <span className="text-[#284B39] font-bold">DND OVERRIDDEN</span>
                   </div>
-                  <div className="text-[#202621]">
-                    &gt; Search Security: <span className="font-bold text-[#202621]">Google, Bing & YouTube Strict Safe Filtering</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#202621] font-bold">Alarm Time: 06:00 AM</span>
+                    <span className="px-3 py-1 rounded-full bg-[#EAF1EC] text-[#284B39] font-bold">RINGING (VOL MAX)</span>
                   </div>
-                  <div className="p-3 rounded-lg bg-[#EAF1EC] border border-[#C5DAC9] flex items-center justify-between">
-                    <span className="text-[#284B39] font-bold">Google, Bing & YouTube Restricted Mode</span>
-                    <span className="px-3 py-1 rounded bg-white border border-[#C5DAC9] font-bold text-[#284B39]">ENFORCED</span>
+                  <div className="p-3 rounded-lg bg-[#EAF1EC] border border-[#C5DAC9] space-y-1.5">
+                    <div className="text-[#284B39] font-bold text-center">COGNITIVE MATH CHALLENGE:</div>
+                    <div className="text-base text-center font-mono font-extrabold text-[#202621]">[ 28 × 6 ] - 19 = ?</div>
+                    <div className="text-[10px] text-center text-[#5E665F]">Solve correctly or shake phone 30 times to dismiss alarm. Snooze disabled.</div>
                   </div>
                   <div className="text-[11px] text-[#5E665F]">
-                    * Incognito and guest browsing cannot disable SafeSearch VIP redirects.
+                    * Forces prefrontal cortex activation immediately upon waking up.
                   </div>
                 </div>
               )}
 
+              {/* Simulated Live Viewport Card 4: Freedom Vault */}
               {steps[activeStep].demoType === 'vault' && (
                 <div className="p-4 rounded-xl bg-white border border-[#E5DFD3] font-mono text-xs space-y-3">
                   <div className="flex items-center justify-between text-[#5E665F] border-b border-[#E5DFD3] pb-2">
@@ -221,6 +248,30 @@ export const DemoVideoShowcase: React.FC<DemoVideoProps> = ({ onOpenDownload }) 
                   </div>
                   <div className="text-[11px] text-[#5E665F]">
                     * Phone remains completely shielded while your rational mind regains control.
+                  </div>
+                </div>
+              )}
+
+              {/* Simulated Live Viewport Card 5: 40Hz Audio & Ulysses */}
+              {steps[activeStep].demoType === 'audio' && (
+                <div className="p-4 rounded-xl bg-white border border-[#E5DFD3] font-mono text-xs space-y-3">
+                  <div className="flex items-center justify-between text-[#5E665F] border-b border-[#E5DFD3] pb-2">
+                    <span>ULYSSES DEEP WORK ENGINE • ON-DEVICE SYNTH</span>
+                    <span className="text-[#A37A3E] font-bold">FLOW ACTIVE</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[#202621] font-bold">Focus Session:</span>
+                    <span className="px-3 py-1 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold">45 MIN REMAINING</span>
+                  </div>
+                  <div className="p-3 rounded-lg bg-[#F5EAD8] border border-[#E2CEB2] space-y-1">
+                    <div className="text-xs font-bold text-[#8A642E] flex items-center justify-between">
+                      <span>40Hz Gamma Wave Synthesis</span>
+                      <span className="animate-pulse">● BROADCASTING</span>
+                    </div>
+                    <div className="text-[10px] text-[#5E665F]">Distraction Journal is capturing stray thoughts in the background.</div>
+                  </div>
+                  <div className="text-[11px] text-[#5E665F]">
+                    * Induces synchronized neuronal firing in prefrontal areas for peak concentration.
                   </div>
                 </div>
               )}

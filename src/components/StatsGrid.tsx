@@ -5,25 +5,25 @@ export const StatsGrid: React.FC = () => {
   const stats = [
     {
       metric: '913 Hours',
-      desc: 'spent annually by the average adult staring into mindless short-form video feeds without conscious intent.',
+      desc: 'wasted annually by the average user trapped in algorithmic short-form video loops (Reels, Shorts, TikTok) and compulsive late-night browsing.',
       icon: Clock,
       type: 'bottom'
     },
     {
       metric: '12 Minutes',
-      desc: 'is how long an impulsive craving actually lasts. FocusCrew\'s 15-minute emergency delay outlasts the urge, preventing 96% of relapses.',
+      desc: 'is the biological peak lifespan of an intense dopamine craving. FocusCrew\'s 15-minute Freedom Vault delay outlasts the impulse, preventing 96% of relapses.',
       icon: Zap,
       type: 'top'
     },
     {
       metric: '154,820+',
-      desc: 'adult domains and explicit keywords blocked inside your phone\'s RAM in 0.18ms before the browser can even transmit a byte.',
+      desc: 'adult domains and explicit query signatures blocked directly inside your phone\'s RAM in 0.18ms before any browser socket can transmit a byte.',
       icon: ShieldCheck,
       type: 'bottom'
     },
     {
-      metric: '$0 Free',
-      desc: 'core production APK. 100% free with no recurring subscription traps, credit card paywalls, or cloud data logging.',
+      metric: '100% Free',
+      desc: 'core production APK. 100% on-device privacy with zero external proxies, zero tracking databases, and zero recurring subscription traps.',
       icon: HeartHandshake,
       type: 'top'
     }
@@ -36,11 +36,10 @@ export const StatsGrid: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202621] tracking-tight">
-            What’s Draining Your Ambition?
+            What’s Stealing Your Focus & Ambition?
           </h2>
           <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed max-w-2xl mx-auto">
-            FocusCrew solves this by acting as an on-device system guardian, delivering zero-latency DNS protection 
-            and mindful friction gates that stop mindless scrolling before it takes over your day.
+            FocusCrew acts as your phone's autonomous nervous system—intercepting explicit triggers at the network layer and snapping you out of hypnotic doomscrolling before you lose hours.
           </p>
         </div>
 
