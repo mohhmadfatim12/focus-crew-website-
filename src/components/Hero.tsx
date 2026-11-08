@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             </h1>
 
             {/* Clear Human Copy */}
-            <p className="text-base sm:text-lg text-[#525853] leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-[#1A1D1A] leading-relaxed max-w-xl font-normal">
               FocusCrew runs inside your phone’s operating layer to dismantle the two most addictive digital loops: 
               endless short-form video feeds (Reels, Shorts, TikTok) and pornography relapses. 
               Enforced by real-time swipe counting, an 8-second mindful pause, and the 15-minute Freedom Vault.
@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
                 className="btn-secondary text-sm !py-3 !px-5"
               >
                 <span>Try Live Simulator</span>
-                <ArrowRight className="w-4 h-4 text-[#525853]" />
+                <ArrowRight className="w-4 h-4 text-[#1A1D1A]" />
               </a>
             </div>
 
@@ -83,20 +83,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             <div className="pt-6 border-t border-[#E5E2DA] grid grid-cols-3 gap-4 text-left">
               <div>
                 <div className="text-2xl font-bold tracking-tight text-[#1A1D1A]">154,820</div>
-                <div className="text-xs text-[#525853] font-medium mt-0.5">Threats in RAM</div>
+                <div className="text-sm text-[#1A1D1A] font-semibold mt-0.5">Threats in RAM</div>
               </div>
               <div>
                 <div className="text-2xl font-bold tracking-tight text-[#1A1D1A]">0.18ms</div>
-                <div className="text-xs text-[#525853] font-medium mt-0.5">Filter latency</div>
+                <div className="text-sm text-[#1A1D1A] font-semibold mt-0.5">Filter latency</div>
               </div>
               <div>
                 <div className="text-2xl font-bold tracking-tight text-[#234E37]">0 Bytes</div>
-                <div className="text-xs text-[#525853] font-medium mt-0.5">Cloud data leak</div>
+                <div className="text-sm text-[#234E37] font-semibold mt-0.5">Cloud data leak</div>
               </div>
             </div>
 
             {/* Trust and Independence Guarantee */}
-            <p className="text-xs text-[#7E857F] leading-normal">
+            <p className="text-sm text-[#1A1D1A] leading-normal font-medium">
               Built by independent software engineer Mohammad Fatim Hasnain. No accounts, no ads, no subscription traps.
             </p>
 
