@@ -4,7 +4,7 @@ import { Download, Copy, Check, ShieldCheck, Smartphone, Settings, ShieldAlert, 
 export const ConversionCard: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
 
-  const sha256Checksum = '90d6a60f3d85bb9836bdecf366699411e85401fc16a45612cf9b37ac76768a69';
+  const sha256Checksum = '368055ccabe12d754fdf0e49efdea59b83e5787d444deff83c3f008fa5e1dc71';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256Checksum);
@@ -15,13 +15,13 @@ export const ConversionCard: React.FC = () => {
   const steps = [
     {
       step: '01',
-      title: 'Download FocusCrew APK',
-      subtitle: 'From this official website',
+      title: 'Download FocusCrew App',
+      subtitle: 'Single tap direct download',
       icon: Download,
       instructions: [
-        'Tap the **Download FocusCrew APK (11 MB)** button above.',
-        'If Chrome or your browser asks *"File might be harmful"*, tap **Download anyway** (standard warning for any direct APK).',
-        '**If saved as .zip:** Some phone browsers rename `.apk` to `.zip`. Do not extract it! In your Files app, tap **Rename**, change `.zip` back to `.apk`, and tap to install (or use the GitHub Mirror button below).'
+        'Tap the **Download FocusCrew App** button above.',
+        'If your browser asks *"File might be harmful"*, tap **Download anyway** (standard Android prompt for direct APKs).',
+        'When the download finishes, tap **Open** or tap the notification to install.'
       ]
     },
     {
@@ -89,23 +89,11 @@ export const ConversionCard: React.FC = () => {
           {/* Download & Verification Action Bar */}
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
             <a
-              href="/FocusCrew.apk"
-              download="FocusCrew.apk"
-              className="btn-accent text-base !py-4 !px-8 shadow-sm flex items-center justify-center gap-2 font-bold"
-            >
-              <Download className="w-5 h-5" />
-              <span>Download FocusCrew APK (11 MB)</span>
-            </a>
-
-            <a
               href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary text-sm !py-4 !px-5 flex items-center justify-center gap-2 font-semibold"
-              title="Official GitHub Releases CDN Direct Download"
+              className="btn-accent text-base sm:text-lg !py-4 sm:!py-5 !px-8 sm:!px-10 shadow-md flex items-center justify-center gap-3 font-bold"
             >
-              <ExternalLink className="w-4 h-4 text-[#1A1D1A]" />
-              <span>GitHub Mirror (Direct APK)</span>
+              <Download className="w-5 h-5 sm:w-6 sm:h-6" />
+              <span>Download FocusCrew App (Free APK)</span>
             </a>
 
             <button

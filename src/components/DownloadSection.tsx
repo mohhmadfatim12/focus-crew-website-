@@ -13,7 +13,7 @@ export const DownloadSection: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
-  const sha256Checksum = '90d6a60f3d85bb9836bdecf366699411e85401fc16a45612cf9b37ac76768a69';
+  const sha256Checksum = '368055ccabe12d754fdf0e49efdea59b83e5787d444deff83c3f008fa5e1dc71';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256Checksum);
@@ -79,24 +79,14 @@ export const DownloadSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct Download Action Buttons */}
+            {/* Direct Download Action Button */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
               <a
-                href="/FocusCrew.apk"
-                download="FocusCrew.apk"
+                href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
                 className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
-                <span>Download APK (Direct)</span>
-              </a>
-              <a
-                href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 border border-slate-300 transition-all"
-              >
-                <ExternalLink className="w-4 h-4 text-slate-700" />
-                <span>GitHub Mirror</span>
+                <span>Download FocusCrew App (Free APK)</span>
               </a>
             </div>
           </div>
