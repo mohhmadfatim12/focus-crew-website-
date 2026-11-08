@@ -4,7 +4,7 @@ import { Download, Copy, Check, ShieldCheck, Smartphone, Settings, ShieldAlert, 
 export const ConversionCard: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
 
-  const sha256Checksum = 'be70d62bb642b5bac799261f2dc5e44eef17bde731e2a5d30b5a184ce35edf87';
+  const sha256Checksum = '2efa9ae9d3221fb2c0a29913be8ac207a6292d632f95676935e54c231192db84';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256Checksum);
