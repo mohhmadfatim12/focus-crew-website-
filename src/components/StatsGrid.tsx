@@ -35,13 +35,13 @@ export const StatsGrid: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-2xl mb-12 space-y-3">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+          <div className="text-eyebrow text-[#9E6F28]">
             Quantitative Baseline
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight leading-tight">
             The measurable toll of modern phone addiction.
           </h2>
-          <p className="text-sm sm:text-base text-[#525853] leading-relaxed">
+          <p className="text-base text-[#525853] leading-relaxed">
             Engineered around verifiable biological and technical parameters rather than vague productivity promises.
           </p>
         </div>
@@ -56,18 +56,18 @@ export const StatsGrid: React.FC = () => {
                 className="pro-card p-6 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-2">
-                  <div className="w-8 h-8 rounded-md bg-[#F7F5F0] border border-[#E5E2DA] flex items-center justify-center text-[#1A1D1A]">
+                  <div className="w-9 h-9 rounded-lg bg-[#F7F5F0] border border-[#E5E2DA] flex items-center justify-center text-[#1A1D1A]">
                     <Icon className="w-4 h-4 text-[#9E6F28]" />
                   </div>
-                  <div className="text-2xl font-bold font-mono text-[#1A1D1A] tracking-tight pt-2">
+                  <div className="text-2xl font-bold tracking-tight text-[#1A1D1A] pt-2">
                     {item.value}
                   </div>
-                  <div className="text-xs font-bold text-[#1A1D1A] font-mono">
+                  <div className="text-sm font-semibold text-[#1A1D1A]">
                     {item.label}
                   </div>
                 </div>
 
-                <p className="text-xs text-[#525853] leading-relaxed pt-3 border-t border-[#E5E2DA]">
+                <p className="text-sm text-[#525853] leading-relaxed pt-3 border-t border-[#E5E2DA]">
                   {item.desc}
                 </p>
               </div>

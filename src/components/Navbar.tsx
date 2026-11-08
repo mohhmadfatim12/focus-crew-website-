@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownload }) => {
               <span className="font-bold text-base tracking-tight text-[#1A1D1A]">
                 FocusCrew
               </span>
-              <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-[#F7F5F0] text-[#525853] border border-[#E5E2DA]">
+              <span className="hidden sm:inline-flex text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-[#F7F5F0] text-[#525853] border border-[#E5E2DA]">
                 v1.0.4 Android
               </span>
             </div>

@@ -39,17 +39,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
           <div className="lg:col-span-7 text-left space-y-6">
             
             {/* System Status Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F7F5F0] border border-[#E5E2DA] text-xs font-mono text-[#525853]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F7F5F0] border border-[#E5E2DA] text-xs font-medium text-[#525853]">
               <span className="w-2 h-2 rounded-full bg-[#234E37]" />
-              <span className="font-semibold text-[#1A1D1A]">On-Device Defense Engine</span>
+              <span className="font-semibold text-[#1A1D1A]">On-Device Defense</span>
               <span className="text-[#C8C2B5]">•</span>
-              <span>154,820 RAM Rules</span>
+              <span>154,820 Rules</span>
               <span className="text-[#C8C2B5]">•</span>
               <span>0.18ms</span>
             </div>
 
             {/* Direct, Concrete Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1A1D1A] leading-[1.08]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1A1D1A] leading-[1.12]">
               System-level defense against doomscrolling and adult content.
             </h1>
 
@@ -82,21 +82,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
             {/* Proof Points / Technical Constraints */}
             <div className="pt-6 border-t border-[#E5E2DA] grid grid-cols-3 gap-4 text-left">
               <div>
-                <div className="text-2xl font-bold font-mono text-[#1A1D1A]">154,820</div>
+                <div className="text-2xl font-bold tracking-tight text-[#1A1D1A]">154,820</div>
                 <div className="text-xs text-[#525853] font-medium mt-0.5">Threats in RAM</div>
               </div>
               <div>
-                <div className="text-2xl font-bold font-mono text-[#1A1D1A]">0.18ms</div>
+                <div className="text-2xl font-bold tracking-tight text-[#1A1D1A]">0.18ms</div>
                 <div className="text-xs text-[#525853] font-medium mt-0.5">Filter latency</div>
               </div>
               <div>
-                <div className="text-2xl font-bold font-mono text-[#234E37]">0 Bytes</div>
+                <div className="text-2xl font-bold tracking-tight text-[#234E37]">0 Bytes</div>
                 <div className="text-xs text-[#525853] font-medium mt-0.5">Cloud data leak</div>
               </div>
             </div>
 
             {/* Trust and Independence Guarantee */}
-            <p className="text-xs text-[#7E857F]">
+            <p className="text-xs text-[#7E857F] leading-normal">
               Built by independent software engineer Mohammad Fatim Hasnain. No accounts, no ads, no subscription traps.
             </p>
 
@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownload }) => {
           <div id="interactive-demo" className="lg:col-span-5 flex flex-col items-center justify-center">
             <div className="w-full max-w-[340px]">
               <div className="text-center mb-3">
-                <span className="text-[11px] font-mono text-[#7E857F] uppercase tracking-wider">
+                <span className="text-eyebrow text-[#7E857F]">
                   Interactive Live Device Preview
                 </span>
               </div>

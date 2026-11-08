@@ -16,15 +16,15 @@ export const DualFeatureBento: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-2xl mb-14 space-y-3">
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+          <div className="text-eyebrow text-[#9E6F28]">
             Core Habit Architecture
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight leading-tight">
             Engineered to eliminate two specific dopamine loops.
           </h2>
 
-          <p className="text-sm sm:text-base text-[#525853] leading-relaxed">
+          <p className="text-base text-[#525853] leading-relaxed">
             Most app blockers present a gentle reminder you can dismiss in two seconds. FocusCrew introduces unskippable physical and system-level friction precisely when willpower is exhausted.
           </p>
         </div>
@@ -36,7 +36,7 @@ export const DualFeatureBento: React.FC = () => {
           <div className="pro-card p-8 sm:p-10 flex flex-col justify-between">
             <div className="space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-[#E5E2DA]">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-[#234E37]">
+                <div className="flex items-center gap-2 text-xs font-semibold text-[#234E37]">
                   <ShieldCheck className="w-4 h-4 text-[#234E37]" />
                   <span>Pillar 01 — Zero-Relapse Defense</span>
                 </div>
@@ -87,7 +87,7 @@ export const DualFeatureBento: React.FC = () => {
           <div className="pro-card p-8 sm:p-10 flex flex-col justify-between">
             <div className="space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-[#E5E2DA]">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-[#9E6F28]">
+                <div className="flex items-center gap-2 text-xs font-semibold text-[#9E6F28]">
                   <Smartphone className="w-4 h-4 text-[#9E6F28]" />
                   <span>Pillar 02 — Short-Form Interception</span>
                 </div>
@@ -125,7 +125,7 @@ export const DualFeatureBento: React.FC = () => {
               </ul>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-[#E5E2DA] flex items-center justify-between text-xs font-mono text-[#525853]">
+            <div className="mt-8 pt-6 border-t border-[#E5E2DA] flex items-center justify-between text-xs font-medium text-[#525853]">
               <span>Window Accessibility Events</span>
               <a href="#friction-science" className="text-[#9E6F28] hover:underline font-semibold flex items-center gap-1">
                 <span>View science</span>

@@ -37,7 +37,7 @@ export const StopDoomscrollSection: React.FC = () => {
           
           {/* Left Column: Scientific Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+            <div className="text-eyebrow text-[#9E6F28]">
               Behavioral Friction Engineering
             </div>
 
@@ -45,7 +45,7 @@ export const StopDoomscrollSection: React.FC = () => {
               Why willpower alone fails against short-form video algorithms.
             </h2>
 
-            <div className="space-y-4 text-sm text-[#525853] leading-relaxed">
+            <div className="space-y-4 text-base text-[#525853] leading-relaxed">
               <p>
                 Short-form video feeds operate on variable-ratio dopamine reinforcement schedules—the exact psychological mechanism used by slot machines. Each vertical swipe is a gamble on whether the next 15-second clip will deliver novelty.
               </p>
@@ -60,14 +60,14 @@ export const StopDoomscrollSection: React.FC = () => {
             {/* Factual Core Mechanisms */}
             <div className="pt-4 border-t border-[#E5E2DA] grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-lg bg-white border border-[#E5E2DA]">
-                <div className="text-xs font-bold text-[#1A1D1A]">Automated Reflex Interruption</div>
+                <div className="text-sm font-bold text-[#1A1D1A]">Automated Reflex Interruption</div>
                 <p className="text-xs text-[#525853] mt-1 leading-normal">
                   Shifts cognition from automatic motor habit back to deliberate decision-making.
                 </p>
               </div>
 
               <div className="p-4 rounded-lg bg-white border border-[#E5E2DA]">
-                <div className="text-xs font-bold text-[#1A1D1A]">15-Minute Craving Decay</div>
+                <div className="text-sm font-bold text-[#1A1D1A]">15-Minute Craving Decay</div>
                 <p className="text-xs text-[#525853] mt-1 leading-normal">
                   Chemical dopamine surges peak and subside within 10 to 12 minutes when access is gated.
                 </p>
@@ -79,7 +79,7 @@ export const StopDoomscrollSection: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="pro-card p-8 text-center space-y-6">
               
-              <div className="flex items-center justify-between pb-3 border-b border-[#E5E2DA] text-xs font-mono text-[#525853]">
+              <div className="flex items-center justify-between pb-3 border-b border-[#E5E2DA] text-xs font-semibold text-[#525853]">
                 <span>TRANCE BREAKER ENGINE</span>
                 <span className="text-[#234E37] font-semibold">ACTIVE</span>
               </div>
@@ -89,29 +89,29 @@ export const StopDoomscrollSection: React.FC = () => {
                 <div className="w-32 h-32 rounded-full border-2 border-[#E5E2DA] bg-[#F7F5F0] flex flex-col items-center justify-center transition-all duration-300">
                   {isBreathingActive ? (
                     <>
-                      <span className="text-4xl font-extrabold font-mono text-[#9E6F28]">
+                      <span className="text-4xl font-extrabold text-[#9E6F28]">
                         {breathingSeconds}s
                       </span>
-                      <span className="text-[10px] font-mono text-[#525853] uppercase mt-1">
+                      <span className="text-xs font-semibold text-[#525853] uppercase mt-1">
                         {breathingSeconds > 4 ? 'Inhale...' : 'Exhale...'}
                       </span>
                     </>
                   ) : hasCompleted ? (
                     <>
                       <CheckCircle2 className="w-8 h-8 text-[#234E37] mb-1" />
-                      <span className="text-[11px] font-bold text-[#234E37]">Mind Awake</span>
+                      <span className="text-xs font-bold text-[#234E37]">Mind Awake</span>
                     </>
                   ) : (
                     <>
-                      <span className="text-3xl font-extrabold font-mono text-[#1A1D1A]">8s</span>
-                      <span className="text-[10px] font-mono text-[#7E857F] uppercase mt-1">Pause Gate</span>
+                      <span className="text-3xl font-extrabold text-[#1A1D1A]">8s</span>
+                      <span className="text-xs font-semibold text-[#7E857F] uppercase mt-1">Pause Gate</span>
                     </>
                   )}
                 </div>
               </div>
 
               {/* Status Explanation */}
-              <p className="text-xs text-[#525853] leading-relaxed max-w-xs mx-auto">
+              <p className="text-sm text-[#525853] leading-relaxed max-w-xs mx-auto">
                 {isBreathingActive 
                   ? 'Focus on your breath. Notice how the compulsion to scroll immediately drops.'
                   : hasCompleted
