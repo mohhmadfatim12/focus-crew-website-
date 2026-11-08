@@ -5,7 +5,8 @@ import {
   Check, 
   ShieldCheck, 
   Terminal, 
-  ChevronDown
+  ChevronDown,
+  ExternalLink
 } from 'lucide-react';
 
 export const DownloadSection: React.FC = () => {
@@ -78,15 +79,26 @@ export const DownloadSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Direct Download Action Button */}
-            <a
-              href="/FocusCrew.apk"
-              download="FocusCrew.apk"
-              className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-white" />
-              <span>Download APK (11 MB Direct)</span>
-            </a>
+            {/* Direct Download Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+              <a
+                href="/FocusCrew.apk"
+                download="FocusCrew.apk"
+                className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
+              >
+                <Download className="w-4 h-4 text-white" />
+                <span>Download APK (Direct)</span>
+              </a>
+              <a
+                href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 border border-slate-300 transition-all"
+              >
+                <ExternalLink className="w-4 h-4 text-slate-700" />
+                <span>GitHub Mirror</span>
+              </a>
+            </div>
           </div>
 
           {/* Release Specifications Grid */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Copy, Check, ShieldCheck, Smartphone, Settings, ShieldAlert, CheckCircle2, Lock, ArrowRight } from 'lucide-react';
+import { Download, Copy, Check, ShieldCheck, Smartphone, Settings, ShieldAlert, CheckCircle2, Lock, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const ConversionCard: React.FC = () => {
   const [copiedHash, setCopiedHash] = useState(false);
@@ -20,7 +20,8 @@ export const ConversionCard: React.FC = () => {
       icon: Download,
       instructions: [
         'Tap the **Download FocusCrew APK (11 MB)** button above.',
-        'If Chrome or your browser asks *"File might be harmful"*, tap **Download anyway** (standard warning for any direct APK).'
+        'If Chrome or your browser asks *"File might be harmful"*, tap **Download anyway** (standard warning for any direct APK).',
+        '**If saved as .zip:** Some phone browsers rename `.apk` to `.zip`. Do not extract it! In your Files app, tap **Rename**, change `.zip` back to `.apk`, and tap to install (or use the GitHub Mirror button below).'
       ]
     },
     {
@@ -86,7 +87,7 @@ export const ConversionCard: React.FC = () => {
           </div>
 
           {/* Download & Verification Action Bar */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
             <a
               href="/FocusCrew.apk"
               download="FocusCrew.apk"
@@ -94,6 +95,17 @@ export const ConversionCard: React.FC = () => {
             >
               <Download className="w-5 h-5" />
               <span>Download FocusCrew APK (11 MB)</span>
+            </a>
+
+            <a
+              href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-sm !py-4 !px-5 flex items-center justify-center gap-2 font-semibold"
+              title="Official GitHub Releases CDN Direct Download"
+            >
+              <ExternalLink className="w-4 h-4 text-[#1A1D1A]" />
+              <span>GitHub Mirror (Direct APK)</span>
             </a>
 
             <button
