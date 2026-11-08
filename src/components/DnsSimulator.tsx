@@ -4,8 +4,7 @@ import {
   ArrowRight, 
   CheckCircle2, 
   XCircle,
-  Search,
-  Zap
+  Search
 } from 'lucide-react';
 
 export const DnsSimulator: React.FC = () => {
@@ -22,7 +21,7 @@ export const DnsSimulator: React.FC = () => {
     isBlocked: true,
     isSearch: false,
     reason: 'Explicit Adult Domain Signature Match',
-    action: 'NEUTRALIZED ON-DEVICE — Threat Terminated Instantly',
+    action: 'Query dropped on-device (NXDOMAIN returned)',
     latency: '0.19ms'
   });
 
@@ -48,8 +47,8 @@ export const DnsSimulator: React.FC = () => {
         domain: clean,
         isBlocked: true,
         isSearch: false,
-        reason: 'Adult & Explicit Website Signature',
-        action: 'NEUTRALIZED ON-DEVICE -> 0KB Transmitted (Radio Silent)',
+        reason: 'Explicit Adult Domain Signature Match',
+        action: 'Query dropped on-device (NXDOMAIN returned)',
         latency: `${(Math.random() * 0.15 + 0.12).toFixed(2)}ms`
       });
     } else if (isSearchEngine) {
@@ -57,8 +56,8 @@ export const DnsSimulator: React.FC = () => {
         domain: clean,
         isBlocked: false,
         isSearch: true,
-        reason: 'Search Engine (SafeSearch Rule Applied)',
-        action: 'ROUTED TO STRICT SAFESEARCH (All explicit search results hidden)',
+        reason: 'Search Engine Domain (SafeSearch Enforced)',
+        action: 'DNS response rewritten to forcesafesearch VIP',
         latency: `${(Math.random() * 0.2 + 0.18).toFixed(2)}ms`
       });
     } else {
@@ -66,40 +65,39 @@ export const DnsSimulator: React.FC = () => {
         domain: clean,
         isBlocked: false,
         isSearch: false,
-        reason: 'Clean Work & Productivity Domain',
-        action: 'VERIFIED PRODUCTIVE -> Direct Secure Passthrough',
+        reason: 'Verified Clean Productive Host',
+        action: 'Direct secure passthrough to upstream DNS',
         latency: `${(Math.random() * 0.2 + 0.15).toFixed(2)}ms`
       });
     }
   };
 
   return (
-    <section className="py-24 bg-[#FBF9F5] border-t border-[#E5DFD3] text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="dns-engine" className="py-20 md:py-28 bg-[#F7F5F0] border-b border-[#E5E2DA] text-left">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E5DFD3] text-xs font-semibold text-[#A37A3E] shadow-2xs">
-            <Zap className="w-3.5 h-3.5" />
-            <span>INTERACTIVE DNS LAB</span>
+        <div className="max-w-2xl mb-12 space-y-3">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+            Interactive Telemetry Lab
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202621] tracking-tight font-serif">
-            Test Any Domain in Real Time
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight">
+            Inspect Bloom filter resolution in real time.
           </h2>
 
-          <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed">
-            See how FocusCrew inspects and blocks requests inside your phone's memory via Titan Bloom Filter before your browser can even connect.
+          <p className="text-sm sm:text-base text-[#525853] leading-relaxed">
+            Test any hostname to observe how FocusCrew inspects and resolves queries in local RAM before a socket connection can transmit data.
           </p>
         </div>
 
-        {/* Interactive Lab Card (Warm Linen Surface) */}
-        <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-[#E5DFD3] p-6 sm:p-10 shadow-sm">
+        {/* Interactive Lab Card */}
+        <div className="pro-card p-6 sm:p-8">
           
           {/* Quick Presets */}
-          <div className="mb-6">
-            <label className="text-xs font-bold text-[#5E665F] uppercase tracking-wider font-mono block mb-2.5">
-              One-Click Test Presets:
+          <div className="mb-6 space-y-2">
+            <label className="text-xs font-mono text-[#525853] block">
+              Quick Test Presets:
             </label>
             <div className="flex flex-wrap gap-2">
               {testPresets.map((preset) => (
@@ -109,12 +107,12 @@ export const DnsSimulator: React.FC = () => {
                     setInputDomain(preset.label);
                     handleTestDomain(preset.label);
                   }}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-bold border transition-all cursor-pointer ${
+                  className={`px-3 py-1 rounded-md text-xs font-mono border transition-colors cursor-pointer ${
                     preset.type === 'bad'
-                      ? 'bg-[#FCE8E8] text-[#8F3B3B] border-[#8F3B3B]/20 hover:bg-[#8F3B3B]/10'
+                      ? 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100'
                       : preset.type === 'search'
-                      ? 'bg-[#F5EAD8] text-[#A37A3E] border-[#A37A3E]/30 hover:bg-[#F5EAD8]/80'
-                      : 'bg-[#E1EDE5] text-[#284B39] border-[#284B39]/20 hover:bg-[#284B39]/10'
+                      ? 'bg-[#F5EAD8] text-[#9E6F28] border-[#E5DFD3] hover:bg-[#EFE4D0]'
+                      : 'bg-[#EBF2ED] text-[#234E37] border-[#C8DCD0] hover:bg-[#DEEBE1]'
                   }`}
                 >
                   {preset.label}
@@ -124,92 +122,76 @@ export const DnsSimulator: React.FC = () => {
           </div>
 
           {/* Custom Domain Input */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
-            <div className="relative flex-1">
-              <input
-                type="text"
-                value={inputDomain}
-                onChange={(e) => setInputDomain(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleTestDomain(inputDomain)}
-                placeholder="Enter domain (e.g. adult-site.xxx or github.com)"
-                className="w-full px-4 py-3 rounded-2xl border border-[#D5CEBF] text-sm font-mono text-[#202621] bg-[#FBF9F5] focus:outline-none focus:border-[#A37A3E] focus:bg-white transition-all"
-              />
-              <span className="absolute right-4 top-3.5 text-xs text-[#5E665F] font-mono">LIVE SHIELD</span>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <input
+              type="text"
+              value={inputDomain}
+              onChange={(e) => setInputDomain(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleTestDomain(inputDomain)}
+              placeholder="Enter domain (e.g. adult-site.xxx or github.com)"
+              className="flex-1 px-4 py-2.5 rounded-lg border border-[#E5E2DA] text-sm font-mono text-[#1A1D1A] bg-white focus:outline-2 focus:outline-[#9E6F28]"
+            />
 
             <button
               onClick={() => handleTestDomain(inputDomain)}
-              className="px-6 py-3 rounded-2xl bg-[#A37A3E] hover:bg-[#8A642E] text-white text-xs font-bold font-mono flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
+              className="btn-accent text-xs !py-2.5 !px-5 whitespace-nowrap"
             >
               <span>Inspect Query</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
           {/* Live Packet Result Console */}
-          <div className="rounded-2xl bg-[#FBF9F5] border border-[#E5DFD3] p-5 sm:p-7 space-y-4 font-mono text-xs">
+          <div className="rounded-lg bg-[#F7F5F0] border border-[#E5E2DA] p-5 space-y-3 font-mono text-xs">
             
-            {/* Header Status */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E5DFD3] text-[#5E665F]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E5E2DA] text-[#525853] text-[11px]">
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-[#A37A3E]" />
-                <span className="font-bold text-[#202621]">ON-DEVICE REAL-TIME SHIELD REPORT</span>
+                <Terminal className="w-3.5 h-3.5 text-[#9E6F28]" />
+                <span className="font-semibold text-[#1A1D1A]">On-Device Query Telemetry</span>
               </div>
-              <div className="flex items-center gap-3">
-                <span>Latency: <strong className="text-[#202621]">{inspectionResult.latency}</strong></span>
-                <span>•</span>
-                <span className="text-[#284B39] font-bold">100% On-Device</span>
+              <div>
+                Latency: <strong className="text-[#1A1D1A]">{inspectionResult.latency}</strong>
               </div>
             </div>
 
             {/* Verdict Banner */}
-            <div className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
-              inspectionResult.isBlocked
-                ? 'bg-[#FCE8E8] border-[#8F3B3B]/30 text-[#8F3B3B]'
-                : inspectionResult.isSearch
-                ? 'bg-[#F5EAD8] border-[#A37A3E]/30 text-[#8A642E]'
-                : 'bg-[#E1EDE5] border-[#284B39]/30 text-[#284B39]'
-            }`}>
+            <div className="p-3.5 rounded-md bg-white border border-[#E5E2DA] flex items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
                 {inspectionResult.isBlocked ? (
-                  <XCircle className="w-5 h-5 text-[#8F3B3B] shrink-0" />
+                  <XCircle className="w-4 h-4 text-red-600 shrink-0" />
                 ) : inspectionResult.isSearch ? (
-                  <Search className="w-5 h-5 text-[#A37A3E] shrink-0" />
+                  <Search className="w-4 h-4 text-[#9E6F28] shrink-0" />
                 ) : (
-                  <CheckCircle2 className="w-5 h-5 text-[#284B39] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#234E37] shrink-0" />
                 )}
                 <div>
-                  <div className="font-bold text-sm">
+                  <div className="font-bold text-xs text-[#1A1D1A]">
                     {inspectionResult.domain}
                   </div>
-                  <div className="text-[11px] opacity-90 mt-0.5">
+                  <div className="text-[11px] text-[#525853]">
                     {inspectionResult.reason}
                   </div>
                 </div>
               </div>
 
-              <div className="self-start sm:self-auto">
-                <span className={`px-3 py-1 rounded-full text-[11px] font-bold ${
-                  inspectionResult.isBlocked
-                    ? 'bg-[#8F3B3B] text-white'
-                    : inspectionResult.isSearch
-                    ? 'bg-[#A37A3E] text-white'
-                    : 'bg-[#284B39] text-white'
-                }`}>
-                  {inspectionResult.isBlocked ? 'BLOCKED' : inspectionResult.isSearch ? 'SAFESEARCH' : 'CLEAN'}
-                </span>
-              </div>
+              <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                inspectionResult.isBlocked
+                  ? 'bg-red-100 text-red-700'
+                  : inspectionResult.isSearch
+                  ? 'bg-amber-100 text-amber-800'
+                  : 'bg-emerald-100 text-emerald-800'
+              }`}>
+                {inspectionResult.isBlocked ? 'BLOCKED' : inspectionResult.isSearch ? 'SAFESEARCH' : 'CLEAN'}
+              </span>
             </div>
 
             {/* Action Details */}
-            <div className="p-3.5 rounded-xl bg-white border border-[#E5DFD3] space-y-1.5 text-[#5E665F] text-[11px]">
+            <div className="text-[11px] text-[#525853] space-y-1">
               <div>
-                <span className="text-[#5E665F]/80">ACTION TAKEN:</span>{' '}
-                <span className="font-bold text-[#202621]">{inspectionResult.action}</span>
+                <span>Action:</span> <strong className="text-[#1A1D1A]">{inspectionResult.action}</strong>
               </div>
               <div>
-                <span className="text-[#5E665F]/80">NETWORK LEAK:</span>{' '}
-                <span className="font-bold text-[#284B39]">0 KB transmitted (Neutralized in RAM before radio)</span>
+                <span>Network Leakage:</span> <strong className="text-[#234E37]">0 Bytes transmitted</strong>
               </div>
             </div>
 
@@ -221,3 +203,4 @@ export const DnsSimulator: React.FC = () => {
     </section>
   );
 };
+export default DnsSimulator;

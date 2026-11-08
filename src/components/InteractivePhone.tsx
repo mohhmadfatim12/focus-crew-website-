@@ -109,19 +109,11 @@ export const InteractivePhone: React.FC = () => {
   return (
     <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[340px] select-none text-left">
       
-      {/* Soft Ambient Shadow */}
-      <div className="absolute -inset-3 bg-[#A37A3E]/15 rounded-[52px] blur-xl opacity-75 pointer-events-none" />
-
-      {/* Titanium Hardware Bezel */}
-      <div className="relative rounded-[44px] p-2.5 bg-gradient-to-b from-[#ECE7DC] via-[#F2EEE5] to-[#ECE7DC] border-2 border-[#D8D1C3] shadow-xl">
+      {/* Precision Device Chassis */}
+      <div className="relative rounded-[40px] p-2 bg-[#1A1D1A] border border-[#2E332E] shadow-xl">
         
-        {/* Hardware Buttons */}
-        <div className="absolute -left-[3px] top-24 w-[2px] h-9 bg-[#C8BFB0] rounded-l-sm" />
-        <div className="absolute -left-[3px] top-36 w-[2px] h-12 bg-[#C8BFB0] rounded-l-sm" />
-        <div className="absolute -right-[3px] top-28 w-[2px] h-14 bg-[#C8BFB0] rounded-r-sm" />
-
-        {/* Screen */}
-        <div className="relative w-full h-[580px] rounded-[36px] bg-white border border-[#E5DFD3] overflow-hidden flex flex-col justify-between text-[#202621] font-sans shadow-inner">
+        {/* Screen Container */}
+        <div className="relative w-full h-[580px] rounded-[32px] bg-white border border-[#E5E2DA] overflow-hidden flex flex-col justify-between text-[#1A1D1A] font-sans">
           
           {/* Status Bar */}
           <div className="pt-2 px-4 pb-1 flex items-center justify-between text-[11px] font-mono text-[#5E665F] bg-white z-20">
@@ -151,7 +143,7 @@ export const InteractivePhone: React.FC = () => {
             </div>
             
             <div className="flex items-center gap-1.5 bg-[#EAF1EC] px-2 py-0.5 rounded-full border border-[#C5DAC9]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#284B39] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#284B39]" />
               <span className="text-[10px] font-mono text-[#284B39] font-bold uppercase">Shield On</span>
             </div>
           </div>
@@ -207,7 +199,7 @@ export const InteractivePhone: React.FC = () => {
                 </div>
 
                 {lastBlockedDomain && (
-                  <div className="p-2 rounded-xl bg-[#FCE8E8] border border-[#E8BCBC] text-[#8F3B3B] text-[10px] font-mono flex items-center gap-1.5 animate-bounce">
+                  <div className="p-2 rounded-xl bg-[#FCE8E8] border border-[#E8BCBC] text-[#8F3B3B] text-[10px] font-mono flex items-center gap-1.5">
                     <AlertTriangle className="w-3.5 h-3.5 text-[#8F3B3B] shrink-0" />
                     <div className="truncate">
                       <span className="font-bold">BLOCKED:</span> {lastBlockedDomain}

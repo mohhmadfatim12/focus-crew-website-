@@ -3,162 +3,132 @@ import {
   ShieldCheck, 
   Smartphone, 
   ArrowRight, 
-  Zap, 
-  CheckCircle2, 
   AlarmClock, 
   Lock, 
   Headphones, 
-  Sparkles,
-  EyeOff,
-  Flame
+  CheckCircle2
 } from 'lucide-react';
 
 export const DualFeatureBento: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-white border-t border-[#E5DFD3] text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-20 md:py-28 bg-[#F7F5F0] border-b border-[#E5E2DA] text-left">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5EAD8] border border-[#E2CEB2] text-xs font-semibold text-[#A37A3E] shadow-2xs">
-            <Zap className="w-3.5 h-3.5" />
-            <span>SYSTEM-LEVEL HABIT DESTRUCTION</span>
+        <div className="max-w-2xl mb-14 space-y-3">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+            Core Habit Architecture
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202621] tracking-tight">
-            Engineered to Destroy the Twin Dopamine Traps: <br className="hidden sm:inline" />
-            <span className="text-[#A37A3E]">Social Media Doomscrolling & Adult Content</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight">
+            Engineered to eliminate two specific dopamine loops.
           </h2>
 
-          <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed">
-            Standard app blockers rely on your willpower when it is already depleted at 11:30 PM. FocusCrew operates at the Android OS layer with unskippable cognitive friction, hardware-level alarms, and instant DNS containment.
+          <p className="text-sm sm:text-base text-[#525853] leading-relaxed">
+            Most app blockers present a gentle reminder you can dismiss in two seconds. FocusCrew introduces unskippable physical and system-level friction precisely when willpower is exhausted.
           </p>
         </div>
 
-        {/* Primary 2-Column Bento Grid */}
+        {/* Primary 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           
-          {/* Card 1: Titan Anti-Porn Fortress */}
-          <div className="rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-8 sm:p-10 flex flex-col justify-between shadow-xs card-shadow-hover relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#A37A3E]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#A37A3E]/20 transition-all duration-500" />
-
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2CEB2] text-[#A37A3E] text-xs font-semibold shadow-2xs mb-6">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#284B39]" />
-                <span>Zero-Relapse Pornography Elimination</span>
+          {/* Pillar 1: Anti-Porn Fortress */}
+          <div className="pro-card p-8 sm:p-10 flex flex-col justify-between">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E5E2DA]">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-[#234E37]">
+                  <ShieldCheck className="w-4 h-4 text-[#234E37]" />
+                  <span>Pillar 01 — Zero-Relapse Defense</span>
+                </div>
+                <span className="status-tag bg-[#EBF2ED] text-[#234E37] border border-[#C8DCD0]">
+                  154,820 RAM Rules
+                </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#202621] tracking-tight">
-                Titan Anti-Porn Fortress
-              </h3>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1A1D1A]">
+                  Titan Anti-Porn Fortress
+                </h3>
+                <p className="mt-2 text-sm text-[#525853] leading-relaxed">
+                  Interprets network queries on-device before socket connection. Blocks adult domains across Chrome, Brave, Samsung Internet, Reddit webviews, and private incognito tabs.
+                </p>
+              </div>
 
-              <p className="mt-2 text-sm text-[#5E665F] leading-relaxed">
-                Complete, zero-leak adult content neutralization across every browser, incognito session, Reddit in-app viewer, and Twitter feed.
-              </p>
-
-              {/* Numbered Feature List */}
-              <ol className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#202621]">
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">1</span>
-                  <span><strong>On-Device RAM Bloom Filter:</strong> Evaluates 154,820 adult domains and keyword filters in under 0.18ms before any data packet leaves your phone.</span>
+              <ul className="space-y-3 text-xs sm:text-sm text-[#1A1D1A]">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#234E37] shrink-0 mt-0.5" />
+                  <span><strong>On-Device RAM Bloom Filter:</strong> Queries verified in 0.18ms before any data packet leaves your phone.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">2</span>
-                  <span><strong>SafeSearch VIP Lock:</strong> Permanently enforces Strict SafeSearch across Google, Bing, DuckDuckGo, Yahoo, and YouTube Restricted Mode.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#234E37] shrink-0 mt-0.5" />
+                  <span><strong>Strict SafeSearch Lock:</strong> Automatically enforces restricted mode across Google, Bing, DuckDuckGo, and YouTube.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">3</span>
-                  <span><strong>Incognito & Private Tab Defense:</strong> Operates at the Android socket layer so incognito browsing and guest profiles cannot bypass protection.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#234E37] shrink-0 mt-0.5" />
+                  <span><strong>Incognito Neutralization:</strong> Operates at the Android socket layer so private windows cannot bypass protection.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">4</span>
-                  <span><strong>100% On-Device Privacy:</strong> Zero external VPN proxies, zero cloud databases, and zero tracking logs. Your private searches never leave your device.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#234E37] shrink-0 mt-0.5" />
+                  <span><strong>100% On-Device Privacy:</strong> No remote proxies, no external databases. Your browsing never leaves your phone.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">5</span>
-                  <span><strong>Late-Night Curfew Guard:</strong> Automatically stiffens behavioral barriers between 11 PM and 5 AM when relapse vulnerability peaks.</span>
-                </li>
-              </ol>
+              </ul>
             </div>
 
-            {/* Embedded Mini-Preview Card */}
-            <div className="mt-8 pt-6 border-t border-[#E5DFD3] flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="p-3.5 rounded-2xl bg-white border border-[#E5DFD3] shadow-2xs w-full sm:w-auto flex-1">
-                <div className="text-[10px] font-mono uppercase text-[#5E665F] font-bold">RAM Filter Telemetry</div>
-                <div className="text-xs font-bold text-[#A37A3E] mt-0.5 font-mono flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#284B39] animate-pulse" />
-                  154,820 RULES ARMED • 0.18ms LATENCY
-                </div>
-              </div>
-
-              <a
-                href="#interactive-demo"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
-              >
-                <span>Test Live Shield</span>
+            <div className="mt-8 pt-6 border-t border-[#E5E2DA] flex items-center justify-between text-xs font-mono text-[#525853]">
+              <span>Hardware-Level Enforcement</span>
+              <a href="#interactive-demo" className="text-[#9E6F28] hover:underline font-semibold flex items-center gap-1">
+                <span>Test filter</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
 
-          {/* Card 2: Reel & Shorts Doomscroll Killer */}
-          <div className="rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-8 sm:p-10 flex flex-col justify-between shadow-xs card-shadow-hover relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#A37A3E]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#A37A3E]/20 transition-all duration-500" />
-
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2CEB2] text-[#A37A3E] text-xs font-semibold shadow-2xs mb-6">
-                <Smartphone className="w-3.5 h-3.5 text-[#A37A3E]" />
-                <span>Short-Form Video Addiction Stopper</span>
+          {/* Pillar 2: Reel & Shorts Doomscroll Killer */}
+          <div className="pro-card p-8 sm:p-10 flex flex-col justify-between">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E5E2DA]">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-[#9E6F28]">
+                  <Smartphone className="w-4 h-4 text-[#9E6F28]" />
+                  <span>Pillar 02 — Short-Form Interception</span>
+                </div>
+                <span className="status-tag bg-[#F5EAD8] text-[#9E6F28] border border-[#E5DFD3]">
+                  Real-Time Counter
+                </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#202621] tracking-tight">
-                Reel & Shorts Doomscroll Killer
-              </h3>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1A1D1A]">
+                  Reel & Shorts Doomscroll Killer
+                </h3>
+                <p className="mt-2 text-sm text-[#5E665F] leading-relaxed">
+                  Stops mindless vertical scrolling in Instagram Reels, YouTube Shorts, and TikTok before an intended 5-minute break turns into 2 hours of lost focus.
+                </p>
+              </div>
 
-              <p className="mt-2 text-sm text-[#5E665F] leading-relaxed">
-                Stops algorithmic dopamine hijacking in Instagram Reels, YouTube Shorts, and TikTok before you lose 2 hours without noticing.
-              </p>
-
-              {/* Numbered Feature List */}
-              <ol className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#202621]">
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">1</span>
-                  <span><strong>Floating Reel Counter HUD:</strong> Transparent on-screen counter tracks your vertical swipes in real-time inside Reels, Shorts, and TikTok.</span>
+              <ul className="space-y-3 text-xs sm:text-sm text-[#1A1D1A]">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#9E6F28] shrink-0 mt-0.5" />
+                  <span><strong>Floating Reel Counter HUD:</strong> A discreet on-screen tally counts your swipes inside short-form players in real time.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">2</span>
-                  <span><strong>8-Second Trance Breaker Gate:</strong> Reaching your daily reel cap triggers a full-screen mindful breathing pause that resets prefrontal cortex awareness.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#9E6F28] shrink-0 mt-0.5" />
+                  <span><strong>8-Second Trance Breaker:</strong> Hitting your daily limit dims the feed and requires an 8-second mindful breathing pause.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">3</span>
-                  <span><strong>Weekly Reel Schedules:</strong> Set strict allowances for productive weekdays (e.g. 10 reels) and flexible caps for weekends.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#9E6F28] shrink-0 mt-0.5" />
+                  <span><strong>Weekly Custom Schedules:</strong> Configure strict caps for weekdays (e.g., 10 reels) and flexible rules for weekends.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">4</span>
-                  <span><strong>DMs & Messaging Fully Unaffected:</strong> Chatting with friends, business messages, notifications, and phone calls remain 100% accessible.</span>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#9E6F28] shrink-0 mt-0.5" />
+                  <span><strong>Preserves Essential Features:</strong> Direct messages, notifications, and calls remain fully accessible.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-[#F5EAD8] text-[#A37A3E] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-mono">5</span>
-                  <span><strong>Zero Screen Recording:</strong> Uses lightweight Android window accessibility callbacks with zero camera or screen-recording permissions.</span>
-                </li>
-              </ol>
+              </ul>
             </div>
 
-            {/* Embedded Mini-Preview Card */}
-            <div className="mt-8 pt-6 border-t border-[#E5DFD3] flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="p-3.5 rounded-2xl bg-white border border-[#E5DFD3] shadow-2xs w-full sm:w-auto flex-1">
-                <div className="text-[10px] font-mono uppercase text-[#5E665F] font-bold">Friction Engine</div>
-                <div className="text-xs font-bold text-[#202621] mt-0.5 font-mono flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#284B39]" />
-                  15 REELS MAX • 8S MINDFUL PAUSE
-                </div>
-              </div>
-
-              <a
-                href="#cost-calculator"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer whitespace-nowrap"
-              >
-                <span>Calculate Time Lost</span>
+            <div className="mt-8 pt-6 border-t border-[#E5E2DA] flex items-center justify-between text-xs font-mono text-[#525853]">
+              <span>Window Accessibility Events</span>
+              <a href="#friction-science" className="text-[#9E6F28] hover:underline font-semibold flex items-center gap-1">
+                <span>View science</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -166,73 +136,43 @@ export const DualFeatureBento: React.FC = () => {
 
         </div>
 
-        {/* Secondary 3-Card Bento Row: Core Startup Pillars */}
+        {/* Secondary Capabilities: 3 Clean Architectural Modules */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Bento Card 3: Unskippable Task Alarm */}
-          <div className="rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-6 sm:p-7 shadow-xs card-shadow-hover space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-2xl bg-[#EAF1EC] text-[#284B39] flex items-center justify-center">
-                <AlarmClock className="w-5 h-5" />
-              </div>
-              <span className="text-[10px] font-mono font-bold bg-[#EAF1EC] text-[#284B39] px-2.5 py-1 rounded-full">
-                COGNITIVE WAKE-UP
-              </span>
+          {/* Module 1: Task Alarm */}
+          <div className="pro-card p-6 space-y-3">
+            <div className="flex items-center justify-between text-xs font-mono">
+              <span className="text-[#525853]">Morning Wakeup</span>
+              <AlarmClock className="w-4 h-4 text-[#234E37]" />
             </div>
-            
-            <h4 className="text-lg font-extrabold text-[#202621]">The Unskippable Task Alarm</h4>
-            <p className="text-xs text-[#5E665F] leading-relaxed">
-              Standard alarms get snoozed in a half-asleep trance. FocusCrew locks your screen with cognitive math challenges or mandatory 30-shake sensor tests that force your conscious mind awake.
+            <h4 className="text-base font-bold text-[#1A1D1A]">Unskippable Task Alarm</h4>
+            <p className="text-xs text-[#525853] leading-relaxed">
+              Overrides silent and Do Not Disturb modes. Dismissal requires solving mental math or 30 physical phone shakes to eliminate sleep grogginess.
             </p>
-            
-            <div className="pt-2 border-t border-[#E5DFD3] flex items-center justify-between text-[11px] font-mono text-[#284B39] font-bold">
-              <span>Overrides DND & Silent Mode</span>
-              <span>Home Widget Sync</span>
-            </div>
           </div>
 
-          {/* Bento Card 4: The Freedom Vault */}
-          <div className="rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-6 sm:p-7 shadow-xs card-shadow-hover space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-2xl bg-[#F5EAD8] text-[#A37A3E] flex items-center justify-center">
-                <Lock className="w-5 h-5" />
-              </div>
-              <span className="text-[10px] font-mono font-bold bg-[#F5EAD8] text-[#A37A3E] px-2.5 py-1 rounded-full">
-                15-MIN URGE BUFFER
-              </span>
+          {/* Module 2: Freedom Vault */}
+          <div className="pro-card p-6 space-y-3">
+            <div className="flex items-center justify-between text-xs font-mono">
+              <span className="text-[#525853]">Anti-Tamper</span>
+              <Lock className="w-4 h-4 text-[#9E6F28]" />
             </div>
-            
-            <h4 className="text-lg font-extrabold text-[#202621]">Freedom Vault Tamper Defense</h4>
-            <p className="text-xs text-[#5E665F] leading-relaxed">
-              Protected by a 4-digit Master Security PIN and Knox-grade anti-uninstall protection. Turning off the shield requires an unskippable 15-minute cooldown where 96% of relapse cravings naturally subside.
+            <h4 className="text-base font-bold text-[#1A1D1A]">15-Minute Freedom Vault</h4>
+            <p className="text-xs text-[#525853] leading-relaxed">
+              Protected by a Master PIN. Turning off protection starts a mandatory 15-minute countdown, giving chemical urge spikes time to dissipate.
             </p>
-            
-            <div className="pt-2 border-t border-[#E5DFD3] flex items-center justify-between text-[11px] font-mono text-[#A37A3E] font-bold">
-              <span>Settings Lockout Guard</span>
-              <span>Zero Impulsive Relapse</span>
-            </div>
           </div>
 
-          {/* Bento Card 5: 40Hz Audio & Ulysses Lock */}
-          <div className="rounded-3xl bg-[#FBF9F5] border border-[#E5DFD3] p-6 sm:p-7 shadow-xs card-shadow-hover space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="w-10 h-10 rounded-2xl bg-[#F5EAD8] text-[#A37A3E] flex items-center justify-center">
-                <Headphones className="w-5 h-5" />
-              </div>
-              <span className="text-[10px] font-mono font-bold bg-[#F5EAD8] text-[#A37A3E] px-2.5 py-1 rounded-full">
-                GAMMA FLOW STATE
-              </span>
+          {/* Module 3: 40Hz Binaural Engine */}
+          <div className="pro-card p-6 space-y-3">
+            <div className="flex items-center justify-between text-xs font-mono">
+              <span className="text-[#525853]">Neural Flow</span>
+              <Headphones className="w-4 h-4 text-[#9E6F28]" />
             </div>
-            
-            <h4 className="text-lg font-extrabold text-[#202621]">40Hz Binaural Audio & Ulysses Lock</h4>
-            <p className="text-xs text-[#5E665F] leading-relaxed">
-              Synthesizes real-time 40Hz Gamma waves to induce deep neural focus, paired with a Distraction Journal dialog that intercepts fleeting impulses so you stay in flow state for hours.
+            <h4 className="text-base font-bold text-[#1A1D1A]">40Hz Binaural Audio</h4>
+            <p className="text-xs text-[#525853] leading-relaxed">
+              Locally synthesized Gamma frequencies to stimulate working memory during deep coding sessions, paired with a Distraction Journal dialog.
             </p>
-            
-            <div className="pt-2 border-t border-[#E5DFD3] flex items-center justify-between text-[11px] font-mono text-[#202621] font-bold">
-              <span>Distraction Journal</span>
-              <span>BrainPal Companion</span>
-            </div>
           </div>
 
         </div>
@@ -242,4 +182,3 @@ export const DualFeatureBento: React.FC = () => {
   );
 };
 export default DualFeatureBento;
-

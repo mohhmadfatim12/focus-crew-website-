@@ -1,107 +1,82 @@
 import React from 'react';
-import { ArrowRight, Clock, ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
+import { Clock, ShieldCheck, Zap, Shield } from 'lucide-react';
 
 export const StatsGrid: React.FC = () => {
-  const stats = [
+  const metrics = [
     {
-      metric: '913 Hours',
-      desc: 'wasted annually by the average user trapped in algorithmic short-form video loops (Reels, Shorts, TikTok) and compulsive late-night browsing.',
-      icon: Clock,
-      type: 'bottom'
+      value: '913 Hours',
+      label: 'Annual Lost Attention',
+      desc: 'Spent by the average smartphone user in passive algorithmic feeds (Reels, Shorts, TikTok) each year.',
+      icon: Clock
     },
     {
-      metric: '12 Minutes',
-      desc: 'is the biological peak lifespan of an intense dopamine craving. FocusCrew\'s 15-minute Freedom Vault delay outlasts the impulse, preventing 96% of relapses.',
-      icon: Zap,
-      type: 'top'
+      value: '12 Minutes',
+      label: 'Craving Half-Life',
+      desc: 'The biological peak duration of an impulsive dopamine urge. The Freedom Vault enforces a 15-minute cooldown to outlast it.',
+      icon: Zap
     },
     {
-      metric: '154,820+',
-      desc: 'adult domains and explicit query signatures blocked directly inside your phone\'s RAM in 0.18ms before any browser socket can transmit a byte.',
-      icon: ShieldCheck,
-      type: 'bottom'
+      value: '154,820',
+      label: 'RAM Threat Signatures',
+      desc: 'Adult domains and explicit query patterns stored in an in-memory Bloom filter for instant sub-millisecond drops.',
+      icon: ShieldCheck
     },
     {
-      metric: '100% Free',
-      desc: 'core production APK. 100% on-device privacy with zero external proxies, zero tracking databases, and zero recurring subscription traps.',
-      icon: HeartHandshake,
-      type: 'top'
+      value: '0 Bytes',
+      label: 'Cloud Data Leakage',
+      desc: 'No remote DNS relays, no analytics SDKs, and zero subscription paywalls. All filtering happens 100% locally on Android.',
+      icon: Shield
     }
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-[#E5DFD3] text-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-24 bg-white border-b border-[#E5E2DA] text-left">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202621] tracking-tight">
-            What’s Stealing Your Focus & Ambition?
+        {/* Header */}
+        <div className="max-w-2xl mb-12 space-y-3">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+            Quantitative Baseline
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight">
+            The measurable toll of modern phone addiction.
           </h2>
-          <p className="text-sm sm:text-base text-[#5E665F] leading-relaxed max-w-2xl mx-auto">
-            FocusCrew acts as your phone's autonomous nervous system—intercepting explicit triggers at the network layer and snapping you out of hypnotic doomscrolling before you lose hours.
+          <p className="text-sm sm:text-base text-[#525853] leading-relaxed">
+            Engineered around verifiable biological and technical parameters rather than vague productivity promises.
           </p>
         </div>
 
-        {/* 4 Cards Grid with Alternating Top/Bottom U-Borders & Floating Circles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-center max-w-6xl mx-auto">
-          {stats.map((s, idx) => {
-            const Icon = s.icon;
-            const isBottom = s.type === 'bottom';
-
+        {/* 4-Card Editorial Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {metrics.map((item, idx) => {
+            const Icon = item.icon;
             return (
-              <div key={idx} className="flex flex-col items-center relative py-4">
-                
-                {/* Top Circle for 'bottom' cards */}
-                {isBottom && (
-                  <div className="acs-circle-icon -mb-9 z-20">
-                    <Icon className="w-7 h-7 text-[#A37A3E]" />
+              <div 
+                key={idx} 
+                className="pro-card p-6 flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-2">
+                  <div className="w-8 h-8 rounded-md bg-[#F7F5F0] border border-[#E5E2DA] flex items-center justify-center text-[#1A1D1A]">
+                    <Icon className="w-4 h-4 text-[#9E6F28]" />
                   </div>
-                )}
-
-                {/* U-Shaped Gradient Card Container */}
-                <div className={isBottom ? 'acs-card-u-bottom w-full' : 'acs-card-u-top w-full'}>
-                  <div className="acs-stat-card">
-                    {/* Top space for bottom cards if icon overlaps */}
-                    {isBottom && <div className="h-4" />}
-
-                    <div className="acs-stat-value font-mono">
-                      {s.metric}
-                    </div>
-
-                    <p className="acs-stat-text">
-                      {s.desc}
-                    </p>
-
-                    {/* Bottom space for top cards if icon overlaps */}
-                    {!isBottom && <div className="h-4" />}
+                  <div className="text-2xl font-bold font-mono text-[#1A1D1A] tracking-tight pt-2">
+                    {item.value}
+                  </div>
+                  <div className="text-xs font-bold text-[#1A1D1A] font-mono">
+                    {item.label}
                   </div>
                 </div>
 
-                {/* Bottom Circle for 'top' cards */}
-                {!isBottom && (
-                  <div className="acs-circle-icon -mt-9 z-20">
-                    <Icon className="w-7 h-7 text-[#A37A3E]" />
-                  </div>
-                )}
-
+                <p className="text-xs text-[#525853] leading-relaxed pt-3 border-t border-[#E5E2DA]">
+                  {item.desc}
+                </p>
               </div>
             );
           })}
-        </div>
-
-        {/* Centered Action Button */}
-        <div className="mt-14">
-          <a
-            href="#download-section"
-            className="acs-btn"
-          >
-            <span>Why Modern High-Performers Choose FocusCrew</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
 
       </div>
     </section>
   );
 };
+export default StatsGrid;

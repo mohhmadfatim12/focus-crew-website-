@@ -9,7 +9,6 @@ import { DeepPurpleBanner } from './components/DeepPurpleBanner';
 import { DnsSimulator } from './components/DnsSimulator';
 import { DopamineCalculator } from './components/DopamineCalculator';
 import { IntellectualPropertyNotice } from './components/IntellectualPropertyNotice';
-import { FloatingWatermark } from './components/FloatingWatermark';
 import { FounderStory } from './components/FounderStory';
 import { Faq } from './components/Faq';
 import { ConversionCard } from './components/ConversionCard';
@@ -31,53 +30,50 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#202621] flex flex-col font-sans selection:bg-[#F5EAD8] selection:text-[#202621] antialiased">
-      {/* 1. Navbar (Exact Structure with Honey Brass CTA) */}
+    <div className="min-h-screen bg-white text-[#1A1D1A] flex flex-col font-sans selection:bg-[#F5EAD8] selection:text-[#1A1D1A] antialiased">
+      {/* 1. Header & Navigation */}
       <Navbar onOpenDownload={scrollToDownload} />
 
       {/* Main Content Flow */}
       <main className="flex-1">
-        {/* 2. Hero Section with Connected Phone Canvas, Flowing SVG Lines, & Marquee */}
+        {/* 2. Hero Section: Direct Value Proposition, Clean Technical Spec & Device Preview */}
         <Hero onOpenDownload={scrollToDownload} />
 
-        {/* 3. Dual Feature Bento (Titan Fortress vs Reel Disruptor) */}
+        {/* 3. Core Habit Architecture: Dual Threat Defense & System Pillars */}
         <DualFeatureBento />
 
-        {/* 4. Product Walkthrough Stage (Interactive 4-Step Showcase) */}
+        {/* 4. Product Walkthrough: Interactive Tabbed Simulator */}
         <DemoVideoShowcase onOpenDownload={scrollToDownload} />
 
-        {/* 5. Stop Doomscrolling Friction Engine (Live 8s Breathing Circle) */}
+        {/* 5. Behavioral Science: 8-Second Mindful Pause & Dopamine Friction */}
         <StopDoomscrollSection />
 
-        {/* 6. 4-Card Stats Grid (Why Willpower Fails - Zanderio U-Borders) */}
+        {/* 6. Quantitative Research & Problem Space: Why Willpower Fails */}
         <StatsGrid />
 
-        {/* 7. Signature Full-Width Deep-Purple Section (On-Device Sovereign Fortress & SafeSearch) */}
+        {/* 7. System Architecture: On-Device Sovereign DNS & Filter Pipeline */}
         <DeepPurpleBanner />
 
-        {/* 8. Interactive DNS Packet Inspector Lab (Light Theme) */}
+        {/* 8. Interactive Telemetry: Real-time DNS Bloom Filter Inspector */}
         <DnsSimulator />
 
-        {/* 9. Interactive Time Reclaim Calculator (Slider & Tangible Life Metrics) */}
+        {/* 9. Cognitive Audit: Life & Hours Reclaimed Calculator */}
         <DopamineCalculator />
 
-        {/* 10. Solo Creator & Founder Story (Mohammad Fatim Hasnain - Meet the Owner) */}
+        {/* 10. Origin & Engineering: Note from Mohammad Fatim Hasnain */}
         <FounderStory />
 
-        {/* 11. Official Intellectual Property & Startup Protection Notice */}
+        {/* 11. Architecture & IP Protection Notice */}
         <IntellectualPropertyNotice />
 
-        {/* 12. Split FAQ Section (Direct Human Answers) */}
+        {/* 12. Technical FAQ: Direct, Human Answers */}
         <Faq />
 
-        {/* 13. Bottom Conversion Block (APK Download, Checksum, Founder Card) */}
+        {/* 13. Verified Binary Distribution: Direct APK & SHA-256 Checksum */}
         <ConversionCard />
       </main>
 
-      {/* Floating Protected IP Watermark Badge */}
-      <FloatingWatermark />
-
-      {/* 14. Structured SaaS Footer */}
+      {/* 14. Structured Footer */}
       <Footer />
     </div>
   );

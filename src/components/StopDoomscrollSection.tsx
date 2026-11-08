@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Flame, CheckCircle, Sparkles } from 'lucide-react';
+import { CheckCircle2, Play, RotateCcw } from 'lucide-react';
 
 export const StopDoomscrollSection: React.FC = () => {
   const [breathingSeconds, setBreathingSeconds] = useState(8);
   const [isBreathingActive, setIsBreathingActive] = useState(false);
-  const [completedBreaths, setCompletedBreaths] = useState(false);
+  const [hasCompleted, setHasCompleted] = useState(false);
 
   useEffect(() => {
     let interval: number;
@@ -12,127 +12,133 @@ export const StopDoomscrollSection: React.FC = () => {
       interval = window.setTimeout(() => setBreathingSeconds(prev => prev - 1), 1000);
     } else if (breathingSeconds === 0) {
       setIsBreathingActive(false);
-      setCompletedBreaths(true);
+      setHasCompleted(true);
     }
     return () => clearTimeout(interval);
   }, [isBreathingActive, breathingSeconds]);
 
   const startBreathingTest = () => {
     setBreathingSeconds(8);
-    setCompletedBreaths(false);
+    setHasCompleted(false);
     setIsBreathingActive(true);
   };
 
-  return (
-    <section className="py-24 bg-white border-t border-[#E5DFD3] text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Split Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#A37A3E] px-3.5 py-1 rounded-full bg-[#F5EAD8] border border-[#E2CEB2] inline-block shadow-2xs">
-              BEHAVIORAL FRICTION ENGINE
-            </span>
+  const resetTest = () => {
+    setBreathingSeconds(8);
+    setIsBreathingActive(false);
+    setHasCompleted(false);
+  };
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202621] tracking-tight leading-tight">
-              Stop Doomscrolling Before You Lose Your Day <br />
-              <span className="text-[#A37A3E]">Reclaim up to 3.2x more deep work</span>
+  return (
+    <section id="friction-science" className="py-20 md:py-28 bg-[#F7F5F0] border-b border-[#E5E2DA] text-left">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Scientific Narrative */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#9E6F28]">
+              Behavioral Friction Engineering
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1D1A] tracking-tight leading-tight">
+              Why willpower alone fails against short-form video algorithms.
             </h2>
 
-            <p className="text-[#5E665F] text-sm sm:text-base leading-relaxed">
-              You open Instagram or YouTube to reply to one message, and 45 minutes later you are still swiping. 
-              FocusCrew counts every reel in the background. When you hit your threshold, it gently halts the feed 
-              with the Trance Breaker 8-second mindful pause so your rational mind can take back control.
-            </p>
+            <div className="space-y-4 text-sm text-[#525853] leading-relaxed">
+              <p>
+                Short-form video feeds operate on variable-ratio dopamine reinforcement schedules—the exact psychological mechanism used by slot machines. Each vertical swipe is a gamble on whether the next 15-second clip will deliver novelty.
+              </p>
+              <p>
+                Within minutes of scrolling, your prefrontal cortex shifts into a passive, semi-automatic state. Trying to "remember" to close the app fails because the conscious self-monitoring circuit is suppressed.
+              </p>
+              <p>
+                FocusCrew’s <strong>8-Second Trance Breaker</strong> restores agency by introducing an unskippable physiological pause. By forcing an intentional breath, your executive brain re-engages and breaks the motor-reflex swipe loop before hours disappear.
+              </p>
+            </div>
 
-            {/* Big Statistics with Divider */}
-            <div className="flex items-center gap-8 pt-4 border-t border-[#E5DFD3]">
-              <div>
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#202621] font-mono tracking-tight">
-                  78%
-                </div>
-                <div className="text-xs font-bold text-[#202621] mt-1 uppercase font-mono tracking-wider">
-                  Urges Neutralized
-                </div>
-                <p className="text-[11px] text-[#5E665F] mt-0.5 max-w-[200px]">
-                  Impulsive cravings dissolve within 8 seconds of physiological friction.
+            {/* Factual Core Mechanisms */}
+            <div className="pt-4 border-t border-[#E5E2DA] grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-white border border-[#E5E2DA]">
+                <div className="text-xs font-bold text-[#1A1D1A]">Automated Reflex Interruption</div>
+                <p className="text-xs text-[#525853] mt-1 leading-normal">
+                  Shifts cognition from automatic motor habit back to deliberate decision-making.
                 </p>
               </div>
 
-              {/* Vertical Divider */}
-              <div className="w-[1px] h-16 bg-[#E5DFD3]" />
-
-              <div>
-                <div className="text-4xl sm:text-5xl font-extrabold text-[#A37A3E] font-mono tracking-tight">
-                  3.2x
-                </div>
-                <div className="text-xs font-bold text-[#202621] mt-1 uppercase font-mono tracking-wider">
-                  Deep Work Reclaimed
-                </div>
-                <p className="text-[11px] text-[#5E665F] mt-0.5 max-w-[200px]">
-                  More focused coding, studying, and building time every single day.
+              <div className="p-4 rounded-lg bg-white border border-[#E5E2DA]">
+                <div className="text-xs font-bold text-[#1A1D1A]">15-Minute Craving Decay</div>
+                <p className="text-xs text-[#525853] mt-1 leading-normal">
+                  Chemical dopamine surges peak and subside within 10 to 12 minutes when access is gated.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Breathing Gate Simulator */}
+          {/* Right Column: Clean, Tactile 8-Second Simulator */}
           <div className="lg:col-span-5">
-            <div className="rounded-3xl bg-white border border-[#E5DFD3] p-8 sm:p-10 shadow-[0_20px_50px_rgba(163,122,62,0.08)] text-center space-y-6 relative overflow-hidden">
+            <div className="pro-card p-8 text-center space-y-6">
               
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <span className="text-xs font-mono font-bold uppercase text-[#A37A3E] tracking-wider">
-                  Trance Breaker Simulator
-                </span>
-                <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#EAF1EC] text-[#284B39] border border-[#C5DAC9]">
-                  <span className="w-2 h-2 rounded-full bg-[#284B39] animate-pulse" />
-                  <span>ARMED</span>
-                </span>
+              <div className="flex items-center justify-between pb-3 border-b border-[#E5E2DA] text-xs font-mono text-[#525853]">
+                <span>TRANCE BREAKER ENGINE</span>
+                <span className="text-[#234E37] font-semibold">ACTIVE</span>
               </div>
 
-              {/* Pulsing Breathing Circle Animation */}
-              <div className="relative w-40 h-40 mx-auto flex items-center justify-center my-4">
-                <div className={`absolute inset-0 rounded-full bg-[#F5EAD8] ${isBreathingActive ? 'radar-ring' : ''}`} />
-                <div className="w-32 h-32 rounded-full bg-white border-2 border-[#A37A3E] flex flex-col items-center justify-center relative z-10 shadow-xl shadow-[#A37A3E]/10">
+              {/* Minimalist Breathing Circle */}
+              <div className="py-4 flex flex-col items-center justify-center">
+                <div className="w-32 h-32 rounded-full border-2 border-[#E5E2DA] bg-[#F7F5F0] flex flex-col items-center justify-center transition-all duration-300">
                   {isBreathingActive ? (
                     <>
-                      <span className="text-4xl font-extrabold text-[#A37A3E] font-mono tracking-tight">{breathingSeconds}s</span>
-                      <span className="text-[10px] uppercase font-bold text-[#5E665F] tracking-wider mt-0.5">
-                        {breathingSeconds >= 5 ? 'Inhale...' : breathingSeconds >= 3 ? 'Hold...' : 'Exhale...'}
+                      <span className="text-4xl font-extrabold font-mono text-[#9E6F28]">
+                        {breathingSeconds}s
+                      </span>
+                      <span className="text-[10px] font-mono text-[#525853] uppercase mt-1">
+                        {breathingSeconds > 4 ? 'Inhale...' : 'Exhale...'}
                       </span>
                     </>
-                  ) : completedBreaths ? (
+                  ) : hasCompleted ? (
                     <>
-                      <CheckCircle className="w-10 h-10 text-[#284B39] mb-0.5" />
-                      <span className="text-[10px] uppercase font-bold text-[#284B39] tracking-wider">Mind Awake</span>
+                      <CheckCircle2 className="w-8 h-8 text-[#234E37] mb-1" />
+                      <span className="text-[11px] font-bold text-[#234E37]">Mind Awake</span>
                     </>
                   ) : (
                     <>
-                      <Flame className="w-10 h-10 text-[#A37A3E] mb-0.5" />
-                      <span className="text-[10px] uppercase font-bold text-[#5E665F] tracking-wider">8s Gate Ready</span>
+                      <span className="text-3xl font-extrabold font-mono text-[#1A1D1A]">8s</span>
+                      <span className="text-[10px] font-mono text-[#7E857F] uppercase mt-1">Pause Gate</span>
                     </>
                   )}
                 </div>
               </div>
 
-              <p className="text-xs text-[#5E665F] leading-relaxed max-w-xs mx-auto">
+              {/* Status Explanation */}
+              <p className="text-xs text-[#525853] leading-relaxed max-w-xs mx-auto">
                 {isBreathingActive 
-                  ? 'Feel your prefrontal cortex re-engage as dopamine cravings drop.'
-                  : completedBreaths 
-                    ? 'Urge dissolved! Notice how the mindless instinct to keep scrolling has completely faded.'
-                    : 'Click below to test how an 8-second intentional pause snaps your brain out of the doomscroll trance.'}
+                  ? 'Focus on your breath. Notice how the compulsion to scroll immediately drops.'
+                  : hasCompleted
+                    ? 'Agency restored. You can now consciously decide whether to close the app or return to work.'
+                    : 'Simulate the exact 8-second friction gate that appears when reaching your daily reel allowance.'}
               </p>
 
-              <button
-                onClick={startBreathingTest}
-                disabled={isBreathingActive}
-                className="w-full py-3.5 rounded-full bg-[#A37A3E] hover:bg-[#8A642E] disabled:bg-[#D8D1C3] text-white font-bold text-xs shadow-md shadow-[#A37A3E]/20 transition-all cursor-pointer flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{isBreathingActive ? `Breathing (${breathingSeconds}s)...` : 'Simulate 8-Second Trance Breaker'}</span>
-              </button>
+              {/* Actions */}
+              <div className="flex items-center justify-center gap-2">
+                {!isBreathingActive ? (
+                  <button
+                    onClick={startBreathingTest}
+                    className="btn-accent text-xs w-full"
+                  >
+                    <Play className="w-3.5 h-3.5" />
+                    <span>{hasCompleted ? 'Run Simulation Again' : 'Test 8-Second Pause'}</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={resetTest}
+                    className="btn-secondary text-xs w-full"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Reset</span>
+                  </button>
+                )}
+              </div>
 
             </div>
           </div>
@@ -143,3 +149,4 @@ export const StopDoomscrollSection: React.FC = () => {
     </section>
   );
 };
+export default StopDoomscrollSection;
