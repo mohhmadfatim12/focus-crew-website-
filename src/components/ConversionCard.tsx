@@ -89,11 +89,24 @@ export const ConversionCard: React.FC = () => {
           {/* Download & Verification Action Bar */}
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
             <a
-              href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
+              href="/FocusCrew.apk"
+              download="FocusCrew.apk"
+              type="application/vnd.android.package-archive"
               className="btn-accent text-base sm:text-lg !py-4 sm:!py-5 !px-8 sm:!px-10 shadow-md flex items-center justify-center gap-3 font-bold"
             >
               <Download className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>Download FocusCrew App (Free APK)</span>
+            </a>
+
+            <a
+              href="https://github.com/mohhmadfatim12/focus-crew/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-sm !py-4 !px-5 flex items-center justify-center gap-2 font-medium"
+              title="Official GitHub Releases"
+            >
+              <ExternalLink className="w-4 h-4 text-[#1A1D1A]" />
+              <span>GitHub Releases</span>
             </a>
 
             <button

@@ -82,11 +82,22 @@ export const DownloadSection: React.FC = () => {
             {/* Direct Download Action Button */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
               <a
-                href="https://github.com/mohhmadfatim12/focus-crew/releases/download/v1.0.0-stable/FocusCrew.apk"
+                href="/FocusCrew.apk"
+                download="FocusCrew.apk"
+                type="application/vnd.android.package-archive"
                 className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-[#A37A3E] hover:bg-[#8A642E] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-sm hover:shadow transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-white" />
                 <span>Download FocusCrew App (Free APK)</span>
+              </a>
+              <a
+                href="https://github.com/mohhmadfatim12/focus-crew/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 border border-slate-300 transition-all"
+              >
+                <ExternalLink className="w-4 h-4 text-slate-700" />
+                <span>GitHub Releases</span>
               </a>
             </div>
           </div>
